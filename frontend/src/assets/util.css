@@ -1,0 +1,7 @@
+.text-shadow-sm {
+  text-shadow: -1px 1px 1px #242424;
+}
+
+.text-shadow-md {
+  text-shadow: -3px 3px 1px #242424;
+}
