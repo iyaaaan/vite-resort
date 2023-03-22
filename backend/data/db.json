@@ -1,0 +1,19 @@
+{
+  "testimonials": [
+    {
+      "name": "Christian Ocol",
+      "text": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio molestiae suscipit quidem!",
+      "img": "test-1.png"
+    },
+    {
+      "name": "Christian 2",
+      "text": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+      "img": "test-1.png"
+    },
+    {
+      "name": "Christian 3",
+      "text": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+      "img": "test-1.png"
+    }
+  ]
+}

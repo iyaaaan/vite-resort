@@ -11,23 +11,40 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: Home,
+      meta: {
+        title: "Home |",
+      },
     },
     {
       path: "/about",
       name: "about",
       component: About,
+      meta: {
+        title: "About |",
+      },
     },
     {
       path: "/package",
       name: "package",
       component: Package,
+      meta: {
+        title: "Package |",
+      },
     },
     {
       path: "/contact",
       name: "contact",
       component: Contact,
+      meta: {
+        title: "Contact |",
+      },
     },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next();
 });
 
 export default router;

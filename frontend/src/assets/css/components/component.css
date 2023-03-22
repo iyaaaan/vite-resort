@@ -1,0 +1,17 @@
+/* buttons */
+.button {
+  @apply min-w-[150px] rounded-full p-3 text-sm text-white transition-colors;
+}
+
+.button-primary {
+  @apply bg-primary hover:bg-primaryLight;
+}
+
+.button-secondary {
+  @apply bg-secondary hover:bg-secondaryLight;
+}
+
+/* section titles */
+.title-primary {
+  @apply font-Playfair text-5xl font-bold text-primary;
+}

@@ -1,7 +1,9 @@
 <template>
-  <div>This is Contact page</div>
+  <!-- Hero -->
+  <HeroBanner banner="contact"> </HeroBanner>
+  <!-- ./Hero -->
 </template>
 
-<script setup></script>
-
-<style lang="scss" scoped></style>
+<script setup>
+import HeroBanner from "@/components/HeroBanner.vue";
+</script>

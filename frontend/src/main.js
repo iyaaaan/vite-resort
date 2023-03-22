@@ -1,9 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
-import "./assets/tailwind.css";
-import "./assets/fonts.css";
-
+import "./assets/css/main.css";
 /* import the fontawesome core */
 import { library } from "@fortawesome/fontawesome-svg-core";
 
@@ -23,6 +21,8 @@ import {
   faPhoneAlt,
   faEnvelope,
   faMapPin,
+  faStar,
+  faStarHalfAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
@@ -37,7 +37,9 @@ library.add(
   faFacebookF,
   faInstagram,
   faEnvelope,
-  faMapPin
+  faMapPin,
+  faStar,
+  faStarHalfAlt
 );
 
 const app = createApp(App);
