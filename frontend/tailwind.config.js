@@ -17,6 +17,7 @@ module.exports = {
       Montserrat: ["Montserrat, sans-serif"],
       AlexBrush: ["Alex Brush"],
       Playfair: ["Playfair Display, serif"],
+      Merriweather: ["Merriweather, serif"],
     },
     container: {
       padding: "2rem",

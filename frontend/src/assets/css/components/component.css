@@ -15,3 +15,7 @@
 .title-primary {
   @apply font-Playfair text-5xl font-bold text-primary;
 }
+
+.clip-path-to-top {
+  clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%);
+}

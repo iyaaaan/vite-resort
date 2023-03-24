@@ -1,7 +1,7 @@
 <template>
-  <header>
+  <header ref="header" class="relative z-10">
     <nav
-      class="fixed top-0 left-0 right-0 z-10 flex items-center justify-center bg-gradient-to-b from-black p-4 font-Montserrat"
+      class="fixed top-0 left-0 right-0 flex items-center justify-center bg-gradient-to-b from-black p-4 font-Montserrat"
     >
       <template v-for="(menu, index) in menus" :key="index">
         <router-link
@@ -40,8 +40,13 @@
 
 <script setup>
 import { ref } from "vue";
+import { fadeDropDown } from "../composables/myAnimate";
 
 const menus = ref(["home", "about", "package", "contact"]);
+
+const header = ref();
+
+fadeDropDown(header);
 </script>
 
 <style scoped></style>

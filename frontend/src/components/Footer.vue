@@ -55,13 +55,13 @@
             <a href="https://www.facebook.com" target="_blank">
               <font-awesome-icon
                 icon="fab fa-facebook-f"
-                class="m-2 text-lg hover:text-primaryLight"
+                class="m-2 text-lg hover:text-secondaryLight"
               />
             </a>
             <a href="https://www.instagram.com" target="_blank">
               <font-awesome-icon
                 icon="fab fa-instagram"
-                class="m-2 text-lg hover:text-primaryLight"
+                class="m-2 text-lg hover:text-secondaryLight"
               />
             </a>
           </li>
@@ -81,15 +81,20 @@
             class="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 transform text-gray-400"
           />
           <input
-            type="email"
-            name="email"
             id="email"
-            placeholder="email@kemuscorp.com"
+            class="block w-full rounded-full py-3 pl-11 ring-cyan-500 focus:outline-none focus:ring-2"
+            :class="{ 'ring-red-500': !isValidEmail }"
             autocomplete="off"
-            class="block w-full rounded-full py-3 pl-11 ring-primaryLight focus:outline-none focus:ring-2"
+            name="email"
+            placeholder="email@kemuscorp.com"
+            type="email"
+            v-model="email"
           />
         </div>
-        <button class="button button-secondary mt-4 w-full p-3">
+        <button
+          class="button button-secondary mt-4 w-full p-3 disabled:bg-slate-400"
+          :disabled="!isValidEmail"
+        >
           Subscribe
         </button>
 
@@ -113,6 +118,14 @@
   </footer>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref, computed } from "vue";
+
+const email = ref("");
+
+const isValidEmail = computed(() => {
+  return /^[^@]+@\w+(\.\w+)+\w$/.test(email.value);
+});
+</script>
 
 <style lang="scss" scoped></style>

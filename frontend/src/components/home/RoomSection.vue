@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section
     class="relative my-24 flex shadow-[0_0px_30px_#d1cfcf] after:absolute after:-top-64 after:-z-10 after:h-screen after:w-full after:bg-gray-100 after:content-['']"
   >
     <div class="flex flex-1 flex-col items-center justify-center bg-white">
@@ -24,5 +24,5 @@
         class="h-full w-full object-cover"
       />
     </div>
-  </div>
+  </section>
 </template>

@@ -31,7 +31,7 @@
             </template>
           </div>
           <blockquote
-             class="relative my-5 before:absolute before:left-0 before:-top-16 before:font-Playfair before:text-9xl before:text-gray-300 before:content-[open-quote] after:invisible after:content-[close-quote]"
+            class="relative my-5 before:absolute before:left-0 before:-top-16 before:font-Playfair before:text-9xl before:text-gray-300 before:content-[open-quote] after:invisible after:content-[close-quote]"
           >
             {{ test.text }}
           </blockquote>

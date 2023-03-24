@@ -1,5 +1,5 @@
 <template>
-  <div class="my-24 p-4">
+  <section class="my-24 p-4">
     <div class="flex items-center justify-center space-x-5">
       <template v-for="(feat, index) in featured" :key="index">
         <div
@@ -22,7 +22,7 @@
         How to get here
       </span>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
