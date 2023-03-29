@@ -126,8 +126,8 @@ onMounted(() => {
       trigger: ".bases",
       scroller: ".smooth-scroll",
       start: 10,
-      scrub: true,
-      end: `${vh(100)}`,
+      scrub: 2,
+      end: 11,
     },
   });
 
@@ -138,24 +138,20 @@ onMounted(() => {
       autoAlpha: 0,
       "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
       stagger: 0.2,
+      duration: 2,
+      ease: "Power4.easeOut",
+      delay: 1
     },
-    "heroScroll"
+    //"heroScroll"
   );
 
   heroScroller.to(
     ".fade-to-top",
     {
-      y: 100,
+      y: 50,
       autoAlpha: 0,
       "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-      stagger: 0.2,
-    },
-    "heroScroll"
-  );
-  heroScroller.to(
-    ".target1",
-    {
-      scale: 0.5,
+      stagger: .2
     },
     "heroScroll"
   );
