@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Package from "../views/Package.vue";
 import Contact from "../views/Contact.vue";
+import Test from "../views/Testpage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,6 +38,14 @@ const router = createRouter({
       component: Contact,
       meta: {
         title: "Contact |",
+      },
+    },
+    {
+      path: "/test",
+      name: "test",
+      component: Test,
+      meta: {
+        title: "Test |",
       },
     },
   ],

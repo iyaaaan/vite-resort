@@ -1,5 +1,9 @@
 <template>
-  <footer class="bg-cyan-900 p-4 font-Montserrat text-sm text-white">
+  <footer
+    class="bg-cyan-900 p-4 font-Montserrat text-sm text-white"
+    data-scroll
+    data-scroll-section
+  >
     <div class="mx-auto flex max-w-7xl justify-start space-x-8">
       <!-- logo -->
       <div class="max-w-xs p-4 text-justify">

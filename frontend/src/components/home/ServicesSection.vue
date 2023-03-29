@@ -1,9 +1,11 @@
 <template>
-  <section class="my-24">
-    <h2 class="text-center font-Playfair text-5xl font-bold text-primary">
+  <section class="sv-wrap my-24" data-scroll data-scroll-section>
+    <h2
+      class="sv-title full-clip-path text-center font-Playfair text-5xl font-bold text-primary"
+    >
       Services
     </h2>
-    <ul class="sv mx-auto flex max-w-5xl space-x-10" ref="sv">
+    <ul class="sv-list mx-auto flex max-w-5xl space-x-10">
       <template v-for="(service, index) in services" :key="index">
         <li
           class="mt-10 rounded-md border border-solid border-zinc-100 bg-white p-4 text-center shadow-lg"
@@ -23,9 +25,9 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ref, onMounted } from "vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,24 +35,31 @@ const props = defineProps({
   services: Array,
 });
 
-const sv = ref(null);
-
 onMounted(() => {
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: sv.value,
-        start: "top center",
-        end: "+=400",
-        //scrub: true,
-        markers: true,
-      },
-    })
-    .from(sv.value.children, {
+  let tl = gsap.timeline({
+    defaults: { ease: "Power4.easeOut", duration: 2 },
+    scrollTrigger: {
+      trigger: ".sv-wrap",
+      markers: true,
+      start: "top 40%",
+    },
+  });
+
+  tl.from(".sv-title", {
+    y: 100,
+    autoAlpha: 0,
+    "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+  });
+  tl.from(
+    ".sv-list > *",
+    {
       y: 100,
       autoAlpha: 0,
-      duration: 1,
       stagger: 0.2,
-    });
+      duration: 0.7,
+      ease: "Back.easeOut",
+    },
+    0.5
+  );
 });
 </script>

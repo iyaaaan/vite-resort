@@ -1,7 +1,10 @@
 <template>
-  <header ref="header" class="relative z-10">
+  <header class="relative z-10">
     <nav
-      class="fixed top-0 left-0 right-0 flex items-center justify-center bg-gradient-to-b from-black p-4 font-Montserrat"
+      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex items-center justify-center bg-gradient-to-b from-black p-4 font-Montserrat"
+      ref="nav"
+      data-scroll
+      data-scroll-section
     >
       <template v-for="(menu, index) in menus" :key="index">
         <router-link
@@ -39,14 +42,20 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { fadeDropDown } from "../composables/myAnimate";
+import { ref, onMounted } from "vue";
+import gsap from "gsap";
 
 const menus = ref(["home", "about", "package", "contact"]);
 
-const header = ref();
+const nav = ref(null);
 
-fadeDropDown(header);
+/* onMounted(() => {
+  gsap.from(nav.value, {
+    autoAlpha: 0,
+    duration: 0.7,
+    delay: 1.8,
+  });
+}); */
 </script>
 
 <style scoped></style>

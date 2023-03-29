@@ -1,3 +1,11 @@
+body {
+  @apply overflow-x-hidden;
+}
+
+section {
+  min-height: 100vh;
+}
+
 p {
   @apply my-4;
 }

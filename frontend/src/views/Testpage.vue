@@ -48,68 +48,17 @@
 <script setup>
 import { onMounted } from "vue";
 import { gsap } from "gsap";
-import LocomotiveScroll from "locomotive-scroll";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector(".smooth-scroll"),
-    smooth: true,
-  });
-
-  locoScroll.on("scroll", ScrollTrigger.update);
-
-  ScrollTrigger.scrollerProxy(".smooth-scroll", {
-    scrollTop(value) {
-      return arguments.length
-        ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true })
-        : locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-    pinType: document.querySelector(".smooth-scroll").style.transform
-      ? "transform"
-      : "fixed",
-  });
-
-  const vw = (coef) => window.innerWidth * (coef / 100);
-  const vh = (coef) => window.innerHeight * (coef / 100);
-
-  const tl = gsap.timeline({
-    paused: true,
-    scrollTrigger: {
-      trigger: ".as-wrap",
-      scroller: ".smooth-scroll",
-      start: "top bottom",
-      end: `${vh(100)}`,
-    },
-  });
-
-  tl.from(".as-fade-to-top", {
-    y: 100,
-    autoAlpha: 0,
-    "clip-path": "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
-    stagger: 0.2,
-  });
-
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-  ScrollTrigger.refresh();
-
-  /* let tl = gsap.timeline({
+  let tl = gsap.timeline({
     defaults: { ease: "Power4.easeOut", duration: 2 },
     scrollTrigger: {
       trigger: ".as-wrap",
-      //markers: true,
-      start: "top bottom",
-      end: "top top",
+      markers: true,
+      start: "center center",
     },
   });
 
@@ -137,6 +86,6 @@ onMounted(() => {
       duration: 2,
     },
     0.8
-  ); */
+  );
 });
 </script>
