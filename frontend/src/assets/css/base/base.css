@@ -1,16 +1,20 @@
+/* html,
 body {
-  @apply overflow-x-hidden;
+  @apply h-screen w-screen;
+} */
+
+html,
+body {
+  @apply min-h-full w-full overscroll-none;
+}
+
+body {
+  @apply overflow-x-hidden font-Montserrat;
 }
 
 section {
-  min-height: 100vh;
 }
 
 p {
-  @apply my-4;
-}
-
-html, body {
-  width: 100vw;
-  height: 100vh;
+  @apply my-4 tracking-wide;
 }

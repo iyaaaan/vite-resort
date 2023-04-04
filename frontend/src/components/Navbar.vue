@@ -44,18 +44,32 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const menus = ref(["home", "about", "package", "contact"]);
 
 const nav = ref(null);
 
-/* onMounted(() => {
-  gsap.from(nav.value, {
-    autoAlpha: 0,
-    duration: 0.7,
-    delay: 1.8,
+onMounted(() => {
+  const showAnim = gsap
+    .from(nav.value, {
+      yPercent: -100,
+      paused: true,
+      duration: 1,
+      ease: "Power4.easeOut",
+    })
+    .progress(1);
+
+  ScrollTrigger.create({
+    start: "top top",
+    end: 99999,
+    onUpdate: (self) => {
+      self.direction === -1 ? showAnim.play() : showAnim.reverse();
+    },
   });
-}); */
+});
 </script>
 
 <style scoped></style>

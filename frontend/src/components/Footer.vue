@@ -1,8 +1,6 @@
 <template>
   <footer
-    class="bg-cyan-900 p-4 font-Montserrat text-sm text-white"
-    data-scroll
-    data-scroll-section
+    class="footer full-clip-path bg-cyan-900 p-4 font-Montserrat text-sm text-white"
   >
     <div class="mx-auto flex max-w-7xl justify-start space-x-8">
       <!-- logo -->
@@ -123,13 +121,32 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const email = ref("");
 
 const isValidEmail = computed(() => {
   return /^[^@]+@\w+(\.\w+)+\w$/.test(email.value);
 });
-</script>
 
-<style lang="scss" scoped></style>
+onMounted(() => {
+  let tl = gsap.timeline({
+    defaults: { ease: "Expo.easeOut", duration: 2 },
+    scrollTrigger: {
+      trigger: ".footer",
+      start: "top center",
+      markers: true,
+    },
+  });
+
+  tl.from(".footer", {
+    y: -100,
+    autoAlpha: 0,
+    "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+  });
+});
+</script>

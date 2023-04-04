@@ -1,12 +1,8 @@
 <template>
-  <section
-    class="as-wrap my-24 mx-auto max-w-3xl p-4 text-center"
-    data-scroll
-    data-scroll-section
-  >
+  <section class="as-wrap my-24 mx-auto max-w-3xl p-4 text-center">
     <div>
       <h2
-        class="as-fade-to-top full-clip-path text-5xl leading-none text-secondary"
+        class="as-fade-to-top full-clip-path font-Allura text-7xl leading-none text-secondary"
       >
         Paradise Beach Resort
       </h2>
@@ -14,14 +10,14 @@
         The best place to clear your mind.
       </p>
 
-      <p class="as-fade-to-top full-clip-path atext my-5 text-gray-700">
+      <p class="as-fade-to-top full-clip-path my-5 text-justify text-gray-700">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero
         repellat consectetur saepe facilis. Placeat, similique quisquam! Ut,
         consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore,
         perspiciatis necessitatibus dolorem quas.
       </p>
 
-      <p class="as-fade-to-top full-clip-path my-5 text-gray-700">
+      <p class="as-fade-to-top full-clip-path my-5 text-justify text-gray-700">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quis
         corrupti. Voluptates, harum a reprehenderit explicabo quisquam nostrum
         dignissimos provident.
@@ -29,11 +25,11 @@
 
       <font-awesome-icon
         icon="fa-solid fa-water"
-        class="asWave full-clip-path mx-auto my-12 block text-4xl text-gray-300"
+        class="as-wave full-clip-path mx-auto my-12 block text-4xl text-gray-300"
       />
 
       <div
-        class="asImg w-[30rem my-12 mx-auto h-80 bg-slate-600 p-2 shadow shadow-gray-800"
+        class="as-img my-12 mx-auto h-80 w-[30rem] bg-slate-600 p-2 shadow shadow-gray-800"
       >
         <!-- <img
           src="@/assets/img/banner/home-about.jpg"
@@ -48,95 +44,48 @@
 <script setup>
 import { onMounted } from "vue";
 import { gsap } from "gsap";
-import LocomotiveScroll from "locomotive-scroll";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector(".smooth-scroll"),
-    smooth: true,
-  });
-
-  locoScroll.on("scroll", ScrollTrigger.update);
-
-  ScrollTrigger.scrollerProxy(".smooth-scroll", {
-    scrollTop(value) {
-      return arguments.length
-        ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true })
-        : locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-    pinType: document.querySelector(".smooth-scroll").style.transform
-      ? "transform"
-      : "fixed",
-  });
-
-  const vw = (coef) => window.innerWidth * (coef / 100);
-  const vh = (coef) => window.innerHeight * (coef / 100);
-
-  const tl = gsap.timeline({
-    paused: true,
+  let tl = gsap.timeline({
+    defaults: { ease: "Expo.easeOut", duration: 1.5 },
     scrollTrigger: {
       trigger: ".as-wrap",
-      scroller: ".smooth-scroll",
-      start: "top bottom",
-      end: `${vh(100)}`,
+      start: "center center",
+      end: "+=1500",
+      toggleActions: "play reverse play none",
+      pin: true,
+      markers: true,
     },
-  });
-
-  tl.from(".as-fade-to-top", {
-    y: 100,
-    autoAlpha: 0,
-    "clip-path": "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
-    stagger: 0.2,
-  });
-
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-  ScrollTrigger.refresh();
-
-  /* let tl = gsap.timeline({
-    defaults: { ease: "Power4.easeOut", duration: 2 },
-    scrollTrigger: {
-      trigger: ".as-wrap",
-      //markers: true,
-      start: "top bottom",
-      end: "top top",
-    },
-  });
-
-  tl.from(".as-fade-to-top", {
-    y: 100,
-    autoAlpha: 0,
-    "clip-path": "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
-    stagger: 0.2,
   });
 
   tl.from(
-    ".asWave",
+    ".as-fade-to-top",
+    {
+      y: 100,
+      autoAlpha: 0,
+      "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+      stagger: 0.2,
+    },
+    0.1
+  );
+  tl.from(
+    ".as-wave",
     {
       "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
-      duration: 2,
     },
     0.5
   );
-
   tl.from(
-    ".asImg",
+    ".as-img",
     {
       autoAlpha: 0,
       scale: 0.8,
       duration: 2,
     },
     0.8
-  ); */
+  );
 });
 </script>

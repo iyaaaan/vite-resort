@@ -40,8 +40,10 @@ onMounted(() => {
     defaults: { ease: "Power4.easeOut", duration: 2 },
     scrollTrigger: {
       trigger: ".sv-wrap",
-      markers: true,
-      start: "top 40%",
+      start: "center center",
+      end: "+=1500",
+      toggleActions: "play reverse play none",
+      pin: true,
     },
   });
 

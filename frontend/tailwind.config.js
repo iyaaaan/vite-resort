@@ -17,6 +17,7 @@ module.exports = {
       Allura: ["Allura, cursive"],
       Montserrat: ["Montserrat, sans-serif"],
       Playfair: ["Playfair Display, serif"],
+      NewYork: ["NewYork, serif"],
     },
     container: {
       padding: "2rem",

@@ -1,9 +1,13 @@
 <template>
-  <section class="rsWrap relative my-24 flex" data-scroll data-scroll-section>
+  <section
+    class="rsWrap relative my-24 flex items-center"
+    data-scroll
+    data-scroll-section
+  >
     <div class="flex flex-1 flex-col items-center justify-center bg-white">
-      <div class="max-w-lg">
+      <div class="max-w-lg p-4">
         <h2
-          class="rsText full-clip-path p-4 font-Playfair text-5xl font-bold text-primary"
+          class="rsText full-clip-path py-4 font-Playfair text-5xl font-bold text-primary"
         >
           Comfortable Stay
         </h2>
@@ -42,7 +46,11 @@ onMounted(() => {
     defaults: { ease: "Expo.easeOut", duration: 2 },
     scrollTrigger: {
       trigger: ".rsWrap",
-      start: "top 80%",
+      start: "center center",
+      end: "+=1500",
+      toggleActions: "play reverse play none",
+      pin: true,
+      markers: true,
     },
   });
 

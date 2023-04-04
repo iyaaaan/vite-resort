@@ -41,7 +41,7 @@ onMounted(() => {
     defaults: { ease: "Power4.easeOut", duration: 2 },
     scrollTrigger: {
       trigger: ".fs-wrap",
-      markers: true,
+      //markers: true,
       start: "top 80%",
     },
   });

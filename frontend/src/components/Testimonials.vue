@@ -1,5 +1,5 @@
 <template>
-  <section class="test-wrap my-24 mx-auto max-w-3xl">
+  <section class="test-wrap my-24 mx-auto bg-red-200 py-24">
     <h2
       class="test-title full-clip-path text-center font-Playfair text-5xl font-bold text-primary"
     >
@@ -68,11 +68,13 @@ const props = defineProps({
 
 onMounted(() => {
   let tl = gsap.timeline({
-    defaults: { ease: "Power4.inOut", duration: 2 },
+    defaults: { ease: "Expo.easeOut", duration: 1.5 },
     scrollTrigger: {
       trigger: ".test-wrap",
-      markers: true,
-      start: "top 80%",
+      start: "center center",
+      end: "+=1500",
+      toggleActions: "play reverse play none",
+      pin: true,
     },
   });
 
