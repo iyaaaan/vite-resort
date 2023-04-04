@@ -62,6 +62,12 @@ onMounted(() => {
     })
     .progress(1);
 
+  gsap.from(nav.value, {
+    autoAlpha: 0,
+    duration: 1,
+    delay: 1.8,
+  });
+
   ScrollTrigger.create({
     start: "top top",
     end: 99999,
