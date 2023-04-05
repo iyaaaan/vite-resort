@@ -55,9 +55,7 @@ import RoomSection from "@/components/home/RoomSection.vue";
 import ServicesSection from "@/components/home/ServicesSection.vue";
 import FeaturedSection from "@/components/home/FeaturedSection.vue";
 import gsap from "gsap";
-import LocomotiveScroll from "locomotive-scroll";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { initGsapLocoScroll, fadeToTop } from "../composables/myAnimate";
 import Lenis from "@studio-freight/lenis";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -65,7 +63,9 @@ gsap.registerPlugin(ScrollTrigger);
 const bb = ref(null);
 
 onMounted(() => {
-  // define
+  console.log(bb.value.$el);
+
+  // define lenis
   const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -85,6 +85,28 @@ onMounted(() => {
 
   requestAnimationFrame(raf);
  */
+
+  let section = bb.value.$el;
+  let bg = bb.value.$el.children[0];
+
+  gsap.fromTo(
+    bg,
+    {
+      backgroundPositionY: () => "100%",
+    },
+    {
+      backgroundPositionY: () => "50%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: section,
+        start: () => "top top",
+        end: "bottom top",
+        scrub: true,
+        invalidateOnRefresh: true, // to make it responsive
+      },
+    }
+  );
+
   let tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2.2 } });
   tl.from(bb.value.$el, {
     autoAlpha: 0,

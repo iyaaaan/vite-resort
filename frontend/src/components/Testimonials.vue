@@ -1,5 +1,5 @@
 <template>
-  <section class="test-wrap my-24 mx-auto bg-red-200 py-24">
+  <section class="test-wrap mx-autopy-24 my-24">
     <h2
       class="test-title full-clip-path text-center font-Playfair text-5xl font-bold text-primary"
     >
@@ -82,13 +82,12 @@ onMounted(() => {
     y: 100,
     autoAlpha: 0,
     "clip-path": "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
-    stagger: 0.2,
   });
 
   tl.from(
     ".testimonial",
     {
-      scale: 0.8,
+      //scale: 0.8,
       autoAlpha: 0,
       duration: 0.7,
       ease: "Back.easeOut",

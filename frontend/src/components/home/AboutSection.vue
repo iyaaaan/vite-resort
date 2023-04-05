@@ -55,7 +55,7 @@ onMounted(() => {
       trigger: ".as-wrap",
       start: "center center",
       end: "+=1500",
-      toggleActions: "play reverse play none",
+      toggleActions: "play reverse play reverse",
       pin: true,
       markers: true,
     },

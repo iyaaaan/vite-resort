@@ -132,7 +132,6 @@
 
 <script setup>
 import HeroBanner from "@/components/HeroBanner.vue";
-import LocomotiveScroll from "locomotive-scroll";
 import { onMounted } from "vue";
 
 onMounted(() => {

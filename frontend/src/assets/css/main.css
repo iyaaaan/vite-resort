@@ -1,9 +1,7 @@
 @import "./base/fonts.css";
-@import "./base/locomotiveScroll.css";
 
 @import "tailwindcss/base";
 @import "./base/base.css";
-@import "./base/scroll.css";
 
 @import "tailwindcss/components";
 @import "./components/component.css";

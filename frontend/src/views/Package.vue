@@ -118,7 +118,6 @@
 </template>
 
 <script>
-import locomotiveScroll from "locomotive-scroll";
 import HeroBanner from "@/components/HeroBanner.vue";
 import AboutSection from "@/components/home/AboutSection.vue";
 export default {
