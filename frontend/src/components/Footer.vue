@@ -40,8 +40,7 @@
   </div>
 
   <footer
-<<<<<<< HEAD
-    class="footerx relative mt-52 bg-cyan-900 p-4 pt-10 font-Montserrat text-sm text-white"
+    class="footer relative bg-cyan-900 p-4 font-Montserrat text-sm text-white"
   >
     <div class="footer-wave absolute -top-3/4 left-0 -z-10 h-full w-full">
       <svg
@@ -81,10 +80,6 @@
         </g>
       </svg>
     </div>
-=======
-    class="footer relative bg-cyan-900 p-4 font-Montserrat text-sm text-white"
-  >
->>>>>>> cea5654036c88a515672ddce1872b985d2218e72
     <div class="mx-auto flex max-w-7xl justify-start space-x-8">
       <!-- logo -->
       <div class="max-w-xs p-4 text-justify">

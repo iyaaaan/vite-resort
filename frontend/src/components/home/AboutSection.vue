@@ -55,15 +55,11 @@ onMounted(() => {
     defaults: { ease: "Expo.inOut", duration: 0.5 },
     scrollTrigger: {
       trigger: ".as-wrap",
-<<<<<<< HEAD
-      start: "top 10vh",
       end: "+=1500",
       toggleActions: "play reverse play reverse",
       pin: true,
       markers: true,
-=======
       start: "top 85%",
->>>>>>> cea5654036c88a515672ddce1872b985d2218e72
     },
   });
 
