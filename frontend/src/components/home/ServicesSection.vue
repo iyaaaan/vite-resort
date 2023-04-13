@@ -1,5 +1,5 @@
 <template>
-  <section class="sv-wrap my-24" data-scroll data-scroll-section>
+  <section class="sv-wrap py-40 px-4">
     <h2
       class="sv-title full-clip-path text-center font-Playfair text-5xl font-bold text-primary"
     >
@@ -8,7 +8,7 @@
     <ul class="sv-list mx-auto flex max-w-5xl space-x-10">
       <template v-for="(service, index) in services" :key="index">
         <li
-          class="mt-10 rounded-md border border-solid border-zinc-100 bg-white p-4 text-center shadow-lg"
+          class="mt-10 rounded-md border border-solid border-zinc-300 bg-neutral-100 p-4 text-center shadow-lg"
         >
           <font-awesome-icon
             :icon="`fas fa-${service.icon}`"
@@ -40,10 +40,7 @@ onMounted(() => {
     defaults: { ease: "Power4.easeOut", duration: 2 },
     scrollTrigger: {
       trigger: ".sv-wrap",
-      start: "center center",
-      end: "+=1500",
-      toggleActions: "play reverse play none",
-      pin: true,
+      start: "top center",
     },
   });
 

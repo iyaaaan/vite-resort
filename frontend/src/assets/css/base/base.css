@@ -4,10 +4,7 @@ body {
 }
 
 body {
-  @apply overflow-x-hidden font-Montserrat;
-}
-
-section {
+  @apply overflow-x-hidden bg-neutral-100 font-Montserrat;
 }
 
 p {

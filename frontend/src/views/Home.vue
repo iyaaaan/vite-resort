@@ -1,11 +1,10 @@
 <template>
   <main class="smooth-scroll">
     <!-- Hero -->
-    <HeroBanner banner="home" class="target1" ref="bb">
+    <HeroBanner banner="home">
       <div class="bases relative -mt-12 ml-12">
         <div
           class="fade-to-top tilta full-clip-path anime p-4 font-Allura text-8xl leading-none text-white"
-          ref="heroCaption"
         >
           <span class="custom-class">Relax &</span>
           <span class="ml-14 block">Recharge</span>
@@ -13,14 +12,12 @@
 
         <p
           class="fade-to-top full-clip-path anime mt-5 mb-4 text-xl font-normal text-white"
-          ref="heroText"
         >
           Life is extremely fast. Travel and have fun while your heart is young.
         </p>
 
         <BaseButton
           button-type="primary"
-          ref="heroButton"
           class="fade-to-top full-clip-path anime"
           >Book Now</BaseButton
         >
@@ -35,6 +32,11 @@
 
     <!-- Services -->
     <ServicesSection :services="services" />
+
+    <!-- <div
+      ref="bgSection"
+      class="h-96 w-full bg-[linear-gradient(to_top,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url('src/assets/img/banner/contact.jpg')] bg-cover bg-fixed bg-center bg-no-repeat"
+    ></div> -->
 
     <!-- Testimonials -->
     <Testimonials :testimonials="testimonials"></Testimonials>
@@ -60,14 +62,12 @@ import Lenis from "@studio-freight/lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const bb = ref(null);
+const bgSection = ref(null);
 
 onMounted(() => {
-  console.log(bb.value.$el);
-
   // define lenis
   const lenis = new Lenis({
-    duration: 1.2,
+    duration: 2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   });
 
@@ -86,31 +86,7 @@ onMounted(() => {
   requestAnimationFrame(raf);
  */
 
-  let section = bb.value.$el;
-  let bg = bb.value.$el.children[0];
-
-  gsap.fromTo(
-    bg,
-    {
-      backgroundPositionY: () => "100%",
-    },
-    {
-      backgroundPositionY: () => "50%",
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: () => "top top",
-        end: "bottom top",
-        scrub: true,
-        invalidateOnRefresh: true, // to make it responsive
-      },
-    }
-  );
-
   let tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2.2 } });
-  tl.from(bb.value.$el, {
-    autoAlpha: 0,
-  });
   tl.from(
     ".fade-to-top",
     {
@@ -120,6 +96,24 @@ onMounted(() => {
       stagger: 0.2,
     },
     0.5
+  );
+
+  gsap.fromTo(
+    bgSection.value,
+    {
+      backgroundPositionY: () => "100%",
+    },
+    {
+      backgroundPositionY: () => "0%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: bgSection.value,
+        start: () => "top bottom",
+        end: "bottom top",
+        scrub: true,
+        invalidateOnRefresh: true, // to make it responsive
+      },
+    }
   );
 });
 

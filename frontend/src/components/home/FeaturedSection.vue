@@ -1,5 +1,5 @@
 <template>
-  <section class="fs-wrap my-24 p-4" data-scroll data-scroll-section>
+  <section class="fs-wrap py-40 px-4">
     <div class="fs-img flex items-center justify-center space-x-5">
       <template v-for="(feat, index) in featured" :key="index">
         <div
@@ -41,7 +41,6 @@ onMounted(() => {
     defaults: { ease: "Power4.easeOut", duration: 2 },
     scrollTrigger: {
       trigger: ".fs-wrap",
-      //markers: true,
       start: "top 80%",
     },
   });

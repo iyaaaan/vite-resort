@@ -1,11 +1,11 @@
 <template>
-  <section class="test-wrap mx-autopy-24 my-24">
+  <section class="test-wrap mx-autopy-24 bg-slate-800 py-40 px-4">
     <h2
-      class="test-title full-clip-path text-center font-Playfair text-5xl font-bold text-primary"
+      class="test-title full-clip-path py-4 text-center font-Playfair text-5xl font-bold text-white"
     >
       What Clients Say
     </h2>
-    <div class="testimonial">
+    <div class="testimonial mx-auto max-w-4xl">
       <carousel :items-to-show="1">
         <slide v-for="(test, index) in testimonials" :key="index">
           <div class="mx-auto mt-16 max-w-3xl p-4 text-center">
@@ -34,11 +34,11 @@
               </template>
             </div>
             <blockquote
-              class="relative my-5 before:absolute before:left-0 before:-top-16 before:font-Playfair before:text-9xl before:text-gray-300 before:content-[open-quote] after:invisible after:content-[close-quote]"
+              class="relative my-5 text-white before:absolute before:left-0 before:-top-16 before:font-Playfair before:text-9xl before:text-white before:content-[open-quote] after:invisible after:content-[close-quote]"
             >
               {{ test.text }}
             </blockquote>
-            <span class="font-Playfair text-gray-600">
+            <span class="text-white">
               <em> - {{ test.name }} </em></span
             >
           </div>
@@ -71,10 +71,8 @@ onMounted(() => {
     defaults: { ease: "Expo.easeOut", duration: 1.5 },
     scrollTrigger: {
       trigger: ".test-wrap",
-      start: "center center",
-      end: "+=1500",
-      toggleActions: "play reverse play none",
-      pin: true,
+      start: "top center",
+      end: "+=1000",
     },
   });
 
@@ -97,4 +95,17 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.carousel__prev,
+.carousel__next {
+  @apply text-white hover:text-slate-300;
+}
+
+.carousel__pagination-button {
+  @apply after:bg-white hover:after:bg-sky-700;
+}
+
+.carousel__pagination-button.carousel__pagination-button--active {
+  @apply after:bg-sky-800;
+}
+</style>

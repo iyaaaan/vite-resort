@@ -10,14 +10,13 @@ module.exports = {
         primaryLight: "#094d8f",
         secondary: "#e87213",
         secondaryLight: "#ff7e17",
-        flame: "#cf5c36",
+        alpineGoat: "#F4F1F9",
       },
     },
     fontFamily: {
       Allura: ["Allura, cursive"],
       Montserrat: ["Montserrat, sans-serif"],
       Playfair: ["Playfair Display, serif"],
-      NewYork: ["NewYork, serif"],
     },
     container: {
       padding: "2rem",

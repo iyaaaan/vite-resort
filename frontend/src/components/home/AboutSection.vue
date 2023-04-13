@@ -1,6 +1,8 @@
 <template>
-  <section class="as-wrap my-24 mx-auto max-w-3xl p-4 text-center">
-    <div>
+  <section
+    class="as-wrap relative flex w-full items-center justify-center px-4 py-40 text-center"
+  >
+    <div class="max-w-3xl">
       <h2
         class="as-fade-to-top full-clip-path font-Allura text-7xl leading-none text-secondary"
       >
@@ -29,13 +31,13 @@
       />
 
       <div
-        class="as-img my-12 mx-auto h-80 w-[30rem] bg-slate-600 p-2 shadow shadow-gray-800"
+        class="as-img my-12 mx-auto h-80 w-[30rem] p-2 shadow shadow-gray-800"
       >
-        <!-- <img
+        <img
           src="@/assets/img/banner/home-about.jpg"
           alt="about image"
           class="h-full w-full"
-        /> -->
+        />
       </div>
     </div>
   </section>
@@ -50,14 +52,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
   let tl = gsap.timeline({
-    defaults: { ease: "Expo.easeOut", duration: 1.5 },
+    defaults: { ease: "Expo.inOut", duration: 0.5 },
     scrollTrigger: {
       trigger: ".as-wrap",
-      start: "center center",
-      end: "+=1500",
-      toggleActions: "play reverse play reverse",
-      pin: true,
-      markers: true,
+      start: "top 85%",
     },
   });
 
@@ -78,14 +76,24 @@ onMounted(() => {
     },
     0.5
   );
-  tl.from(
+  /*   tl.from(
     ".as-img",
     {
       autoAlpha: 0,
       scale: 0.8,
-      duration: 2,
     },
     0.8
-  );
+  ); */
+
+  /* gsap.from(".as-img", {
+    scale: 0,
+    scrollTrigger: {
+      trigger: ".as-img",
+      start: "center center",
+      pin: true,
+      toggleActions: "play reverse play none",
+      markers: true,
+    },
+  }); */
 });
 </script>
