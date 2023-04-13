@@ -12,16 +12,13 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: Home,
-      meta: {
-        title: "Home |",
-      },
     },
     {
       path: "/about",
       name: "about",
       component: About,
       meta: {
-        title: "About |",
+        title: "About",
       },
     },
     {
@@ -29,7 +26,7 @@ const router = createRouter({
       name: "package",
       component: Package,
       meta: {
-        title: "Package |",
+        title: "Package",
       },
     },
     {
@@ -37,7 +34,7 @@ const router = createRouter({
       name: "contact",
       component: Contact,
       meta: {
-        title: "Contact |",
+        title: "Contact",
       },
     },
     {
@@ -45,14 +42,18 @@ const router = createRouter({
       name: "test",
       component: Test,
       meta: {
-        title: "Test |",
+        title: "Test",
       },
     },
   ],
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title;
+  if (to.meta.title) {
+    document.title = `${to.meta.title} | Paradise Beach Resort`;
+  } else {
+    document.title = `Paradise Beach Resort`;
+  }
   next();
 });
 

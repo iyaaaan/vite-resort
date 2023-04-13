@@ -132,14 +132,6 @@
 
 <script setup>
 import HeroBanner from "@/components/HeroBanner.vue";
-import { onMounted } from "vue";
-
-onMounted(() => {
-  const scroll = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-  });
-});
 </script>
 
 <style scoped>

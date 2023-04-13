@@ -4,7 +4,11 @@ body {
 }
 
 body {
+<<<<<<< HEAD
   @apply overflow-x-hidden font-Montserrat;
+=======
+  @apply overflow-x-hidden bg-neutral-100 font-Montserrat;
+>>>>>>> cea5654036c88a515672ddce1872b985d2218e72
 }
 
 p {
