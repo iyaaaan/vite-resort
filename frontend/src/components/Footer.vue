@@ -1,8 +1,8 @@
 <template>
   <footer
-    class="footerx relative mt-52 bg-cyan-900 p-4 font-Montserrat text-sm text-white"
+    class="footerx relative mt-52 bg-cyan-900 p-4 pt-10 font-Montserrat text-sm text-white"
   >
-    <div class="footer-wave absolute -top-full left-0 -z-10 h-full w-full">
+    <div class="footer-wave absolute -top-3/4 left-0 -z-10 h-full w-full">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"

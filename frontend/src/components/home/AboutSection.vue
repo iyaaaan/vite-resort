@@ -53,7 +53,7 @@ onMounted(() => {
     defaults: { ease: "Expo.easeOut", duration: 1.5 },
     scrollTrigger: {
       trigger: ".as-wrap",
-      start: "center center",
+      start: "top 10vh",
       end: "+=1500",
       toggleActions: "play reverse play reverse",
       pin: true,

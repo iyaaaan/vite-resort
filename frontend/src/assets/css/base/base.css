@@ -7,9 +7,6 @@ body {
   @apply overflow-x-hidden font-Montserrat;
 }
 
-section {
-}
-
 p {
   @apply my-4 tracking-wide;
 }
