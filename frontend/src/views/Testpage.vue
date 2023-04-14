@@ -1,13 +1,39 @@
 <template>
-  <main
-    class="my-container h-100vh flex w-[500vw] flex-nowrap items-center justify-center"
-  >
-    <div class="my-item h-screen w-screen bg-red-300"></div>
-    <div class="my-item h-screen w-screen bg-blue-300"></div>
-    <div class="my-item h-screen w-screen bg-gray-300"></div>
-    <div class="my-item h-screen w-screen bg-pink-300"></div>
-    <div class="my-item h-screen w-screen bg-indigo-300"></div>
-  </main>
+  <div class="gallery-container">
+    <div class="gallery">
+      <section class="my-section h-80 w-80 shrink-0 bg-red-100"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-200"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-300"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-400"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-500"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-600"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-700"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-800"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-900"></section>
+    </div>
+    <div class="gallery">
+      <section class="my-section h-80 w-80 shrink-0 bg-red-100"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-200"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-300"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-400"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-500"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-600"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-700"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-800"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-900"></section>
+    </div>
+    <div class="gallery">
+      <section class="my-section h-80 w-80 shrink-0 bg-red-100"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-200"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-300"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-400"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-500"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-600"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-700"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-800"></section>
+      <section class="my-section h-80 w-80 shrink-0 bg-red-900"></section>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -18,68 +44,87 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  let con = document.querySelector(".my-container");
-  let sections = gsap.utils.toArray(".my-item");
+  // Get the gallery container element
+  var galleryContainer = document.querySelector(".gallery-container");
 
-  let scrollTween = gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
-    ease: "none", // <-- IMPORTANT!
+  // Get the gallery elements
+  var galleries = galleryContainer.querySelectorAll(".gallery");
+
+  // Get the width of each gallery item
+  var galleryItemWidth = galleries[0].querySelector("section").clientWidth;
+
+  // Get the total width of the galleries
+  var galleryWidth = galleries[0].scrollWidth * 3;
+
+  // Set the width of the gallery container
+  galleryContainer.style.width = galleryWidth + "px";
+
+  // Create a GSAP timeline for the animation
+  var tl = gsap.timeline({
     scrollTrigger: {
-      trigger: ".my-container",
+      trigger: galleryContainer,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
       pin: true,
-      scrub: 0.1,
-      //snap: 1 / (sections.length - 1),
-      end: "+=3000",
-      //end: `+=${con.offsetWidth}`,
+      anticipatePin: 1,
+      snap: {
+        snapTo: "labels",
+        duration: { min: 0.1, max: 0.5 },
+        ease: "power1.out",
+      },
     },
   });
+
+  // Add a GSAP animation to move the galleries horizontally
+  tl.to(galleries[0], {
+    x: -galleryWidth / 3 + window.innerWidth / 2 - galleryItemWidth / 2,
+    ease: "none",
+    duration: 2,
+    labels: {
+      start: 0,
+      end: galleryWidth / 3 - window.innerWidth / 2 + galleryItemWidth / 2,
+    },
+  })
+    .to(galleries[1], {
+      x: galleryWidth / 3 - window.innerWidth / 2 + galleryItemWidth / 2,
+      ease: "none",
+      duration: 2,
+      labels: {
+        start: galleryWidth / 3 - window.innerWidth / 2 - galleryItemWidth / 2,
+        end:
+          (galleryWidth / 3) * 2 - window.innerWidth / 2 + galleryItemWidth / 2,
+      },
+    })
+    .to(galleries[2], {
+      x: (galleryWidth / 3) * 2 - window.innerWidth / 2 + galleryItemWidth / 2,
+      ease: "none",
+      duration: 2,
+      labels: {
+        start:
+          (galleryWidth / 3) * 2 - window.innerWidth / 2 - galleryItemWidth / 2,
+        end: galleryWidth - window.innerWidth,
+      },
+    });
 });
 </script>
 
 <style scoped>
-.hero__panel {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #ff9a62;
-  z-index: 10;
+.gallery-container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
-.end {
-  position: relative;
 
-  z-index: 40;
-  background-color: #666;
-}
 .gallery {
-  width: 500vw;
-  height: 100%;
   display: flex;
-  flex-wrap: nowrap;
-  margin-top: 100vh;
-  position: relative;
-  z-index: 30;
-}
-.panel-1 {
-  background-color: #85b6ff;
+  scroll-snap-align: center;
+  flex: 0 0 calc(100% / 3);
 }
 
-.panel-2 {
-  background-color: #be91f0;
-}
-
-.panel-3 {
-  background-color: #aff4c6;
-}
-
-.panel-4 {
-  background-color: #4ecb71;
-}
-
-section {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.gallery section {
+  width: 300px;
+  height: 300px;
 }
 </style>
