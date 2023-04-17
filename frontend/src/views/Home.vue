@@ -33,42 +33,11 @@
     <!-- Services -->
     <ServicesSection :services="services" />
 
-    <!-- <div
-      ref="bgSection"
-      class="h-96 w-full bg-[linear-gradient(to_top,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url('src/assets/img/banner/contact.jpg')] bg-cover bg-fixed bg-center bg-no-repeat"
-    ></div> -->
-
     <!-- Testimonials -->
     <Testimonials :testimonials="testimonials"></Testimonials>
 
     <!-- How to get here -->
-    <!-- <FeaturedSection :featured="featured" /> -->
-    <!-- <Testpage /> -->
-
-    <div class="my-cont flex h-screen flex-col justify-center">
-      <div class="my-wrap flex">
-        <section class="my-section h-80 w-80 shrink-0 bg-red-100"></section>
-        <section class="my-section h-80 w-80 shrink-0 bg-red-200"></section>
-        <section class="my-section h-80 w-80 shrink-0 bg-red-300"></section>
-        <section class="my-section h-80 w-80 shrink-0 bg-red-400"></section>
-        <section class="my-section h-80 w-80 shrink-0 bg-red-500"></section>
-        <section class="my-section h-80 w-80 shrink-0 bg-red-600"></section>
-        <section class="my-section h-80 w-80 shrink-0 bg-red-700"></section>
-        <section class="my-section h-80 w-80 shrink-0 bg-red-800"></section>
-        <section class="my-section h-80 w-80 shrink-0 bg-red-900"></section>
-      </div>
-      <div class="my-wrap2 flex flex-row-reverse">
-        <section class="my-section2 h-80 w-80 shrink-0 bg-orange-100"></section>
-        <section class="my-section2 h-80 w-80 shrink-0 bg-orange-200"></section>
-        <section class="my-section2 h-80 w-80 shrink-0 bg-orange-300"></section>
-        <section class="my-section2 h-80 w-80 shrink-0 bg-orange-400"></section>
-        <section class="my-section2 h-80 w-80 shrink-0 bg-orange-500"></section>
-        <section class="my-section2 h-80 w-80 shrink-0 bg-orange-600"></section>
-        <section class="my-section2 h-80 w-80 shrink-0 bg-orange-700"></section>
-        <section class="my-section2 h-80 w-80 shrink-0 bg-orange-800"></section>
-        <section class="my-section2 h-80 w-80 shrink-0 bg-orange-900"></section>
-      </div>
-    </div>
+    <FeaturedSection :featured="featured" />
   </main>
 </template>
 
@@ -123,71 +92,6 @@ onMounted(() => {
     },
     0.5
   );
-
-  const sections = gsap.utils.toArray(".my-section");
-  const sections2 = gsap.utils.toArray(".my-section2");
-  let maxWidth = 0;
-  let maxWidth2 = 0;
-
-  const getMaxWidth = () => {
-    maxWidth = 0;
-    sections.forEach((section) => {
-      maxWidth += section.offsetWidth;
-    });
-  };
-
-  const getMaxWidth2 = () => {
-    maxWidth2 = 0;
-    sections2.forEach((section) => {
-      maxWidth2 += section.offsetWidth;
-    });
-  };
-
-  getMaxWidth();
-  getMaxWidth2();
-
-  ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
-  ScrollTrigger.addEventListener("refreshInit", getMaxWidth2);
-
-  gsap.to(sections, {
-    x: () => `-${maxWidth - window.innerWidth}`,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".my-cont",
-      pin: true,
-      scrub: true,
-      start: "top top",
-      end: "+=3000",
-      invalidateOnRefresh: true,
-      markers: true,
-    },
-  });
-
-  gsap.to(sections2, {
-    x: () => `+${maxWidth - window.innerWidth}`,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".my-cont",
-      scrub: true,
-      start: "top top",
-      end: "+=3000",
-      invalidateOnRefresh: true,
-      markers: true,
-    },
-  });
-
-  sections.forEach((sec, i) => {
-    ScrollTrigger.create({
-      trigger: sec,
-      start: () =>
-        "top top-=" +
-        (sec.offsetLeft - window.innerWidth / 2) *
-          (maxWidth2 / (maxWidth2 - window.innerWidth)),
-      end: () =>
-        "+=" + sec.offsetWidth * (maxWidth2 / (maxWidth2 - window.innerWidth)),
-      toggleClass: { targets: sec, className: "active" },
-    });
-  });
 });
 
 const services = ref([
@@ -209,6 +113,36 @@ const services = ref([
   {
     name: "Bar",
     icon: "glass-martini-alt",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+  },
+
+  {
+    name: "Wifi",
+    icon: "wifi-3",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+  },
+
+  {
+    name: "Room Service",
+    icon: "concierge-bell",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+  },
+
+  {
+    name: "Spa",
+    icon: "spa",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+  },
+
+  {
+    name: "Casino",
+    icon: "dice",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+  },
+
+  {
+    name: "Beach",
+    icon: "umbrella-beach",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
   },
 ]);
@@ -234,5 +168,14 @@ const testimonials = ref([
   },
 ]);
 
-const featured = ref(["about.jpg", "package.jpg", "contact.jpg", "home.jpg"]);
+const featured = ref([
+  "package.jpg",
+  "contact.jpg",
+  "package.jpg",
+  "contact.jpg",
+  "package.jpg",
+  "contact.jpg",
+  "package.jpg",
+  "contact.jpg",
+]);
 </script>

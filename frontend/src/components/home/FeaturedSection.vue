@@ -1,27 +1,47 @@
 <template>
-  <section class="fs-wrap py-40 px-4">
-    <div class="fs-img flex items-center justify-center space-x-5">
+  <section class="feat-container flex h-screen flex-col justify-center">
+    <div class="flex">
       <template v-for="(feat, index) in featured" :key="index">
-        <div
-          class="h-64 w-96 overflow-hidden rounded-md border border-solid border-zinc-100 bg-slate-600 shadow-xl"
-        >
-          <!-- <img
+        <div class="feat-wrap w-80 shrink-0">
+          <img
             :src="`src/assets/img/banner/${feat}`"
             :alt="feat"
             class="w-full"
-          /> -->
+          />
         </div>
       </template>
     </div>
 
-    <div class="fs-caption full-clip-path mt-8 text-center">
+    <div class="flex flex-row-reverse">
+      <template v-for="(feat, index) in featured" :key="index">
+        <div class="feat-wrap2 w-80 shrink-0">
+          <img
+            :src="`src/assets/img/banner/${feat}`"
+            :alt="feat"
+            class="w-full"
+          />
+        </div>
+      </template>
+    </div>
+
+    <div>
+      <span>What </span>
+      <span>are </span>
+      <span>you </span>
+      <span>waiting </span>
+      <span>for?</span>
+      <p>You are few clicks away from your dream vacation!</p>
+      <p>Book now</p>
+    </div>
+
+    <!-- <div class="fs-caption full-clip-path mt-8 text-center">
       <span
         class="inline-block rounded-lg bg-primary p-2 text-white hover:bg-primaryLight"
       >
         <font-awesome-icon icon="fas fa-map-pin" class="text-lg text-red-600" />
         How to get here
       </span>
-    </div>
+    </div> -->
   </section>
 </template>
 
@@ -37,7 +57,7 @@ const props = defineProps({
 });
 
 onMounted(() => {
-  let tl = gsap.timeline({
+  /* let tl = gsap.timeline({
     defaults: { ease: "Power4.easeOut", duration: 2 },
     scrollTrigger: {
       trigger: ".fs-wrap",
@@ -61,6 +81,49 @@ onMounted(() => {
       "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
     },
     0.5
-  );
+  ); */
+
+  const featWrap = gsap.utils.toArray(".feat-wrap");
+  const featWrap2 = gsap.utils.toArray(".feat-wrap2");
+
+  let maxWidth = 0;
+
+  const getMaxWidth = () => {
+    maxWidth = 0;
+    featWrap.forEach((feat) => {
+      maxWidth += feat.offsetWidth;
+    });
+  };
+
+  getMaxWidth();
+
+  ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
+
+  gsap.to(featWrap, {
+    x: () => `-${maxWidth - window.innerWidth}`,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".feat-container",
+      pin: true,
+      scrub: true,
+      start: "top top",
+      end: "+=2000",
+      invalidateOnRefresh: true,
+      markers: true,
+    },
+  });
+
+  gsap.to(featWrap2, {
+    x: () => `+${maxWidth - window.innerWidth}`,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".feat-container",
+      scrub: true,
+      start: "top top",
+      end: "+=2000",
+      invalidateOnRefresh: true,
+      markers: true,
+    },
+  });
 });
 </script>

@@ -1,39 +1,31 @@
 <template>
-  <div class="gallery-container">
-    <div class="gallery">
-      <section class="my-section h-80 w-80 shrink-0 bg-red-100"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-200"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-300"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-400"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-500"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-600"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-700"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-800"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-900"></section>
-    </div>
-    <div class="gallery">
-      <section class="my-section h-80 w-80 shrink-0 bg-red-100"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-200"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-300"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-400"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-500"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-600"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-700"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-800"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-900"></section>
-    </div>
-    <div class="gallery">
-      <section class="my-section h-80 w-80 shrink-0 bg-red-100"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-200"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-300"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-400"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-500"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-600"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-700"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-800"></section>
-      <section class="my-section h-80 w-80 shrink-0 bg-red-900"></section>
+  <div class="flex h-screen w-screen items-center justify-center">HELLO</div>
+  <div class="con flex h-screen items-center">
+    <div class="wrapper flex flex-nowrap">
+      <section
+        class="section vh-100 d-flex justify-content-center align-items-center w-96 flex-shrink-0"
+      >
+        Part One
+      </section>
+      <section
+        class="section section--dark section--small vh-100 d-flex justify-content-center align-items-center flex-shrink-0"
+      >
+        Part Two
+      </section>
+      <section
+        class="section section--small vh-100 d-flex justify-content-center align-items-center flex-shrink-0"
+      >
+        Part Three
+      </section>
+      <section
+        class="section section--small vw-100 vh-100 d-flex justify-content-center align-items-center flex-shrink-0"
+      >
+        Part Four
+      </section>
     </div>
   </div>
+
+  <div class="flex h-screen w-screen items-center justify-center">WORLD</div>
 </template>
 
 <script setup>
@@ -44,87 +36,66 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  // Get the gallery container element
-  var galleryContainer = document.querySelector(".gallery-container");
+  const sections = gsap.utils.toArray("section");
+  let maxWidth = 0;
 
-  // Get the gallery elements
-  var galleries = galleryContainer.querySelectorAll(".gallery");
+  const getMaxWidth = () => {
+    maxWidth = 0;
+    sections.forEach((section) => {
+      maxWidth += section.offsetWidth;
+    });
+  };
+  getMaxWidth();
+  ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
 
-  // Get the width of each gallery item
-  var galleryItemWidth = galleries[0].querySelector("section").clientWidth;
-
-  // Get the total width of the galleries
-  var galleryWidth = galleries[0].scrollWidth * 3;
-
-  // Set the width of the gallery container
-  galleryContainer.style.width = galleryWidth + "px";
-
-  // Create a GSAP timeline for the animation
-  var tl = gsap.timeline({
+  gsap.to(sections, {
+    x: () => `-${maxWidth - window.innerWidth}`,
+    ease: "none",
     scrollTrigger: {
-      trigger: galleryContainer,
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
+      trigger: ".con",
       pin: true,
-      anticipatePin: 1,
-      snap: {
-        snapTo: "labels",
-        duration: { min: 0.1, max: 0.5 },
-        ease: "power1.out",
-      },
+      scrub: true,
+      //end: () => `+=${maxWidth}`,
+      start: "top top",
+      end: "+=2000",
+      invalidateOnRefresh: true,
     },
   });
 
-  // Add a GSAP animation to move the galleries horizontally
-  tl.to(galleries[0], {
-    x: -galleryWidth / 3 + window.innerWidth / 2 - galleryItemWidth / 2,
-    ease: "none",
-    duration: 2,
-    labels: {
-      start: 0,
-      end: galleryWidth / 3 - window.innerWidth / 2 + galleryItemWidth / 2,
-    },
-  })
-    .to(galleries[1], {
-      x: galleryWidth / 3 - window.innerWidth / 2 + galleryItemWidth / 2,
-      ease: "none",
-      duration: 2,
-      labels: {
-        start: galleryWidth / 3 - window.innerWidth / 2 - galleryItemWidth / 2,
-        end:
-          (galleryWidth / 3) * 2 - window.innerWidth / 2 + galleryItemWidth / 2,
-      },
-    })
-    .to(galleries[2], {
-      x: (galleryWidth / 3) * 2 - window.innerWidth / 2 + galleryItemWidth / 2,
-      ease: "none",
-      duration: 2,
-      labels: {
-        start:
-          (galleryWidth / 3) * 2 - window.innerWidth / 2 - galleryItemWidth / 2,
-        end: galleryWidth - window.innerWidth,
-      },
+  sections.forEach((sct, i) => {
+    ScrollTrigger.create({
+      trigger: sct,
+      start: () =>
+        "top top-=" +
+        (sct.offsetLeft - window.innerWidth / 2) *
+          (maxWidth / (maxWidth - window.innerWidth)),
+      end: () =>
+        "+=" + sct.offsetWidth * (maxWidth / (maxWidth - window.innerWidth)),
+      toggleClass: { targets: sct, className: "active" },
     });
+  });
 });
 </script>
 
 <style scoped>
-.gallery-container {
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+.section {
+  font-size: 5rem;
+}
+.section--large {
+  width: 100vw;
+  background-color: #8d3dae;
+  color: white;
+}
+.section--small {
+  width: 46rem;
+}
+.section--dark {
+  color: white;
+  background-color: black;
 }
 
-.gallery {
-  display: flex;
-  scroll-snap-align: center;
-  flex: 0 0 calc(100% / 3);
-}
-
-.gallery section {
-  width: 300px;
-  height: 300px;
+section {
+  font-weight: 900;
+  transition: color 0.3s;
 }
 </style>
