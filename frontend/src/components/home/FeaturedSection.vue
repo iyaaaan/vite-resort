@@ -24,16 +24,6 @@
       </template>
     </div>
 
-    <div>
-      <span>What </span>
-      <span>are </span>
-      <span>you </span>
-      <span>waiting </span>
-      <span>for?</span>
-      <p>You are few clicks away from your dream vacation!</p>
-      <p>Book now</p>
-    </div>
-
     <!-- <div class="fs-caption full-clip-path mt-8 text-center">
       <span
         class="inline-block rounded-lg bg-primary p-2 text-white hover:bg-primaryLight"
@@ -109,7 +99,6 @@ onMounted(() => {
       start: "top top",
       end: "+=2000",
       invalidateOnRefresh: true,
-      markers: true,
     },
   });
 
@@ -122,7 +111,6 @@ onMounted(() => {
       start: "top top",
       end: "+=2000",
       invalidateOnRefresh: true,
-      markers: true,
     },
   });
 });

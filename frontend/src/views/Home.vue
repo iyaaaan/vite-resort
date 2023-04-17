@@ -38,6 +38,9 @@
 
     <!-- How to get here -->
     <FeaturedSection :featured="featured" />
+
+    <!-- Book Now -->
+    <BookNow></BookNow>
   </main>
 </template>
 
@@ -51,6 +54,7 @@ import Testimonials from "@/components/Testimonials.vue";
 import RoomSection from "@/components/home/RoomSection.vue";
 import ServicesSection from "@/components/home/ServicesSection.vue";
 import FeaturedSection from "@/components/home/FeaturedSection.vue";
+import BookNow from "@/components/home/BookNow.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
@@ -171,10 +175,13 @@ const testimonials = ref([
 const featured = ref([
   "package.jpg",
   "contact.jpg",
+  "banner-1.jpg",
   "package.jpg",
   "contact.jpg",
+  "banner-1.jpg",
   "package.jpg",
   "contact.jpg",
+  "banner-1.jpg",
   "package.jpg",
   "contact.jpg",
 ]);

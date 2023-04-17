@@ -8,7 +8,9 @@
       >
         Services
       </h2>
-      <ul class="flex flex-nowrap space-x-10 overflow-hidden py-10 px-4">
+      <ul
+        class="mx-auto flex max-w-4xl flex-nowrap space-x-10 overflow-hidden py-10 px-4"
+      >
         <template v-for="(service, index) in services" :key="index">
           <li
             class="service-item w-80 shrink-0 rounded-md border border-solid border-zinc-300 bg-neutral-100 p-4 text-center shadow-lg"
@@ -58,7 +60,7 @@ onMounted(() => {
   const serviceItemWidth = () => {
     maxWidth = 0;
     serviceItems.forEach((item) => {
-      maxWidth += item.offsetWidth + 50;
+      maxWidth += item.offsetWidth + 160;
     });
   };
 
@@ -76,7 +78,6 @@ onMounted(() => {
       start: "top top",
       end: "+=2000",
       invalidateOnRefresh: true,
-      markers: true,
     },
   });
 
@@ -89,7 +90,6 @@ onMounted(() => {
           (maxWidth / (maxWidth - window.innerWidth)),
       end: () =>
         "+=" + item.offsetWidth * (maxWidth / (maxWidth - window.innerWidth)),
-      markers: true,
     });
   });
 });
