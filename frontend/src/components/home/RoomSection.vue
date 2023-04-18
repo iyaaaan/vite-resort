@@ -73,7 +73,7 @@ onMounted(() => {
   gsap.fromTo(
     roomBg.value,
     {
-      objectPosition: () => "0 0",
+      objectPosition: () => "0 60%",
     },
     {
       objectPosition: () => "0 100%",

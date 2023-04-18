@@ -1,5 +1,7 @@
 <template>
-  <section class="feat-container flex h-screen flex-col justify-center">
+  <section
+    class="feat-container w-100 flex h-screen flex-col justify-center overflow-hidden"
+  >
     <div class="flex">
       <template v-for="(feat, index) in featured" :key="index">
         <div class="feat-wrap w-80 shrink-0">
@@ -12,7 +14,7 @@
       </template>
     </div>
 
-    <div class="flex flex-row-reverse">
+    <div class="flex translate-x-2 flex-row-reverse">
       <template v-for="(feat, index) in featured" :key="index">
         <div class="feat-wrap2 w-80 shrink-0">
           <img
@@ -107,7 +109,7 @@ onMounted(() => {
     ease: "none",
     scrollTrigger: {
       trigger: ".feat-container",
-      scrub: true,
+      scrub: 1,
       start: "top top",
       end: "+=2000",
       invalidateOnRefresh: true,

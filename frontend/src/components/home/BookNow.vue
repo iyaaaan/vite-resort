@@ -1,7 +1,9 @@
 <template>
-  <section class="book-now flex items-center justify-center px-4">
+  <section
+    class="book-now flex h-screen items-center justify-center justify-center px-4"
+  >
     <div class="p-4">
-      <div class="w-[30rem]">
+      <div class="book-now-img w-[30rem] shadow-xl">
         <img src="src/assets/img/banner/banner-1.jpg" alt="" class="w-full" />
       </div>
     </div>
@@ -13,10 +15,12 @@
         <span class="book-now-text mr-3 inline-block">waiting </span>
         <span class="book-now-text mr-3 inline-block">for?</span>
       </div>
-      <p>You are few clicks away from your dream vacation!</p>
+      <p class="book-now-item full-clip-path">
+        You are few clicks away from the dream vacation you deserve!
+      </p>
 
-      <BaseButton button-type="primary" class="fade-to-top full-clip-path anime"
-        >Make a Reservation Now!</BaseButton
+      <BaseButton button-type="primary" class="book-now-item full-clip-path"
+        >Make a Reservation Now</BaseButton
       >
     </div>
   </section>
@@ -33,17 +37,42 @@ gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
   let txt = document.querySelectorAll(".book-now-text");
 
-  gsap.from(txt, {
-    y: 100,
-    autoAlpha: 0,
-    ease: "Back.easeOut",
-    duration: 0.8,
-    stagger: 0.2,
+  let tl = gsap.timeline({
+    defaults: { ease: "Back.easeOut", duration: 1 },
     scrollTrigger: {
       trigger: ".book-now",
-      start: "top center",
+      start: "top top",
+      end: "+=1000",
+      pin: true,
+      markers: true,
     },
   });
+
+  gsap.set(".book-now-img", { x: 500, autoAlpha: 0 });
+  tl.to(".book-now-img", {
+    x: 0,
+    autoAlpha: 1,
+  });
+
+  tl.from(
+    txt,
+    {
+      y: 100,
+      autoAlpha: 0,
+      stagger: 0.2,
+    },
+    0.05
+  );
+
+  tl.from(
+    ".book-now-item",
+    {
+      y: 100,
+      autoAlpha: 0,
+      stagger: 0.2,
+    },
+    -0.05
+  );
 });
 </script>
 
