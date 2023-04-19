@@ -1,6 +1,6 @@
 <template>
   <section
-    class="feat-container w-100 flex h-screen flex-col justify-center overflow-hidden"
+    class="feat-container w-100 z-10 flex h-screen flex-col justify-center overflow-hidden"
   >
     <div class="flex">
       <template v-for="(feat, index) in featured" :key="index">
@@ -49,32 +49,6 @@ const props = defineProps({
 });
 
 onMounted(() => {
-  /* let tl = gsap.timeline({
-    defaults: { ease: "Power4.easeOut", duration: 2 },
-    scrollTrigger: {
-      trigger: ".fs-wrap",
-      start: "top 80%",
-    },
-  });
-
-  tl.from(".fs-img > *", {
-    y: 100,
-    autoAlpha: 0,
-    stagger: 0.2,
-    duration: 0.7,
-    ease: "Back.easeOut",
-  });
-
-  tl.from(
-    ".fs-caption",
-    {
-      y: 100,
-      autoAlpha: 0,
-      "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-    },
-    0.5
-  ); */
-
   const featWrap = gsap.utils.toArray(".feat-wrap");
   const featWrap2 = gsap.utils.toArray(".feat-wrap2");
 
@@ -92,26 +66,28 @@ onMounted(() => {
   ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
 
   gsap.to(featWrap, {
-    x: () => `-${maxWidth - window.innerWidth}`,
+    x: () => `-${maxWidth - (window.innerWidth - maxWidth)}`,
     ease: "none",
     scrollTrigger: {
       trigger: ".feat-container",
       pin: true,
       scrub: true,
+      pinSpacing: false,
       start: "top top",
-      end: "+=2000",
+      end: "+=3000",
       invalidateOnRefresh: true,
+      markers: true,
     },
   });
 
   gsap.to(featWrap2, {
-    x: () => `+${maxWidth - window.innerWidth}`,
+    x: () => `+${maxWidth - (window.innerWidth - maxWidth)}`,
     ease: "none",
     scrollTrigger: {
       trigger: ".feat-container",
-      scrub: 1,
+      scrub: true,
       start: "top top",
-      end: "+=2000",
+      end: "+=3000",
       invalidateOnRefresh: true,
     },
   });

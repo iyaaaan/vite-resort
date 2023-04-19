@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="book-now flex h-screen items-center justify-center justify-center px-4"
-  >
+  <section class="book-now flex h-screen items-center justify-center px-4">
     <div class="p-4">
       <div class="book-now-img w-[30rem] shadow-xl">
         <img src="src/assets/img/banner/banner-1.jpg" alt="" class="w-full" />
@@ -38,30 +36,36 @@ onMounted(() => {
   let txt = document.querySelectorAll(".book-now-text");
 
   let tl = gsap.timeline({
-    defaults: { ease: "Back.easeOut", duration: 1 },
+    defaults: { ease: "Back.easeOut", duration: 0.8 },
     scrollTrigger: {
       trigger: ".book-now",
-      start: "top top",
-      end: "+=1000",
+      start: "center center",
+      end: "+=2500",
       pin: true,
+      scrub: true,
       markers: true,
     },
   });
 
   gsap.set(".book-now-img", { x: 500, autoAlpha: 0 });
-  tl.to(".book-now-img", {
-    x: 0,
-    autoAlpha: 1,
-  });
+  tl.to(
+    ".book-now-img",
+    {
+      x: 0,
+      autoAlpha: 1,
+      duration: 1,
+    },
+    1
+  );
 
   tl.from(
     txt,
     {
       y: 100,
       autoAlpha: 0,
-      stagger: 0.2,
+      stagger: 0.1,
     },
-    0.05
+    1
   );
 
   tl.from(
@@ -71,9 +75,7 @@ onMounted(() => {
       autoAlpha: 0,
       stagger: 0.2,
     },
-    -0.05
+    1
   );
 });
 </script>
-
-<style lang="scss" scoped></style>
