@@ -37,7 +37,7 @@
     <Testimonials :testimonials="testimonials"></Testimonials>
 
     <!-- How to get here -->
-    <FeaturedSection :featured="featured" />
+    <!-- <FeaturedSection :featured="featured" /> -->
 
     <!-- Book Now -->
     <BookNow></BookNow>
@@ -66,8 +66,9 @@ const bgSection = ref(null);
 onMounted(() => {
   // define lenis
   const lenis = new Lenis({
-    duration: 2.2,
+    duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
   });
 
   // integrate lenis into gsap

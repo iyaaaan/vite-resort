@@ -39,10 +39,9 @@ onMounted(() => {
     defaults: { ease: "Back.easeOut", duration: 0.8 },
     scrollTrigger: {
       trigger: ".book-now",
-      start: "center center",
+      start: "top top",
       end: "+=2500",
       pin: true,
-      scrub: true,
       markers: true,
     },
   });
@@ -54,6 +53,7 @@ onMounted(() => {
       x: 0,
       autoAlpha: 1,
       duration: 1,
+      ease: "Expo.inOut",
     },
     1
   );
@@ -63,7 +63,7 @@ onMounted(() => {
     {
       y: 100,
       autoAlpha: 0,
-      stagger: 0.1,
+      stagger: 0.15,
     },
     1
   );

@@ -19,7 +19,7 @@
         <router-link
           :to="{ name: 'package' }"
           class="rsText full-clip-path block text-white underline"
-          >View More</router-link
+          >View Rooms</router-link
         >
       </div>
     </div>
@@ -49,7 +49,7 @@ onMounted(() => {
     defaults: { ease: "Expo.inOut", duration: 1 },
     scrollTrigger: {
       trigger: ".rsWrap",
-      start: "center 75%",
+      start: "top center",
     },
   });
 
@@ -60,7 +60,7 @@ onMounted(() => {
     stagger: 0.2,
   });
 
-  tl.from(
+  /* tl.from(
     ".rsRight",
     {
       x: 200,
@@ -68,12 +68,23 @@ onMounted(() => {
       "clip-path": "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
     },
     0.3
-  );
+  ); */
 
-  gsap.fromTo(
+  gsap.set(roomBg.value, { scale: 1.3 });
+  gsap.to(roomBg.value, {
+    scale: 1,
+    ease: "Power4.inOut",
+    scrollTrigger: {
+      trigger: ".rsWrap",
+      start: "top center",
+      scrub: true,
+    },
+  });
+
+  /* gsap.fromTo(
     roomBg.value,
     {
-      objectPosition: () => "0 60%",
+      objectPosition: () => "0 0%",
     },
     {
       objectPosition: () => "0 100%",
@@ -84,8 +95,9 @@ onMounted(() => {
         end: "+=800",
         scrub: true,
         invalidateOnRefresh: true, // to make it responsive
+        markers: true,
       },
     }
-  );
+  ); */
 });
 </script>

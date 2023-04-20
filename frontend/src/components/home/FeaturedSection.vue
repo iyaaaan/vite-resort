@@ -71,7 +71,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: ".feat-container",
       pin: true,
-      scrub: true,
+      scrub: 1,
       pinSpacing: false,
       start: "top top",
       end: "+=3000",
@@ -85,7 +85,7 @@ onMounted(() => {
     ease: "none",
     scrollTrigger: {
       trigger: ".feat-container",
-      scrub: true,
+      scrub: 1,
       start: "top top",
       end: "+=3000",
       invalidateOnRefresh: true,

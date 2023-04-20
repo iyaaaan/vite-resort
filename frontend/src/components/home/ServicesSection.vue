@@ -9,7 +9,7 @@
         Services
       </h2>
       <ul
-        class="mx-auto flex max-w-4xl flex-nowrap space-x-10 overflow-hidden py-10 px-4"
+        class="mx-auto flex flex-nowrap space-x-10 overflow-hidden py-10 px-4"
       >
         <template v-for="(service, index) in services" :key="index">
           <li
@@ -60,7 +60,7 @@ onMounted(() => {
   const serviceItemWidth = () => {
     maxWidth = 0;
     serviceItems.forEach((item) => {
-      maxWidth += item.offsetWidth + 160;
+      maxWidth += item.offsetWidth;
     });
   };
 
