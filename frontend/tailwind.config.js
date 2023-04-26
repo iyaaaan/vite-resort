@@ -19,7 +19,7 @@ module.exports = {
       Playfair: ["Playfair Display, serif"],
     },
     container: {
-      padding: "2rem",
+      padding: "1rem",
       center: true,
     },
     /* screens: {

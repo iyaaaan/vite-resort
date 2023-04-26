@@ -40,23 +40,18 @@ onMounted(() => {
     scrollTrigger: {
       trigger: ".book-now",
       start: "top top",
-      end: "+=2500",
+      end: "+=1000",
       pin: true,
-      markers: true,
     },
   });
 
   gsap.set(".book-now-img", { x: 500, autoAlpha: 0 });
-  tl.to(
-    ".book-now-img",
-    {
-      x: 0,
-      autoAlpha: 1,
-      duration: 1,
-      ease: "Expo.inOut",
-    },
-    1
-  );
+  tl.to(".book-now-img", {
+    x: 0,
+    autoAlpha: 1,
+    duration: 1,
+    ease: "Expo.inOut",
+  });
 
   tl.from(
     txt,
@@ -65,7 +60,7 @@ onMounted(() => {
       autoAlpha: 0,
       stagger: 0.15,
     },
-    1
+    0.5
   );
 
   tl.from(
@@ -75,7 +70,7 @@ onMounted(() => {
       autoAlpha: 0,
       stagger: 0.2,
     },
-    1
+    0.5
   );
 });
 </script>

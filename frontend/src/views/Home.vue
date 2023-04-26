@@ -2,7 +2,7 @@
   <main class="smooth-scroll">
     <!-- Hero -->
     <HeroBanner banner="home">
-      <div class="bases relative -mt-12 ml-12">
+      <div class="hero-caption relative -mt-12 ml-12">
         <div
           class="fade-to-top tilta full-clip-path anime p-4 font-Allura text-8xl leading-none text-white"
         >
@@ -86,7 +86,13 @@ onMounted(() => {
   requestAnimationFrame(raf);
  */
 
-  let tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2.2 } });
+  let tl = gsap.timeline({
+    defaults: { ease: "power4.inOut", duration: 2.2 },
+    scrollTrigger: {
+      trigger: ".hero-caption",
+      start: "top center",
+    },
+  });
   tl.from(
     ".fade-to-top",
     {
@@ -101,53 +107,47 @@ onMounted(() => {
 
 const services = ref([
   {
-    name: "Pool",
+    name: "pool",
     icon: "swimming-pool",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio molestiae suscipit quidem! ",
   },
   {
-    name: "Restaurant",
+    name: "restaurant",
     icon: "utensils",
     text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, maiores!",
   },
   {
-    name: "Gym",
+    name: "gym",
     icon: "dumbbell",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas?",
   },
   {
-    name: "Bar",
+    name: "bar",
     icon: "glass-martini-alt",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
   },
 
   {
-    name: "Wifi",
+    name: "wifi",
     icon: "wifi-3",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
   },
 
   {
-    name: "Room Service",
+    name: "room service",
     icon: "concierge-bell",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
   },
 
   {
-    name: "Spa",
+    name: "spa",
     icon: "spa",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
   },
 
   {
-    name: "Casino",
+    name: "casino",
     icon: "dice",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-  },
-
-  {
-    name: "Beach",
-    icon: "umbrella-beach",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
   },
 ]);

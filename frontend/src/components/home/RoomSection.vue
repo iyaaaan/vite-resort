@@ -70,10 +70,10 @@ onMounted(() => {
     0.3
   ); */
 
-  gsap.set(roomBg.value, { scale: 1.3 });
+  gsap.set(roomBg.value, { scale: 1.2 });
   gsap.to(roomBg.value, {
     scale: 1,
-    ease: "Power4.inOut",
+    ease: "none",
     scrollTrigger: {
       trigger: ".rsWrap",
       start: "top center",

@@ -2,29 +2,29 @@
   <section
     class="feat-container w-100 z-10 flex h-screen flex-col justify-center overflow-hidden"
   >
-    <div class="flex">
+    <div class="w flex w-80 flex-nowrap overflow-hidden">
       <template v-for="(feat, index) in featured" :key="index">
         <div class="feat-wrap w-80 shrink-0">
           <img
             :src="`src/assets/img/banner/${feat}`"
             :alt="feat"
-            class="w-full"
+            class="h-full w-full"
           />
         </div>
       </template>
     </div>
 
-    <div class="flex translate-x-2 flex-row-reverse">
+    <!--   <div class="flex translate-x-2 flex-row-reverse">
       <template v-for="(feat, index) in featured" :key="index">
-        <div class="feat-wrap2 w-80 shrink-0">
+        <div class="feat-wrap2 h-[50vh] w-auto shrink-0">
           <img
             :src="`src/assets/img/banner/${feat}`"
             :alt="feat"
-            class="w-full"
+            class="h-full w-full"
           />
         </div>
       </template>
-    </div>
+    </div> -->
 
     <!-- <div class="fs-caption full-clip-path mt-8 text-center">
       <span
@@ -71,12 +71,12 @@ onMounted(() => {
     scrollTrigger: {
       trigger: ".feat-container",
       pin: true,
-      scrub: 1,
+      scrub: true,
       pinSpacing: false,
       start: "top top",
       end: "+=3000",
       invalidateOnRefresh: true,
-      markers: true,
+      snap: 1 / (featWrap.length - 0.5),
     },
   });
 
@@ -85,7 +85,7 @@ onMounted(() => {
     ease: "none",
     scrollTrigger: {
       trigger: ".feat-container",
-      scrub: 1,
+      scrub: true,
       start: "top top",
       end: "+=3000",
       invalidateOnRefresh: true,

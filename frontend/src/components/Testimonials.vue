@@ -8,7 +8,9 @@
     <div class="testimonial mx-auto max-w-4xl">
       <carousel :items-to-show="1">
         <slide v-for="(test, index) in testimonials" :key="index">
-          <div class="mx-auto mt-16 max-w-3xl p-4 text-center">
+          <div
+            class="mx-auto mt-16 max-w-3xl cursor-context-menu p-4 text-center"
+          >
             <div class="mx-auto w-48">
               <img
                 :src="`src/assets/img/testimonial/${test.img}`"

@@ -8,18 +8,18 @@
       >
         Paradise Beach Resort
       </h2>
-      <p class="as-fade-to-top full-clip-path atitle mt-2 text-gray-600">
+      <p class="atitle mt-2 text-gray-600">
         The best place to clear your mind.
       </p>
 
-      <p class="as-fade-to-top full-clip-path my-5 text-justify text-gray-700">
+      <p class="my-5 text-justify text-gray-700">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero
         repellat consectetur saepe facilis. Placeat, similique quisquam! Ut,
         consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore,
         perspiciatis necessitatibus dolorem quas.
       </p>
 
-      <p class="as-fade-to-top full-clip-path my-5 text-justify text-gray-700">
+      <p class="my-5 text-justify text-gray-700">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quis
         corrupti. Voluptates, harum a reprehenderit explicabo quisquam nostrum
         dignissimos provident.
@@ -52,7 +52,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
   let tl = gsap.timeline({
-    defaults: { ease: "Expo.inOut", duration: 0.5 },
+    defaults: { ease: "Expo.inOut", duration: 0.8 },
     scrollTrigger: {
       trigger: ".as-wrap",
       start: "top 85%",
@@ -76,24 +76,13 @@ onMounted(() => {
     },
     0.5
   );
-  /*   tl.from(
+  tl.from(
     ".as-img",
     {
       autoAlpha: 0,
       scale: 0.8,
     },
     0.8
-  ); */
-
-  /* gsap.from(".as-img", {
-    scale: 0,
-    scrollTrigger: {
-      trigger: ".as-img",
-      start: "center center",
-      pin: true,
-      toggleActions: "play reverse play none",
-      markers: true,
-    },
-  }); */
+  );
 });
 </script>
