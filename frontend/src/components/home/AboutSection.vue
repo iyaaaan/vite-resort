@@ -27,7 +27,7 @@
 
       <font-awesome-icon
         icon="fa-solid fa-water"
-        class="as-wave full-clip-path mx-auto my-12 block text-4xl text-gray-300"
+        class="as-wave full-clip-path mx-auto my-12 block text-4xl text-gray-400"
       />
 
       <div
@@ -69,20 +69,15 @@ onMounted(() => {
     },
     0.1
   );
-  tl.from(
-    ".as-wave",
-    {
-      "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
+
+  gsap.from(".as-wave", {
+    "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
+    scrollTrigger: {
+      trigger: ".as-wrap",
+      scrub: true,
+      start: "top center",
+      end: "top top",
     },
-    0.5
-  );
-  tl.from(
-    ".as-img",
-    {
-      autoAlpha: 0,
-      scale: 0.8,
-    },
-    0.8
-  );
+  });
 });
 </script>

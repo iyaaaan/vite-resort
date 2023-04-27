@@ -6,28 +6,6 @@
       >
         Amenities
       </h2>
-      <ul
-        class="container grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"
-      >
-        <template v-for="(service, index) in services" :key="index">
-          <li
-            class="service-item group relative h-full cursor-pointer self-center border border-zinc-300 bg-white bg-cover bg-center px-4 py-8 text-center hover:border-zinc-500 hover:bg-[linear-gradient(to_right_bottom,rgba(0,0,0,.8),rgba(0,0,0,.8)),url('@/assets/img/banner/restaurant.jpg')] hover:shadow-md"
-          >
-            <font-awesome-icon
-              :icon="`fas fa-${service.icon}`"
-              class="text-5xl text-gray-400 transition-colors group-hover:text-white"
-            />
-            <h3
-              class="my-3 font-Playfair text-xl font-bold capitalize text-secondary group-hover:text-white"
-            >
-              {{ service.name }}
-            </h3>
-            <p class="text-justify text-gray-700 group-hover:text-white">
-              {{ service.text }}
-            </p>
-          </li>
-        </template>
-      </ul>
 
       <!-- :style="{
               'background-image':
@@ -36,26 +14,34 @@
                 '.jpg)',
             }" -->
       <div
-        class="container grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"
+        class="card container grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"
       >
         <template v-for="(service, index) in services" :key="index">
           <div
-            class="h-full w-full overflow-hidden bg-cover bg-center"
-            :style="newImgUrl"
+            class="service-item group relative h-full w-full overflow-hidden bg-cover bg-center"
           >
+            <!-- bg img -->
+            <div class="absolute h-full w-full">
+              <img
+                :src="`src/assets/img/ameneties/${service.name}.jpg`"
+                alt="about image"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <!-- content -->
             <div
-              class="group relative h-full translate-y-full cursor-pointer bg-white px-4 py-8 text-center"
+              class="card-content relative h-full translate-y-full cursor-pointer bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.7))] px-4 py-8 text-center transition-all duration-300 group-hover:translate-y-0"
             >
               <font-awesome-icon
                 :icon="`fas fa-${service.icon}`"
-                class="text-5xl text-gray-400 transition-colors group-hover:text-white"
+                class="text-5xl text-white"
               />
               <h3
-                class="my-3 font-Playfair text-xl font-bold capitalize text-secondary group-hover:text-white"
+                class="my-3 font-Playfair text-xl font-bold capitalize text-secondaryLight"
               >
                 {{ service.name }}
               </h3>
-              <p class="text-justify text-gray-700 group-hover:text-white">
+              <p class="text-justify text-white">
                 {{ service.text }}
               </p>
             </div>
@@ -77,12 +63,6 @@ gsap.registerPlugin(ScrollTrigger);
 const props = defineProps({
   services: Array,
 });
-
-let newImgUrl = computed(() => {
-  return `background-image: url("/src/assets/img/banner/${props.services[0].name}.jpg")`;
-});
-
-console.log(props.services[0].name);
 
 onMounted(() => {
   gsap.from(".service-title", {
@@ -114,44 +94,5 @@ onMounted(() => {
         duration: 0.8,
       }),
   });
-
-  /* const serviceItems = gsap.utils.toArray(".service-item");
-  let maxWidth = 0;
-
-  const serviceItemWidth = () => {
-    maxWidth = 0;
-    serviceItems.forEach((item) => {
-      maxWidth += item.offsetWidth;
-    });
-  };
-
-  serviceItemWidth();
-
-  ScrollTrigger.addEventListener("refreshInit", serviceItemWidth);
-
-  gsap.to(serviceItems, {
-    x: () => `-${maxWidth - window.innerWidth}`,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".services-container",
-      pin: true,
-      scrub: true,
-      start: "top top",
-      end: "+=2000",
-      invalidateOnRefresh: true,
-    },
-  });
-
-  serviceItems.forEach((item, i) => {
-    ScrollTrigger.create({
-      trigger: item,
-      start: () =>
-        "top top-=" +
-        (item.offsetLeft - window.innerWidth / 2) *
-          (maxWidth / (maxWidth - window.innerWidth)),
-      end: () =>
-        "+=" + item.offsetWidth * (maxWidth / (maxWidth - window.innerWidth)),
-    });
-  }); */
 });
 </script>
