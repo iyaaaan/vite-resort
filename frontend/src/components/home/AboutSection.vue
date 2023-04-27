@@ -4,7 +4,7 @@
   >
     <div class="max-w-3xl">
       <h2
-        class="as-fade-to-top full-clip-path font-Allura text-7xl leading-none text-secondary"
+        class="as-title full-clip-path font-Allura text-7xl leading-none text-secondary"
       >
         Paradise Beach Resort
       </h2>
@@ -51,24 +51,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  let tl = gsap.timeline({
-    defaults: { ease: "Expo.inOut", duration: 0.8 },
+  gsap.from(".as-title", {
+    y: 100,
+    autoAlpha: 0,
+    "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+    ease: "Expo.inOut",
+    duration: 0.8,
     scrollTrigger: {
-      trigger: ".as-wrap",
+      trigger: ".as-title",
       start: "top 85%",
+      toggleActions: "play none restart none",
     },
   });
-
-  tl.from(
-    ".as-fade-to-top",
-    {
-      y: 100,
-      autoAlpha: 0,
-      "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-      stagger: 0.2,
-    },
-    0.1
-  );
 
   gsap.from(".as-wave", {
     "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",

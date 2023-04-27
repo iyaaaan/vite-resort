@@ -30,7 +30,7 @@
             </div>
             <!-- content -->
             <div
-              class="card-content relative h-full translate-y-full cursor-pointer bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.7))] px-4 py-8 text-center transition-all duration-300 group-hover:translate-y-0"
+              class="card-content relative h-full translate-y-full cursor-pointer bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.7),rgba(0,0,0,0.7))] px-4 py-8 text-center transition-all duration-300 group-hover:translate-y-0"
             >
               <font-awesome-icon
                 :icon="`fas fa-${service.icon}`"

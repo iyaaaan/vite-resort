@@ -60,7 +60,7 @@ onMounted(() => {
     stagger: 0.2,
   });
 
-  /* tl.from(
+  tl.from(
     ".rsRight",
     {
       x: 200,
@@ -68,7 +68,7 @@ onMounted(() => {
       "clip-path": "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
     },
     0.3
-  ); */
+  );
 
   gsap.set(roomBg.value, { scale: 1.2 });
   gsap.to(roomBg.value, {
@@ -80,24 +80,5 @@ onMounted(() => {
       scrub: true,
     },
   });
-
-  /* gsap.fromTo(
-    roomBg.value,
-    {
-      objectPosition: () => "0 0%",
-    },
-    {
-      objectPosition: () => "0 100%",
-      ease: "none",
-      scrollTrigger: {
-        trigger: roomBg.value,
-        start: () => "top center",
-        end: "+=800",
-        scrub: true,
-        invalidateOnRefresh: true, // to make it responsive
-        markers: true,
-      },
-    }
-  ); */
 });
 </script>
