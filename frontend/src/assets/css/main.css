@@ -1,5 +1,6 @@
 @import "./base/fonts.css";
 @import "./base/scroll.css";
+@import "./base/lenis.css";
 
 @import "tailwindcss/base";
 @import "./base/base.css";

@@ -1,27 +1,39 @@
 <template>
-  <section class="fs-wrap py-40 px-4">
-    <div class="fs-img flex items-center justify-center space-x-5">
+  <section
+    class="feat-container w-100 z-10 flex h-screen flex-col justify-center overflow-hidden"
+  >
+    <div class="w flex w-80 flex-nowrap overflow-hidden">
       <template v-for="(feat, index) in featured" :key="index">
-        <div
-          class="h-64 w-96 overflow-hidden rounded-md border border-solid border-zinc-100 bg-slate-600 shadow-xl"
-        >
-          <!-- <img
+        <div class="feat-wrap w-80 shrink-0">
+          <img
             :src="`src/assets/img/banner/${feat}`"
             :alt="feat"
-            class="w-full"
-          /> -->
+            class="h-full w-full"
+          />
         </div>
       </template>
     </div>
 
-    <div class="fs-caption full-clip-path mt-8 text-center">
+    <!--   <div class="flex translate-x-2 flex-row-reverse">
+      <template v-for="(feat, index) in featured" :key="index">
+        <div class="feat-wrap2 h-[50vh] w-auto shrink-0">
+          <img
+            :src="`src/assets/img/banner/${feat}`"
+            :alt="feat"
+            class="h-full w-full"
+          />
+        </div>
+      </template>
+    </div> -->
+
+    <!-- <div class="fs-caption full-clip-path mt-8 text-center">
       <span
         class="inline-block rounded-lg bg-primary p-2 text-white hover:bg-primaryLight"
       >
         <font-awesome-icon icon="fas fa-map-pin" class="text-lg text-red-600" />
         How to get here
       </span>
-    </div>
+    </div> -->
   </section>
 </template>
 
@@ -37,30 +49,47 @@ const props = defineProps({
 });
 
 onMounted(() => {
-  let tl = gsap.timeline({
-    defaults: { ease: "Power4.easeOut", duration: 2 },
+  const featWrap = gsap.utils.toArray(".feat-wrap");
+  const featWrap2 = gsap.utils.toArray(".feat-wrap2");
+
+  let maxWidth = 0;
+
+  const getMaxWidth = () => {
+    maxWidth = 0;
+    featWrap.forEach((feat) => {
+      maxWidth += feat.offsetWidth;
+    });
+  };
+
+  getMaxWidth();
+
+  ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
+
+  gsap.to(featWrap, {
+    x: () => `-${maxWidth - (window.innerWidth - maxWidth)}`,
+    ease: "none",
     scrollTrigger: {
-      trigger: ".fs-wrap",
-      start: "top 80%",
+      trigger: ".feat-container",
+      pin: true,
+      scrub: true,
+      pinSpacing: false,
+      start: "top top",
+      end: "+=3000",
+      invalidateOnRefresh: true,
+      snap: 1 / (featWrap.length - 0.5),
     },
   });
 
-  tl.from(".fs-img > *", {
-    y: 100,
-    autoAlpha: 0,
-    stagger: 0.2,
-    duration: 0.7,
-    ease: "Back.easeOut",
-  });
-
-  tl.from(
-    ".fs-caption",
-    {
-      y: 100,
-      autoAlpha: 0,
-      "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+  gsap.to(featWrap2, {
+    x: () => `+${maxWidth - (window.innerWidth - maxWidth)}`,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".feat-container",
+      scrub: true,
+      start: "top top",
+      end: "+=3000",
+      invalidateOnRefresh: true,
     },
-    0.5
-  );
+  });
 });
 </script>

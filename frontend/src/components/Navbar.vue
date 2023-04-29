@@ -1,11 +1,29 @@
 <template>
   <header class="relative z-10">
     <nav
-      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex items-center justify-center bg-gradient-to-b from-black p-4 font-Montserrat"
+      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex items-center justify-between bg-gradient-to-b from-black p-4 font-Montserrat"
       ref="nav"
       data-scroll
       data-scroll-section
     >
+      <!-- logo -->
+      <router-link
+        class="item flex grow-[1] cursor-pointer items-center"
+        :to="{ name: 'home' }"
+      >
+        <img
+          class="inline-block"
+          src="@/assets/img/logo.png"
+          alt="Company Logo"
+          height="80"
+          width="80"
+        />
+        <h2 class="inline-block font-Allura text-4xl text-white">
+          Paradise Beach Resort
+        </h2>
+      </router-link>
+
+      <!-- menu -->
       <template v-for="(menu, index) in menus" :key="index">
         <router-link
           :to="{ name: menu }"
@@ -20,21 +38,6 @@
               >{{ menu }}</span
             >
           </span>
-        </router-link>
-
-        <!-- logo -->
-        <router-link
-          :key="index"
-          class="item cursor-pointer"
-          v-if="index === 1"
-          :to="{ name: 'home' }"
-        >
-          <img
-            src="@/assets/img/logo.png"
-            alt="Company Logo"
-            height="120"
-            width="120"
-          />
         </router-link>
       </template>
     </nav>
@@ -78,4 +81,11 @@ onMounted(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.router-link-active::after {
+  width: 100%;
+}
+.router-link-active {
+  pointer-events: none;
+}
+</style>

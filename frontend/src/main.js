@@ -23,6 +23,11 @@ import {
   faMapPin,
   faStar,
   faStarHalfAlt,
+  faWifi,
+  faBellConcierge,
+  faSpa,
+  faDice,
+  faUmbrellaBeach,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
@@ -39,7 +44,12 @@ library.add(
   faEnvelope,
   faMapPin,
   faStar,
-  faStarHalfAlt
+  faStarHalfAlt,
+  faWifi,
+  faBellConcierge,
+  faSpa,
+  faDice,
+  faUmbrellaBeach
 );
 
 const app = createApp(App);

@@ -19,7 +19,7 @@
         <router-link
           :to="{ name: 'package' }"
           class="rsText full-clip-path block text-white underline"
-          >View More</router-link
+          >View Rooms</router-link
         >
       </div>
     </div>
@@ -49,7 +49,7 @@ onMounted(() => {
     defaults: { ease: "Expo.inOut", duration: 1 },
     scrollTrigger: {
       trigger: ".rsWrap",
-      start: "center 75%",
+      start: "top center",
     },
   });
 
@@ -70,22 +70,15 @@ onMounted(() => {
     0.3
   );
 
-  gsap.fromTo(
-    roomBg.value,
-    {
-      objectPosition: () => "0 0",
+  gsap.set(roomBg.value, { scale: 1.2 });
+  gsap.to(roomBg.value, {
+    scale: 1,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".rsWrap",
+      start: "top center",
+      scrub: true,
     },
-    {
-      objectPosition: () => "0 100%",
-      ease: "none",
-      scrollTrigger: {
-        trigger: roomBg.value,
-        start: () => "top center",
-        end: "+=800",
-        scrub: true,
-        invalidateOnRefresh: true, // to make it responsive
-      },
-    }
-  );
+  });
 });
 </script>

@@ -1,13 +1,31 @@
 <template>
-  <main
-    class="my-container h-100vh flex w-[500vw] flex-nowrap items-center justify-center"
-  >
-    <div class="my-item h-screen w-screen bg-red-300"></div>
-    <div class="my-item h-screen w-screen bg-blue-300"></div>
-    <div class="my-item h-screen w-screen bg-gray-300"></div>
-    <div class="my-item h-screen w-screen bg-pink-300"></div>
-    <div class="my-item h-screen w-screen bg-indigo-300"></div>
-  </main>
+  <div class="flex h-screen w-screen items-center justify-center">HELLO</div>
+  <div class="con flex h-screen items-center">
+    <div class="wrapper flex flex-nowrap">
+      <section
+        class="section vh-100 d-flex justify-content-center align-items-center w-96 flex-shrink-0"
+      >
+        Part One
+      </section>
+      <section
+        class="section section--dark section--small vh-100 d-flex justify-content-center align-items-center flex-shrink-0"
+      >
+        Part Two
+      </section>
+      <section
+        class="section section--small vh-100 d-flex justify-content-center align-items-center flex-shrink-0"
+      >
+        Part Three
+      </section>
+      <section
+        class="section section--small vw-100 vh-100 d-flex justify-content-center align-items-center flex-shrink-0"
+      >
+        Part Four
+      </section>
+    </div>
+  </div>
+
+  <div class="flex h-screen w-screen items-center justify-center">WORLD</div>
 </template>
 
 <script setup>
@@ -18,68 +36,66 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  let con = document.querySelector(".my-container");
-  let sections = gsap.utils.toArray(".my-item");
+  const sections = gsap.utils.toArray("section");
+  let maxWidth = 0;
 
-  let scrollTween = gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
-    ease: "none", // <-- IMPORTANT!
+  const getMaxWidth = () => {
+    maxWidth = 0;
+    sections.forEach((section) => {
+      maxWidth += section.offsetWidth;
+    });
+  };
+  getMaxWidth();
+  ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
+
+  gsap.to(sections, {
+    x: () => `-${maxWidth - window.innerWidth}`,
+    ease: "none",
     scrollTrigger: {
-      trigger: ".my-container",
+      trigger: ".con",
       pin: true,
-      scrub: 0.1,
-      //snap: 1 / (sections.length - 1),
-      end: "+=3000",
-      //end: `+=${con.offsetWidth}`,
+      scrub: true,
+      //end: () => `+=${maxWidth}`,
+      start: "top top",
+      end: "+=2000",
+      invalidateOnRefresh: true,
     },
+  });
+
+  sections.forEach((sct, i) => {
+    ScrollTrigger.create({
+      trigger: sct,
+      start: () =>
+        "top top-=" +
+        (sct.offsetLeft - window.innerWidth / 2) *
+          (maxWidth / (maxWidth - window.innerWidth)),
+      end: () =>
+        "+=" + sct.offsetWidth * (maxWidth / (maxWidth - window.innerWidth)),
+      toggleClass: { targets: sct, className: "active" },
+    });
   });
 });
 </script>
 
 <style scoped>
-.hero__panel {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #ff9a62;
-  z-index: 10;
+.section {
+  font-size: 5rem;
 }
-.end {
-  position: relative;
-
-  z-index: 40;
-  background-color: #666;
+.section--large {
+  width: 100vw;
+  background-color: #8d3dae;
+  color: white;
 }
-.gallery {
-  width: 500vw;
-  height: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  margin-top: 100vh;
-  position: relative;
-  z-index: 30;
+.section--small {
+  width: 46rem;
 }
-.panel-1 {
-  background-color: #85b6ff;
-}
-
-.panel-2 {
-  background-color: #be91f0;
-}
-
-.panel-3 {
-  background-color: #aff4c6;
-}
-
-.panel-4 {
-  background-color: #4ecb71;
+.section--dark {
+  color: white;
+  background-color: black;
 }
 
 section {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight: 900;
+  transition: color 0.3s;
 }
 </style>

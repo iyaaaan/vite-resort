@@ -4,22 +4,22 @@
   >
     <div class="max-w-3xl">
       <h2
-        class="as-fade-to-top full-clip-path font-Allura text-7xl leading-none text-secondary"
+        class="as-title full-clip-path font-Allura text-7xl leading-none text-secondary"
       >
         Paradise Beach Resort
       </h2>
-      <p class="as-fade-to-top full-clip-path atitle mt-2 text-gray-600">
+      <p class="atitle mt-2 text-gray-600">
         The best place to clear your mind.
       </p>
 
-      <p class="as-fade-to-top full-clip-path my-5 text-justify text-gray-700">
+      <p class="my-5 text-justify text-gray-700">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero
         repellat consectetur saepe facilis. Placeat, similique quisquam! Ut,
         consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore,
         perspiciatis necessitatibus dolorem quas.
       </p>
 
-      <p class="as-fade-to-top full-clip-path my-5 text-justify text-gray-700">
+      <p class="my-5 text-justify text-gray-700">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quis
         corrupti. Voluptates, harum a reprehenderit explicabo quisquam nostrum
         dignissimos provident.
@@ -27,7 +27,7 @@
 
       <font-awesome-icon
         icon="fa-solid fa-water"
-        class="as-wave full-clip-path mx-auto my-12 block text-4xl text-gray-300"
+        class="as-wave full-clip-path mx-auto my-12 block text-4xl text-gray-400"
       />
 
       <div
@@ -51,50 +51,28 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  let tl = gsap.timeline({
-    defaults: { ease: "Expo.inOut", duration: 0.5 },
+  gsap.from(".as-title", {
+    y: 100,
+    autoAlpha: 0,
+    "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+    ease: "Expo.inOut",
+    duration: 0.8,
     scrollTrigger: {
-      trigger: ".as-wrap",
-      end: "+=1500",
-      start: "top center",
+      trigger: ".as-title",
+      start: "top 85%",
+      toggleActions: "play none restart none",
+
     },
   });
 
-  tl.from(
-    ".as-fade-to-top",
-    {
-      y: 100,
-      autoAlpha: 0,
-      "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-      stagger: 0.2,
-    },
-    0.1
-  );
-  tl.from(
-    ".as-wave",
-    {
-      "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
-    },
-    0.5
-  );
-  /*   tl.from(
-    ".as-img",
-    {
-      autoAlpha: 0,
-      scale: 0.8,
-    },
-    0.8
-  ); */
-
-  /* gsap.from(".as-img", {
-    scale: 0,
+  gsap.from(".as-wave", {
+    "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
     scrollTrigger: {
-      trigger: ".as-img",
-      start: "center center",
-      pin: true,
-      toggleActions: "play reverse play none",
-      markers: true,
+      trigger: ".as-wrap",
+      scrub: true,
+      start: "top center",
+      end: "top top",
     },
-  }); */
+  });
 });
 </script>

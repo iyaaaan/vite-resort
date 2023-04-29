@@ -2,7 +2,7 @@
   <main class="smooth-scroll">
     <!-- Hero -->
     <HeroBanner banner="home">
-      <div class="bases relative -mt-12 ml-12">
+      <div class="hero-caption relative -mt-12 ml-12">
         <div
           class="fade-to-top tilta full-clip-path anime p-4 font-Allura text-8xl leading-none text-white"
         >
@@ -33,16 +33,14 @@
     <!-- Services -->
     <ServicesSection :services="services" />
 
-    <!-- <div
-      ref="bgSection"
-      class="h-96 w-full bg-[linear-gradient(to_top,rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url('src/assets/img/banner/contact.jpg')] bg-cover bg-fixed bg-center bg-no-repeat"
-    ></div> -->
-
     <!-- Testimonials -->
     <Testimonials :testimonials="testimonials"></Testimonials>
 
     <!-- How to get here -->
-    <FeaturedSection :featured="featured" />
+    <!-- <FeaturedSection :featured="featured" /> -->
+
+    <!-- Book Now -->
+    <BookNow></BookNow>
   </main>
 </template>
 
@@ -56,6 +54,7 @@ import Testimonials from "@/components/Testimonials.vue";
 import RoomSection from "@/components/home/RoomSection.vue";
 import ServicesSection from "@/components/home/ServicesSection.vue";
 import FeaturedSection from "@/components/home/FeaturedSection.vue";
+import BookNow from "@/components/home/BookNow.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
@@ -67,8 +66,9 @@ const bgSection = ref(null);
 onMounted(() => {
   // define lenis
   const lenis = new Lenis({
-    duration: 2,
+    duration: 2.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
   });
 
   // integrate lenis into gsap
@@ -86,7 +86,13 @@ onMounted(() => {
   requestAnimationFrame(raf);
  */
 
-  let tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2.2 } });
+  let tl = gsap.timeline({
+    defaults: { ease: "power4.inOut", duration: 2.2 },
+    scrollTrigger: {
+      trigger: ".hero-caption",
+      start: "top center",
+    },
+  });
   tl.from(
     ".fade-to-top",
     {
@@ -97,45 +103,51 @@ onMounted(() => {
     },
     0.5
   );
-
-  gsap.fromTo(
-    bgSection.value,
-    {
-      backgroundPositionY: () => "100%",
-    },
-    {
-      backgroundPositionY: () => "0%",
-      ease: "none",
-      scrollTrigger: {
-        trigger: bgSection.value,
-        start: () => "top bottom",
-        end: "bottom top",
-        scrub: true,
-        invalidateOnRefresh: true, // to make it responsive
-      },
-    }
-  );
 });
 
 const services = ref([
   {
-    name: "Pool",
+    name: "pool",
     icon: "swimming-pool",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio molestiae suscipit quidem! ",
   },
   {
-    name: "Restaurant",
+    name: "restaurant",
     icon: "utensils",
     text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, maiores!",
   },
   {
-    name: "Gym",
+    name: "gym",
     icon: "dumbbell",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas?",
   },
   {
-    name: "Bar",
+    name: "bar",
     icon: "glass-martini-alt",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+  },
+
+  {
+    name: "wifi",
+    icon: "wifi-3",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+  },
+
+  {
+    name: "room service",
+    icon: "concierge-bell",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+  },
+
+  {
+    name: "spa",
+    icon: "spa",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+  },
+
+  {
+    name: "casino",
+    icon: "dice",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
   },
 ]);
@@ -161,5 +173,17 @@ const testimonials = ref([
   },
 ]);
 
-const featured = ref(["about.jpg", "package.jpg", "contact.jpg", "home.jpg"]);
+const featured = ref([
+  "package.jpg",
+  "contact.jpg",
+  "banner-1.jpg",
+  "package.jpg",
+  "contact.jpg",
+  "banner-1.jpg",
+  "package.jpg",
+  "contact.jpg",
+  "banner-1.jpg",
+  "package.jpg",
+  "contact.jpg",
+]);
 </script>
