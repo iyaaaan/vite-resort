@@ -56,10 +56,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: ".as-wrap",
       end: "+=1500",
-      toggleActions: "play reverse play reverse",
-      pin: true,
-      markers: true,
-      start: "top 85%",
+      start: "top center",
     },
   });
 
