@@ -28,6 +28,7 @@ import {
   faSpa,
   faDice,
   faUmbrellaBeach,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
@@ -49,7 +50,8 @@ library.add(
   faBellConcierge,
   faSpa,
   faDice,
-  faUmbrellaBeach
+  faUmbrellaBeach,
+  faBars
 );
 
 const app = createApp(App);
