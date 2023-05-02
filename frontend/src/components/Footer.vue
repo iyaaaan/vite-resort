@@ -1,6 +1,6 @@
 <template>
   <!-- wave -->
-  <div class="footer-wave relative mt-52 w-full">
+  <div class="footer-wave relative  w-full">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
@@ -42,45 +42,7 @@
   <footer
     class="footer relative bg-cyan-900 p-4 font-Montserrat text-sm text-white"
   >
-    <div class="footer-wave absolute -top-3/4 left-0 -z-10 h-full w-full">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        xmlns:svgjs="http://svgjs.dev/svgjs"
-        viewBox="0 0 2400 800"
-        opacity="1"
-      >
-        <defs>
-          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="sssurf-grad">
-            <stop
-              stop-color="hsla(196, 42%, 55%, 1.00)"
-              stop-opacity="1"
-              offset="0%"
-            ></stop>
-            <stop stop-color="#164e63" stop-opacity="1" offset="100%"></stop>
-          </linearGradient>
-        </defs>
-        <g fill="#164e63" transform="matrix(1,0,0,1,0,-17.049041748046875)">
-          <path
-            d="M 0 330.359212526045 Q 480 450 480 284.09805533139905 Q 960 450 960 349.91586566858626 Q 1440 450 1440 354.6289408250575 Q 1920 450 1920 341.12045201841283 Q 2400 450 2400 344.80060654819755 L 2400 800 L 0 800 L 0 333.5358130160081 Z"
-            transform="matrix(1,0,0,1,0,60)"
-            opacity="0.37"
-          ></path>
-          <path
-            d="M 0 330.359212526045 Q 480 450 480 284.09805533139905 Q 960 450 960 349.91586566858626 Q 1440 450 1440 354.6289408250575 Q 1920 450 1920 341.12045201841283 Q 2400 450 2400 344.80060654819755 L 2400 800 L 0 800 L 0 333.5358130160081 Z"
-            transform="matrix(1,0,0,1,0,90)"
-            opacity="0.68"
-          ></path>
-          <path
-            d="M 0 330.359212526045 Q 480 450 480 284.09805533139905 Q 960 450 960 349.91586566858626 Q 1440 450 1440 354.6289408250575 Q 1920 450 1920 341.12045201841283 Q 2400 450 2400 344.80060654819755 L 2400 800 L 0 800 L 0 333.5358130160081 Z"
-            transform="matrix(1,0,0,1,0,120)"
-            opacity="1.00"
-          ></path>
-        </g>
-      </svg>
-    </div>
-    <div class="mx-auto flex max-w-7xl justify-start space-x-8">
+    <div class="mx-auto flex max-w-7xl flex-wrap justify-start space-x-8">
       <!-- logo -->
       <div class="max-w-xs p-4 text-justify">
         <img src="../assets/img/logo.png" alt="" class="mx-auto w-36" />

@@ -123,7 +123,7 @@ onMounted(() => {
         y: 0,
         autoAlpha: 1,
         stagger: 0.2,
-        ease: "Back.easeOut",
+        ease: "Power4.inOut",
         duration: 0.8,
       }),
   });

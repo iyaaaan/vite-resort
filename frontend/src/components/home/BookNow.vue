@@ -1,12 +1,12 @@
 <template>
-  <section class="book-now flex h-screen items-center justify-center px-4">
-    <div class="p-4">
-      <div class="book-now-img w-[30rem] shadow-xl">
+  <section class="book-now flex flex-wrap flex-col md:flex-row h-screen items-center justify-center px-4">
+    <div class="w-full md:w-1/2 order-first md:order-last">
+      <div class="book-now-img w-full md:w-[30rem] shadow-xl">
         <img src="src/assets/img/banner/banner-1.jpg" alt="" class="w-full" />
       </div>
     </div>
-    <div class="p-4">
-      <div class="font-Playfair text-5xl font-bold">
+    <div class="w-full md:w-1/2 p-4 mb-8 md:mb-0">
+      <div class="font-Playfair text-3xl md:text-5xl font-bold">
         <span class="book-now-text mr-3 inline-block">What </span>
         <span class="book-now-text mr-3 inline-block">are </span>
         <span class="book-now-text mr-3 inline-block">you </span>
@@ -17,7 +17,7 @@
         You are few clicks away from the dream vacation you deserve!
       </p>
 
-      <BaseButton button-type="primary" class="book-now-item full-clip-path"
+      <BaseButton button-type="primary" class="book-now-item full-clip-path w-full md:w-auto"
         >Make a Reservation Now</BaseButton
       >
     </div>
@@ -40,8 +40,8 @@ onMounted(() => {
     scrollTrigger: {
       trigger: ".book-now",
       start: "top top",
-      end: "+=1000",
-      pin: true,
+      //end: "+=1000",
+      //pin: true,
     },
   });
 

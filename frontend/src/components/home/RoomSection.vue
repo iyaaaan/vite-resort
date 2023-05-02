@@ -1,11 +1,9 @@
 <template>
   <section
-    class="rsWrap relative flex items-center bg-stone-700 py-40"
-    data-scroll
-    data-scroll-section
+    class="rsWrap relative flex flex-wrap flex-col px-4 md:px-0 md:flex-row items-center bg-stone-700 py-10"
   >
-    <div class="flex flex-1 flex-col items-center justify-center">
-      <div class="max-w-lg p-4">
+    <div class="flex flex-1 flex-col p-4 items-center justify-center">
+      <div class="w-full md:max-w-lg">
         <h2
           class="rsText full-clip-path py-4 font-Playfair text-5xl font-bold text-white"
         >
@@ -29,7 +27,7 @@
         ref="roomBg"
         src="@/assets/img/room/room-1.jpg"
         alt=""
-        class="h-full w-full object-cover"
+        class="h-full w-full object-cover object-left"
       />
     </div>
   </section>

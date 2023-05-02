@@ -2,7 +2,7 @@
   <header class="relative z-10">
     <nav
       class="clip-path-to-bottom fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between overflow-hidden bg-gradient-to-b from-black py-4 px-4 font-Montserrat transition-transform duration-300 ease-linear lg:px-12"
-      :class="{ 'bg-stone-700': !topOfPage, '-translate-y-full': !showNavbar }"
+      :class="{ '-translate-y-full': !showNavbar }"
       ref="nav"
       data-scroll
       data-scroll-section
@@ -16,7 +16,7 @@
           height="80"
           width="80"
         />
-        <h2 class="hidden font-Allura text-4xl text-white md:inline-block">
+        <h2 class="hidden font-Allura text-4xl text-white sm:inline-block">
           Paradise Beach Resort
         </h2>
       </router-link>
