@@ -2,9 +2,9 @@
   <section
     class="as-wrap relative flex w-full items-center justify-center px-4 py-40 text-center"
   >
-    <div class="max-w-3xl">
+    <div class="max-w-full md:max-w-3xl">
       <h2
-        class="as-title full-clip-path font-Allura text-7xl leading-none text-secondary"
+        class="as-title full-clip-path font-Allura text-5xl leading-none text-secondary md:text-7xl"
       >
         Paradise Beach Resort
       </h2>
@@ -31,7 +31,7 @@
       />
 
       <div
-        class="as-img my-12 mx-auto h-80 w-[30rem] p-2 shadow shadow-gray-800"
+        class="as-img my-12 mx-auto h-auto w-full p-2 shadow shadow-gray-800 md:w-[30rem]"
       >
         <img
           src="@/assets/img/banner/home-about.jpg"
