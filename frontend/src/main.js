@@ -29,6 +29,7 @@ import {
   faDice,
   faUmbrellaBeach,
   faBars,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
@@ -51,7 +52,8 @@ library.add(
   faSpa,
   faDice,
   faUmbrellaBeach,
-  faBars
+  faBars,
+  faTimes
 );
 
 const app = createApp(App);

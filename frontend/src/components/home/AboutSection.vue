@@ -4,7 +4,7 @@
   >
     <div class="max-w-full md:max-w-3xl">
       <h2
-        class="as-title full-clip-path font-Allura text-7xl leading-none text-secondary"
+        class="as-title full-clip-path font-Allura text-5xl leading-none text-secondary md:text-7xl"
       >
         Paradise Beach Resort
       </h2>

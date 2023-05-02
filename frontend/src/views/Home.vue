@@ -2,23 +2,25 @@
   <main class="smooth-scroll">
     <!-- Hero -->
     <HeroBanner banner="home">
-      <div class="hero-caption relative -mt-12 ml-12">
+      <div
+        class="hero-caption relative mx-auto -mt-12 p-4 text-center md:ml-12 md:text-left"
+      >
         <div
-          class="fade-to-top tilta full-clip-path anime p-4 font-Allura text-8xl leading-none text-white"
+          class="fade-to-top tilta full-clip-path anime pb-4 font-Allura text-6xl leading-none text-white md:text-8xl"
         >
-          <span class="custom-class">Relax &</span>
-          <span class="ml-14 block">Recharge</span>
+          <span>Relax &</span>
+          <span class="ml-0 inline md:ml-14 md:block">Recharge</span>
         </div>
 
         <p
-          class="fade-to-top full-clip-path anime mt-5 mb-4 text-xl font-normal text-white"
+          class="fade-to-top full-clip-path anime m-0 text-base font-normal text-white md:text-xl"
         >
           Life is extremely fast. Travel and have fun while your heart is young.
         </p>
 
         <BaseButton
           button-type="primary"
-          class="fade-to-top full-clip-path anime"
+          class="fade-to-top full-clip-path anime mt-8 w-full md:w-auto"
           >Book Now</BaseButton
         >
       </div>
@@ -86,20 +88,15 @@ onMounted(() => {
   requestAnimationFrame(raf);
  */
 
-  let tl = gsap.timeline({
-    defaults: { ease: "power4.inOut", duration: 2.2 },
-    scrollTrigger: {
-      trigger: ".hero-caption",
-      start: "top center",
-    },
-  });
-  tl.from(
+  gsap.from(
     ".fade-to-top",
     {
       y: 100,
       autoAlpha: 0,
       "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
       stagger: 0.2,
+      ease: "power4.inOut",
+      duration: 2.2,
     },
     0.5
   );

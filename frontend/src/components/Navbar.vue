@@ -1,7 +1,7 @@
 <template>
   <header class="relative z-10">
     <nav
-      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between overflow-hidden bg-gradient-to-b from-black py-4 px-12 font-Montserrat transition-transform duration-300 ease-linear"
+      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between overflow-hidden bg-gradient-to-b from-black py-4 px-4 font-Montserrat transition-transform duration-300 ease-linear lg:px-12"
       :class="{ 'bg-stone-700': !topOfPage, '-translate-y-full': !showNavbar }"
       ref="nav"
       data-scroll
@@ -22,8 +22,14 @@
       </router-link>
 
       <!-- menu toggler -->
-      <span @click="toggleMenu" class="inline-flex lg:hidden">
-        <font-awesome-icon icon="fas fa-bars" class="text-2xl text-white" />
+      <span
+        @click="toggleMenu"
+        class="flex h-6 w-6 items-center justify-center lg:hidden"
+      >
+        <font-awesome-icon
+          :icon="`fas fa-${menuIcon}`"
+          class="text-2xl text-white"
+        />
       </span>
 
       <!-- menu -->
@@ -66,6 +72,7 @@ const menus = ref(["home", "about", "package", "contact"]);
 const nav = ref(null);
 
 let activeMenu = ref(false);
+let menuIcon = ref("bars");
 
 let topOfPage = ref(true);
 let showNavbar = ref(true);
@@ -98,6 +105,7 @@ const handleScroll = () => {
     } else {
       showNavbar.value = false;
       activeMenu.value = false;
+      menuIcon.value = "bars";
     }
   }
 
@@ -106,33 +114,17 @@ const handleScroll = () => {
 
 const toggleMenu = () => {
   activeMenu.value = !activeMenu.value;
+  menuIcon.value = activeMenu.value ? "times" : "bars";
 };
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
-
-  /*  const showAnim = gsap
-    .from(nav.value, {
-      yPercent: -100,
-      paused: true,
-      duration: 1,
-      ease: "Power4.easeOut",
-    })
-    .progress(1);
 
   gsap.from(nav.value, {
     autoAlpha: 0,
     duration: 1,
     delay: 1.8,
   });
-
-  ScrollTrigger.create({
-    start: "top top",
-    end: 99999,
-    onUpdate: (self) => {
-      self.direction === -1 ? showAnim.play() : showAnim.reverse();
-    },
-  }); */
 });
 </script>
 
