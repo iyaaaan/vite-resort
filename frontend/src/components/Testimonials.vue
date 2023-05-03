@@ -1,5 +1,5 @@
 <template>
-  <section class="test-wrap mx-autopy-24 bg-slate-800 py-40 px-4">
+  <section class="test-wrap mx-auto bg-slate-800 py-40 px-4">
     <h2
       class="test-title full-clip-path py-4 text-center font-Playfair text-5xl font-bold text-white"
     >

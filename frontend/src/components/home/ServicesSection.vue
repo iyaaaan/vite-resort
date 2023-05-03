@@ -49,13 +49,13 @@
     </div>
   </section> -->
 
-  <section class="flex flex-wrap">
+  <section class="flex flex-wrap p-4">
     <template v-for="(service, index) in services" :key="index">
       <div
-        class="service-item group relative h-64 w-full overflow-hidden sm:w-1/2 md:h-[50vh] lg:w-1/4"
+        class="service-item group relative h-64 w-full overflow-hidden p-4 sm:w-1/2 md:h-[50vh] lg:w-1/4"
       >
         <!-- bg img -->
-        <div class="absolute h-full w-full">
+        <div class="relative h-full w-full">
           <img
             :src="`src/assets/img/ameneties/${service.name}.jpg`"
             alt="about image"
@@ -65,7 +65,7 @@
 
         <!-- content -->
         <div
-          class="card-content relative flex h-full translate-y-full cursor-pointer flex-col justify-center bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.7),rgba(0,0,0,0.7))] px-4 py-8 text-center transition-all duration-300 group-hover:translate-y-0"
+          class="card-content relative flex h-full translate-y-full cursor-pointer flex-col justify-center bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.7),rgba(0,0,0,0.7))] px-4 py-8 text-center transition-all duration-300 group-hover:-translate-y-full"
         >
           <font-awesome-icon
             :icon="`fas fa-${service.icon}`"
@@ -124,7 +124,7 @@ onMounted(() => {
         autoAlpha: 1,
         stagger: 0.2,
         ease: "Power4.inOut",
-        duration: 0.8,
+        duration: 0.3,
       }),
   });
 });

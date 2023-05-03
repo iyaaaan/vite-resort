@@ -1,9 +1,11 @@
 <template>
   <section
-    class="rsWrap relative flex flex-wrap flex-col px-4 md:px-0 md:flex-row items-center bg-stone-700 py-10"
+    class="rsWrap relative flex flex-col flex-wrap items-center overflow-hidden bg-stone-700 px-4 py-48 lg:flex-row lg:px-0"
   >
-    <div class="flex flex-1 flex-col p-4 items-center justify-center">
-      <div class="w-full md:max-w-lg">
+    <div
+      class="mb-12 flex flex-1 flex-col items-center justify-center py-4 md:w-3/4 lg:mb-0 lg:px-4"
+    >
+      <div class="w-full lg:max-w-lg">
         <h2
           class="rsText full-clip-path py-4 font-Playfair text-5xl font-bold text-white"
         >
@@ -17,15 +19,15 @@
         <router-link
           :to="{ name: 'package' }"
           class="rsText full-clip-path block text-white underline"
-          >View Rooms</router-link
+          >View All Rooms</router-link
         >
       </div>
     </div>
 
-    <div class="rsRight full-clip-path h-[30rem] flex-1 bg-slate-600">
+    <div class="rsRight full-clip-path h-[30rem] flex-1 bg-slate-600 md:w-3/4">
       <img
         ref="roomBg"
-        src="@/assets/img/room/room-1.jpg"
+        src="@/assets/img/room/deluxe.jpg"
         alt=""
         class="h-full w-full object-cover object-left"
       />
@@ -61,9 +63,9 @@ onMounted(() => {
   tl.from(
     ".rsRight",
     {
-      x: 200,
       autoAlpha: 0,
       "clip-path": "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
+      duration: 0.6,
     },
     0.3
   );

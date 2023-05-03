@@ -1,6 +1,6 @@
 <template>
   <!-- wave -->
-  <div class="footer-wave relative  w-full">
+  <div class="footer-wave relative w-full">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
@@ -42,9 +42,11 @@
   <footer
     class="footer relative bg-cyan-900 p-4 font-Montserrat text-sm text-white"
   >
-    <div class="mx-auto flex max-w-7xl flex-wrap justify-start space-x-8">
+    <div
+      class="container flex flex-wrap justify-start text-center md:text-left"
+    >
       <!-- logo -->
-      <div class="max-w-xs p-4 text-justify">
+      <div class="w-full p-4 text-center md:w-1/2 md:text-justify lg:w-1/4">
         <img src="../assets/img/logo.png" alt="" class="mx-auto w-36" />
         <p class="backgr text-gray-200">Rest your soul in paradise.</p>
         <p>
@@ -55,26 +57,26 @@
       </div>
 
       <!-- site links -->
-      <div class="shrink-0 p-4">
+      <div class="w-full p-4 md:w-1/2 lg:w-52">
         <h3 class="font-bold">Site Links</h3>
         <ul>
-          <li class="my-2 hover:text-primaryLight">
+          <li class="my-2 hover:text-secondaryLight">
             <router-link :to="{ name: 'home' }"><span>Home</span></router-link>
           </li>
-          <li class="my-2 hover:text-primaryLight">
+          <li class="my-2 hover:text-secondaryLight">
             <router-link :to="{ name: 'about' }">About</router-link>
           </li>
-          <li class="my-2 hover:text-primaryLight">
+          <li class="my-2 hover:text-secondaryLight">
             <router-link :to="{ name: 'package' }">Packages</router-link>
           </li>
-          <li class="my-2 hover:text-primaryLight">
+          <li class="my-2 hover:text-secondaryLight">
             <router-link :to="{ name: 'contact' }">Contact</router-link>
           </li>
         </ul>
       </div>
 
       <!-- contact -->
-      <div class="shrink-0 p-4">
+      <div class="w-full p-4 md:w-1/2 lg:w-1/4">
         <h3 class="font-bold">Contact Us</h3>
         <ul>
           <li class="my-2">
@@ -110,7 +112,8 @@
         </ul>
       </div>
 
-      <div class="p-4">
+      <!-- get in touch -->
+      <div class="w-full grow p-4 md:w-1/2 lg:w-1/4">
         <h3 class="text-4xl font-bold">Get in touch</h3>
         <p>
           Get updated to our latest promos and discounts for your dream
@@ -149,7 +152,7 @@
     </div>
 
     <!-- foot note -->
-    <div class="mx-auto max-w-7xl">
+    <div class="container mx-auto">
       <hr class="border-gray-300" />
 
       <p>
@@ -184,3 +187,9 @@ onMounted(() => {
   }); */
 });
 </script>
+
+<style scoped>
+.router-link-active {
+  @apply text-secondary;
+}
+</style>

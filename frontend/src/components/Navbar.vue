@@ -1,11 +1,12 @@
 <template>
   <header class="relative z-10">
     <nav
-      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between overflow-hidden bg-gradient-to-b from-black py-4 px-4 font-Montserrat transition-transform duration-300 ease-linear lg:px-12"
-      :class="{ '-translate-y-full': !showNavbar }"
+      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between overflow-hidden bg-gradient-to-b py-4 px-4 font-Montserrat transition-transform duration-300 ease-linear lg:px-12"
+      :class="[
+        { '-translate-y-full': !showNavbar },
+        topOfPage ? 'from-black' : 'bg-stone-700',
+      ]"
       ref="nav"
-      data-scroll
-      data-scroll-section
     >
       <!-- logo -->
       <router-link class="cursor-pointer items-center" :to="{ name: 'home' }">
