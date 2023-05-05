@@ -137,7 +137,7 @@
           />
         </div>
         <button
-          class="button button-secondary mt-4 w-full p-3 disabled:bg-slate-400"
+          class="button button-secondary mt-4 w-full p-3 disabled:bg-slate-400 rounded-full"
           :disabled="!isValidEmail"
         >
           Subscribe
