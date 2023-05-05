@@ -52,14 +52,14 @@
 
     <!-- banner section -->
     <section
-      class="h-96 w-full bg-[url('src/assets/img/banner/banner.jpg')] bg-cover bg-fixed bg-bottom bg-no-repeat"
+      class="h-96 w-full bg-[url('src/assets/img/banner/banner.webp')] bg-cover bg-fixed bg-bottom bg-no-repeat"
     ></section>
 
     <!-- How to get here -->
     <!-- <FeaturedSection :featured="featured" /> -->
 
     <!-- Book Now -->
-    <BookNow></BookNow>
+    <Contact></Contact>
   </main>
 </template>
 
@@ -76,6 +76,7 @@ import Activities from "@/components/home/ActivitiesSection.vue";
 import Benefits from "@/components/home/BenefitsSection.vue";
 import FeaturedSection from "@/components/home/FeaturedSection.vue";
 import BookNow from "@/components/home/BookNow.vue";
+import Contact from "@/components/home/ContactSection.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";

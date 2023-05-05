@@ -4,7 +4,7 @@
   >
     <div class="w-full px-4 lg:w-96">
       <img
-        src="@/assets/img/banner/home-perks.jpg"
+        src="@/assets/img/banner/home-perks.webp"
         alt=""
         class="w-full rounded-lg"
       />
