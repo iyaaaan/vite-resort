@@ -1,53 +1,59 @@
 <template>
-  <section class="test-wrap mx-auto bg-slate-800 py-40 px-4">
+  <section class="test-wrap container mx-auto py-40 px-0">
     <h2
-      class="test-title full-clip-path py-4 text-center font-Playfair text-5xl font-bold text-white"
+      class="test-title full-clip-path py-4 text-center font-Playfair text-3xl md:text-5xl text-beaver"
     >
-      What Clients Say
+      Become one of our satisfied customers
     </h2>
-    <div class="testimonial mx-auto max-w-4xl">
-      <carousel :items-to-show="1">
+    <div class="testimonial container mx-auto">
+      <carousel :itemsToShow="1" :transition="500">
         <slide v-for="(test, index) in testimonials" :key="index">
           <div
-            class="mx-auto mt-16 max-w-3xl cursor-context-menu p-4 text-center"
+            class="mx-auto mt-16 flex max-w-3xl cursor-context-menu flex-col items-center justify-center rounded-lg bg-[#343434] px-4 py-20 text-center md:flex-row"
           >
-            <div class="mx-auto w-48">
-              <img
-                :src="`src/assets/img/testimonial/${test.img}`"
-                alt=""
-                class="test-img h-full w-full rounded-full"
-              />
-            </div>
-            <div class="test-rating my-4">
-              <!-- rating -->
-              <template v-for="(n, index) in test.rating" :key="index">
-                <font-awesome-icon
-                  icon="fas fa-star"
-                  class="text-2xl text-yellow-300"
+            <!-- img -->
+            <div class="w-full p-4 md:mr-5 md:w-auto">
+              <div class="mx-auto h-32 w-32">
+                <img
+                  :src="`src/assets/img/testimonial/${test.img}`"
+                  alt=""
+                  class="test-img h-full w-full rounded-full object-cover"
                 />
-                <!-- additional stars -->
-                <template v-for="x in 5 - test.rating">
+              </div>
+
+              <p class="mt-2 mb-4 font-bold text-white">{{ test.name }}</p>
+
+              <div class="test-rating">
+                <!-- rating -->
+                <template v-for="(n, index) in test.rating" :key="index">
                   <font-awesome-icon
-                    v-if="index === test.rating - 1"
-                    class="text-2xl text-gray-200"
                     icon="fas fa-star"
+                    class="text-2xl text-yellow-300"
                   />
+                  <!-- additional stars -->
+                  <template v-for="x in 5 - test.rating">
+                    <font-awesome-icon
+                      v-if="index === test.rating - 1"
+                      class="text-2xl text-gray-200"
+                      icon="fas fa-star"
+                    />
+                  </template>
                 </template>
-              </template>
+              </div>
             </div>
-            <blockquote
-              class="relative my-5 text-white before:absolute before:left-0 before:-top-16 before:font-Playfair before:text-9xl before:text-white before:content-[open-quote] after:invisible after:content-[close-quote]"
-            >
-              {{ test.text }}
-            </blockquote>
-            <span class="text-white">
-              <em> - {{ test.name }} </em></span
-            >
+
+            <div class="w-full p-4 md:w-8/12">
+              <blockquote
+                class="relative mt-10 text-justify font-light text-white before:absolute before:-top-16 before:-left-3 before:font-Playfair before:text-9xl before:leading-none before:text-neutral-500 before:content-[open-quote] after:invisible after:content-[close-quote] md:before:-top-24 md:before:text-[200px]"
+              >
+                {{ test.text }}
+              </blockquote>
+            </div>
           </div>
         </slide>
 
         <template #addons>
-          <navigation />
+          <!-- <navigation /> -->
           <pagination />
         </template>
       </carousel>
@@ -56,6 +62,7 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { gsap } from "gsap";
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
@@ -64,9 +71,26 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const props = defineProps({
-  testimonials: Object,
-});
+const testimonials = ref([
+  {
+    name: "Juan Dela Cruz",
+    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+    img: "test.jpg",
+    rating: 4,
+  },
+  {
+    name: "Rhianna Gomez",
+    text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+    img: "test.jpg",
+    rating: 5,
+  },
+  {
+    name: "Joshua The Explorer",
+    text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+    img: "test.jpg",
+    rating: 4,
+  },
+]);
 
 onMounted(() => {
   let tl = gsap.timeline({
@@ -104,10 +128,10 @@ onMounted(() => {
 }
 
 .carousel__pagination-button {
-  @apply after:bg-white hover:after:bg-sky-700;
+  @apply rounded-full after:bg-neutral-400 hover:after:bg-neutral-600;
 }
 
 .carousel__pagination-button.carousel__pagination-button--active {
-  @apply after:bg-sky-800;
+  @apply after:bg-beaver;
 }
 </style>

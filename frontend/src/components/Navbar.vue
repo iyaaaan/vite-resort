@@ -1,10 +1,10 @@
 <template>
   <header class="relative z-10">
     <nav
-      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between overflow-hidden bg-gradient-to-b py-4 px-4 font-Montserrat transition-transform duration-300 ease-linear lg:px-12"
+      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between overflow-hidden bg-gradient-to-b py-4 px-4 font-Poppins transition-transform duration-300 ease-linear lg:px-12"
       :class="[
         { '-translate-y-full': !showNavbar },
-        topOfPage ? 'from-black' : 'bg-stone-700',
+        topOfPage ? 'from-black' : 'bg-[#72645B]',
       ]"
       ref="nav"
     >
@@ -35,14 +35,14 @@
 
       <!-- menu -->
       <div
-        class="flex max-h-0 basis-full flex-col text-right transition-all duration-300 ease-linear lg:max-h-full lg:basis-0 lg:flex-row"
+        class="flex max-h-0 basis-full flex-col text-right font-Poppins font-light transition-all duration-300 ease-linear lg:max-h-full lg:basis-0 lg:flex-row"
         :class="{ 'max-h-96': activeMenu }"
       >
         <template v-for="(menu, index) in menus" :key="index">
           <div>
             <router-link
               :to="{ name: menu }"
-              class="group relative m-4 mr-0 inline-block text-sm uppercase text-white after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-secondary after:transition-all after:duration-300 after:content-[''] hover:after:right-0 hover:after:w-full lg:mr-4"
+              class="hover:after:bg-secondary-light group relative m-4 mr-0 inline-block text-sm uppercase text-white after:absolute after:-bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-secondary after:transition-all after:duration-300 after:content-[''] hover:after:right-0 hover:after:w-6 lg:mr-4"
             >
               <span
                 class="relative inline-block overflow-hidden p-0 transition duration-300 before:absolute before:left-0 before:inline-block before:translate-y-full before:tracking-[3px] before:transition before:duration-300 before:content-[attr(data-before)] group-hover:before:translate-y-0"
@@ -68,7 +68,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const menus = ref(["home", "about", "package", "contact"]);
+const menus = ref(["home", "about", "package", "activities", "contact"]);
 
 const nav = ref(null);
 
@@ -131,9 +131,9 @@ onMounted(() => {
 
 <style scoped>
 .router-link-active::after {
-  width: 100%;
+  @apply w-6;
 }
 .router-link-active {
-  pointer-events: none;
+  @apply pointer-events-none;
 }
 </style>

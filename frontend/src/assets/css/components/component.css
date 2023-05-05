@@ -1,21 +1,16 @@
 /* buttons */
 .button {
-  @apply min-w-[150px] rounded-full p-3 text-sm text-white transition-colors;
+  @apply min-w-[200px] rounded-lg p-3 text-base text-white transition-colors;
 }
 
 .button-primary {
-  @apply bg-primary hover:bg-primaryLight;
+  @apply bg-primary hover:bg-primary-light;
 }
 
 .button-secondary {
-  @apply bg-secondary hover:bg-secondaryLight;
+  @apply bg-secondary hover:bg-secondary-dark;
 }
 
-/* section titles */
-.title-primary {
-  @apply font-Playfair text-5xl font-bold text-primary;
-}
-
-.full-clip-path {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+.button-borderless {
+  @apply min-w-min;
 }

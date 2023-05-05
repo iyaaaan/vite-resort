@@ -8,7 +8,7 @@
           banner +
           '.jpg)',
       }"
-      class="flex h-screen w-full items-center bg-cover bg-fixed bg-no-repeat font-Montserrat"
+      class="flex h-screen w-full items-center bg-cover bg-fixed bg-no-repeat"
       :class="banner === 'home' ? 'bg-bottom' : 'bg-center'"
     >
       <slot></slot>

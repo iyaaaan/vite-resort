@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Package from "../views/Package.vue";
+import Activities from "../views/Activities.vue";
 import Contact from "../views/Contact.vue";
 import Test from "../views/Testpage.vue";
 
@@ -27,6 +28,15 @@ const router = createRouter({
       component: Package,
       meta: {
         title: "Package",
+      },
+    },
+
+    {
+      path: "/activities",
+      name: "activities",
+      component: Activities,
+      meta: {
+        title: "Activities",
       },
     },
     {

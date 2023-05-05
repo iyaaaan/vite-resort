@@ -30,9 +30,7 @@
         class="as-wave full-clip-path mx-auto my-12 block text-4xl text-gray-400"
       />
 
-      <div
-        class="as-img my-12 mx-auto h-auto w-full p-2 shadow shadow-gray-800 md:w-[30rem]"
-      >
+      <div class="as-img my-12 mx-auto h-auto w-full md:w-[30rem]">
         <img
           src="@/assets/img/banner/home-about.jpg"
           alt="about image"
@@ -61,7 +59,6 @@ onMounted(() => {
       trigger: ".as-title",
       start: "top 85%",
       toggleActions: "play none restart none",
-
     },
   });
 

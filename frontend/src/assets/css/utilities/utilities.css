@@ -5,3 +5,7 @@
 .text-shadow-md {
   text-shadow: -3px 3px 1px #242424;
 }
+
+.full-clip-path {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}

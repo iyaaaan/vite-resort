@@ -1,101 +1,67 @@
 <template>
-  <div class="flex h-screen w-screen items-center justify-center">HELLO</div>
-  <div class="con flex h-screen items-center">
-    <div class="wrapper flex flex-nowrap">
-      <section
-        class="section vh-100 d-flex justify-content-center align-items-center w-96 flex-shrink-0"
-      >
-        Part One
-      </section>
-      <section
-        class="section section--dark section--small vh-100 d-flex justify-content-center align-items-center flex-shrink-0"
-      >
-        Part Two
-      </section>
-      <section
-        class="section section--small vh-100 d-flex justify-content-center align-items-center flex-shrink-0"
-      >
-        Part Three
-      </section>
-      <section
-        class="section section--small vw-100 vh-100 d-flex justify-content-center align-items-center flex-shrink-0"
-      >
-        Part Four
-      </section>
-    </div>
-  </div>
+  <Carousel :itemsToShow="3.95" :wrapAround="true" :transition="500">
+    <Slide v-for="slide in 10" :key="slide" class="bg-red-900">
+      <div class="carousel__item bg-red-400">{{ slide }}</div>
+    </Slide>
 
-  <div class="flex h-screen w-screen items-center justify-center">WORLD</div>
+    ...
+  </Carousel>
 </template>
 
-<script setup>
-import { onMounted } from "vue";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+<script>
+import { defineComponent } from "vue";
+import { Carousel, Pagination, Slide } from "vue3-carousel";
 
-gsap.registerPlugin(ScrollTrigger);
+import "vue3-carousel/dist/carousel.css";
 
-onMounted(() => {
-  const sections = gsap.utils.toArray("section");
-  let maxWidth = 0;
-
-  const getMaxWidth = () => {
-    maxWidth = 0;
-    sections.forEach((section) => {
-      maxWidth += section.offsetWidth;
-    });
-  };
-  getMaxWidth();
-  ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
-
-  gsap.to(sections, {
-    x: () => `-${maxWidth - window.innerWidth}`,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".con",
-      pin: true,
-      scrub: true,
-      //end: () => `+=${maxWidth}`,
-      start: "top top",
-      end: "+=2000",
-      invalidateOnRefresh: true,
-    },
-  });
-
-  sections.forEach((sct, i) => {
-    ScrollTrigger.create({
-      trigger: sct,
-      start: () =>
-        "top top-=" +
-        (sct.offsetLeft - window.innerWidth / 2) *
-          (maxWidth / (maxWidth - window.innerWidth)),
-      end: () =>
-        "+=" + sct.offsetWidth * (maxWidth / (maxWidth - window.innerWidth)),
-      toggleClass: { targets: sct, className: "active" },
-    });
-  });
+export default defineComponent({
+  name: "Autoplay",
+  components: {
+    Carousel,
+    Slide,
+    Pagination,
+  },
 });
 </script>
 
 <style scoped>
-.section {
-  font-size: 5rem;
-}
-.section--large {
-  width: 100vw;
-  background-color: #8d3dae;
-  color: white;
-}
-.section--small {
-  width: 46rem;
-}
-.section--dark {
-  color: white;
-  background-color: black;
+.carousel__slide {
+  padding: 5px;
 }
 
-section {
-  font-weight: 900;
-  transition: color 0.3s;
+.carousel__viewport {
+  perspective: 2000px;
+}
+
+.carousel__track {
+  transform-style: preserve-3d;
+}
+
+.carousel__slide--sliding {
+  transition: 0.5s;
+}
+
+.carousel__slide {
+  opacity: 0.9;
+  transform: rotateY(-20deg) scale(0.9);
+}
+
+.carousel__slide--active ~ .carousel__slide {
+  transform: rotateY(20deg) scale(0.9);
+}
+
+.carousel__slide--prev {
+  opacity: 1;
+  transform: rotateY(-10deg) scale(0.95);
+}
+
+.carousel__slide--next {
+  opacity: 1;
+  transform: rotateY(10deg) scale(0.95);
+}
+
+.carousel__slide--active {
+  opacity: 1;
+  transform: rotateY(0) scale(1.1);
 }
 </style>

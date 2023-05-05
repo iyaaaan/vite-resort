@@ -6,23 +6,32 @@
         class="hero-caption relative mx-auto -mt-12 p-4 text-center md:ml-12 md:text-left"
       >
         <div
-          class="fade-to-top tilta full-clip-path anime pb-4 font-Allura text-6xl leading-none text-white md:text-8xl"
+          class="fade-to-top tilta full-clip-path pb-4 font-Allura text-6xl leading-none text-white md:text-8xl"
         >
           <span>Relax &</span>
           <span class="ml-0 inline md:ml-14 md:block">Recharge</span>
         </div>
 
         <p
-          class="fade-to-top full-clip-path anime m-0 text-base font-normal text-white md:text-xl"
+          class="fade-to-top full-clip-path m-0 text-base font-light text-white md:text-lg"
         >
           Life is extremely fast. Travel and have fun while your heart is young.
         </p>
 
-        <BaseButton
-          button-type="primary"
-          class="fade-to-top full-clip-path anime mt-8 w-full md:w-auto"
-          >Book Now</BaseButton
-        >
+        <div class="mt-8">
+          <BaseButton
+            button-type="secondary"
+            class="fade-to-top full-clip-path w-full md:w-auto"
+            >Book Your Escape</BaseButton
+          >
+
+          <BaseButton
+            class="fade-to-top full-clip-path w-full md:w-auto"
+            button-type="borderless"
+            :hasArrow="true"
+            >Discover more
+          </BaseButton>
+        </div>
       </div>
     </HeroBanner>
 
@@ -32,11 +41,19 @@
     <!-- Featured Room -->
     <RoomSection />
 
-    <!-- Services -->
-    <ServicesSection :services="services" />
+    <!-- Activities -->
+    <Activities />
+
+    <!-- Perks -->
+    <Benefits />
 
     <!-- Testimonials -->
-    <Testimonials :testimonials="testimonials"></Testimonials>
+    <Testimonials></Testimonials>
+
+    <!-- banner section -->
+    <section
+      class="h-96 w-full bg-[url('src/assets/img/banner/banner.jpg')] bg-cover bg-fixed bg-bottom bg-no-repeat"
+    ></section>
 
     <!-- How to get here -->
     <!-- <FeaturedSection :featured="featured" /> -->
@@ -47,7 +64,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeMount } from "vue";
+import { ref, onMounted } from "vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import AboutSection from "@/components/home/AboutSection.vue";
 import Testpage from "@/views/Testpage.vue";
@@ -55,6 +72,8 @@ import BaseButton from "@/components/BaseButton.vue";
 import Testimonials from "@/components/Testimonials.vue";
 import RoomSection from "@/components/home/RoomSection.vue";
 import ServicesSection from "@/components/home/ServicesSection.vue";
+import Activities from "@/components/home/ActivitiesSection.vue";
+import Benefits from "@/components/home/BenefitsSection.vue";
 import FeaturedSection from "@/components/home/FeaturedSection.vue";
 import BookNow from "@/components/home/BookNow.vue";
 import gsap from "gsap";
@@ -68,7 +87,7 @@ const bgSection = ref(null);
 onMounted(() => {
   // define lenis
   const lenis = new Lenis({
-    duration: 1.2,
+    duration: 1.8,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
   });
@@ -146,27 +165,6 @@ const services = ref([
     name: "casino",
     icon: "dice",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-  },
-]);
-
-const testimonials = ref([
-  {
-    name: "Christian Ocol",
-    text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio molestiae suscipit quidem!",
-    img: "test-1.png",
-    rating: 4,
-  },
-  {
-    name: "Christian 2",
-    text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-    img: "test-1.png",
-    rating: 5,
-  },
-  {
-    name: "Christian 3",
-    text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-    img: "test-1.png",
-    rating: 4,
   },
 ]);
 

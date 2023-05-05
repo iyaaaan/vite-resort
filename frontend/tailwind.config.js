@@ -7,16 +7,17 @@ module.exports = {
     extend: {
       colors: {
         primary: "#084887",
-        primaryLight: "#094d8f",
-        secondary: "#e87213",
-        secondaryLight: "#ff7e17",
-        alpineGoat: "#F4F1F9",
+        "primary-light": "#094d8f",
+        secondary: "#F5974B",
+        "secondary-dark": "#ea8d46",
+        beaver: "#5E564D",
       },
     },
     fontFamily: {
       Allura: ["Allura, cursive"],
-      Montserrat: ["Montserrat, sans-serif"],
       Playfair: ["Playfair Display, serif"],
+      Poppins: ["Poppins, sans-serif"],
+      Montserrat: ["Montserrat, sans-serif"],
     },
     container: {
       padding: "1rem",
