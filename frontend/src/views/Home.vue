@@ -6,7 +6,7 @@
         class="hero-caption relative mx-auto -mt-12 p-4 text-center md:ml-12 md:text-left"
       >
         <div
-          class="fade-to-top tilta full-clip-path pb-4 font-Allura text-6xl leading-none text-white md:text-8xl"
+          class="fade-to-top tilta full-clip-path pb-4 font-Allura text-6xl leading-none text-white md:text-8xl lg:text-9xl"
         >
           <span>Relax &</span>
           <span class="ml-0 inline md:ml-14 md:block">Recharge</span>
@@ -116,7 +116,7 @@ onMounted(() => {
       "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
       stagger: 0.2,
       ease: "power4.inOut",
-      duration: 2.2,
+      duration: 1.2,
     },
     0.5
   );
