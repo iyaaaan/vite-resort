@@ -52,7 +52,7 @@ const roomBg = ref(null);
 
 onMounted(() => {
   let tl = gsap.timeline({
-    defaults: { ease: "Expo.inOut", duration: 1 },
+    defaults: { ease: "Power4.inOut", duration: 0.8 },
     scrollTrigger: {
       trigger: ".rsWrap",
       start: "top center",
