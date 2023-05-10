@@ -4,25 +4,27 @@
   >
     <!-- left -->
     <div class="flex w-full flex-wrap items-center justify-center lg:w-1/2">
-      <!-- card -->
-      <template v-for="activity in activities" key="index">
-        <div class="acts-card w-full p-4 md:w-1/2">
-          <div class="rounded-lg border bg-white px-8 py-10 text-stone-700">
-            <!-- card icon -->
-            <Icon :icon="activity.icon" class="mx-auto text-7xl" />
+      <div class="acts-card-wrap flex flex-wrap justify-center">
+        <!-- card -->
+        <template v-for="activity in activities" key="index">
+          <div class="acts-card w-full p-4 md:w-1/2">
+            <div class="rounded-lg border bg-white px-8 py-10 text-stone-700">
+              <!-- card icon -->
+              <Icon :icon="activity.icon" class="mx-auto text-7xl" />
 
-            <!-- card title -->
-            <h3 class="mt-8 text-center font-Playfair text-xl font-bold">
-              {{ activity.name }}
-            </h3>
+              <!-- card title -->
+              <h3 class="mt-8 text-center font-Playfair text-xl font-bold">
+                {{ activity.name }}
+              </h3>
 
-            <!-- card description -->
-            <p class="text-justify">
-              {{ activity.desc }}
-            </p>
+              <!-- card description -->
+              <p class="text-justify">
+                {{ activity.desc }}
+              </p>
+            </div>
           </div>
-        </div>
-      </template>
+        </template>
+      </div>
     </div>
 
     <!-- right -->
@@ -74,7 +76,7 @@ onMounted(() => {
       trigger: ".acts-text-wrap",
       start: "top bottom",
       end: "bottom top",
-      toggleActions: "restart none restart none",
+      toggleActions: "restart reverse restart reverse",
     },
   });
 
@@ -84,10 +86,10 @@ onMounted(() => {
     stagger: 0.2,
     delay: 0.8,
     scrollTrigger: {
-      trigger: ".acts-container",
+      trigger: ".acts-card-wrap",
       start: "top bottom",
       end: "bottom top",
-      toggleActions: "restart none restart none",
+      toggleActions: "restart reverse restart reverse",
     },
   });
 });

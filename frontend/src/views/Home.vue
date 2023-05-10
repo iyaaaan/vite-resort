@@ -115,6 +115,12 @@ onMounted(() => {
       stagger: 0.2,
       ease: "power4.inOut",
       duration: 1.2,
+      scrollTrigger: {
+        trigger: ".hero-caption",
+        start: "top bottom",
+        end: "bottom top",
+        toggleActions: "restart reverse restart reverse",
+      },
     },
     0.5
   );

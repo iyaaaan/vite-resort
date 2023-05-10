@@ -60,16 +60,16 @@
       <div class="w-full p-4 md:w-1/2 lg:w-52">
         <h3 class="font-bold">Site Links</h3>
         <ul>
-          <li class="my-2 hover:text-secondaryLight">
+          <li class="hover:text-secondaryLight my-2">
             <router-link :to="{ name: 'home' }"><span>Home</span></router-link>
           </li>
-          <li class="my-2 hover:text-secondaryLight">
+          <li class="hover:text-secondaryLight my-2">
             <router-link :to="{ name: 'about' }">About</router-link>
           </li>
-          <li class="my-2 hover:text-secondaryLight">
+          <li class="hover:text-secondaryLight my-2">
             <router-link :to="{ name: 'package' }">Packages</router-link>
           </li>
-          <li class="my-2 hover:text-secondaryLight">
+          <li class="hover:text-secondaryLight my-2">
             <router-link :to="{ name: 'contact' }">Contact</router-link>
           </li>
         </ul>
@@ -99,13 +99,13 @@
             <a href="https://www.facebook.com" target="_blank">
               <font-awesome-icon
                 icon="fab fa-facebook-f"
-                class="m-2 text-lg hover:text-secondaryLight"
+                class="hover:text-secondaryLight m-2 text-lg"
               />
             </a>
             <a href="https://www.instagram.com" target="_blank">
               <font-awesome-icon
                 icon="fab fa-instagram"
-                class="m-2 text-lg hover:text-secondaryLight"
+                class="hover:text-secondaryLight m-2 text-lg"
               />
             </a>
           </li>
@@ -137,7 +137,7 @@
           />
         </div>
         <button
-          class="button button-secondary mt-4 w-full p-3 disabled:bg-slate-400 rounded-full"
+          class="button button-secondary mt-4 w-full rounded-full p-3 disabled:bg-slate-400"
           :disabled="!isValidEmail"
         >
           Subscribe
@@ -177,14 +177,14 @@ const isValidEmail = computed(() => {
 });
 
 onMounted(() => {
-  /* gsap.from(".footer-wave", {
-    y: 180,
+  gsap.from(".footer-wave", {
+    yPercent: 100,
     scrollTrigger: {
       trigger: "footer",
-      start: "top 90%",
-      toggleActions: "play reverse play reverse",
+      start: "top bottom",
+      toggleActions: "restart reverse restart reverse",
     },
-  }); */
+  });
 });
 </script>
 

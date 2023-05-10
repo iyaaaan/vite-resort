@@ -1,62 +1,64 @@
 <template>
-  <section class="test-wrap container mx-auto py-48 px-0">
-    <h2
-      class="test-title full-clip-path py-4 text-center font-Playfair text-3xl md:text-5xl text-beaver"
-    >
-      Become one of our satisfied customers
-    </h2>
-    <div class="testimonial container mx-auto">
-      <carousel :itemsToShow="1" :transition="500">
-        <slide v-for="(test, index) in testimonials" :key="index">
-          <div
-            class="mx-auto mt-16 flex max-w-3xl cursor-context-menu flex-col items-center justify-center rounded-lg bg-[#343434] px-4 py-20 text-center md:flex-row"
-          >
-            <!-- img -->
-            <div class="w-full p-4 md:mr-5 md:w-auto">
-              <div class="mx-auto h-32 w-32">
-                <img
-                  :src="`src/assets/img/testimonial/${test.img}`"
-                  alt=""
-                  class="test-img h-full w-full rounded-full object-cover"
-                />
-              </div>
-
-              <p class="mt-2 mb-4 font-bold text-white">{{ test.name }}</p>
-
-              <div class="test-rating">
-                <!-- rating -->
-                <template v-for="(n, index) in test.rating" :key="index">
-                  <font-awesome-icon
-                    icon="fas fa-star"
-                    class="text-2xl text-yellow-300"
+  <section class="container mx-auto py-48 px-0">
+    <div class="test-wrap">
+      <h2
+        class="test-title full-clip-path py-4 text-center font-Playfair text-3xl text-beaver md:text-5xl"
+      >
+        Become one of our satisfied customers
+      </h2>
+      <div class="testimonial container mx-auto">
+        <carousel :itemsToShow="1" :transition="500">
+          <slide v-for="(test, index) in testimonials" :key="index">
+            <div
+              class="mx-auto mt-16 flex max-w-3xl cursor-context-menu flex-col items-center justify-center rounded-lg bg-[#343434] px-4 py-20 text-center md:flex-row"
+            >
+              <!-- img -->
+              <div class="w-full p-4 md:mr-5 md:w-auto">
+                <div class="mx-auto h-32 w-32">
+                  <img
+                    :src="`src/assets/img/testimonial/${test.img}`"
+                    alt=""
+                    class="test-img h-full w-full rounded-full object-cover"
                   />
-                  <!-- additional stars -->
-                  <template v-for="x in 5 - test.rating">
+                </div>
+
+                <p class="mt-2 mb-4 font-bold text-white">{{ test.name }}</p>
+
+                <div class="test-rating">
+                  <!-- rating -->
+                  <template v-for="(n, index) in test.rating" :key="index">
                     <font-awesome-icon
-                      v-if="index === test.rating - 1"
-                      class="text-2xl text-gray-200"
                       icon="fas fa-star"
+                      class="text-2xl text-yellow-300"
                     />
+                    <!-- additional stars -->
+                    <template v-for="x in 5 - test.rating">
+                      <font-awesome-icon
+                        v-if="index === test.rating - 1"
+                        class="text-2xl text-gray-200"
+                        icon="fas fa-star"
+                      />
+                    </template>
                   </template>
-                </template>
+                </div>
+              </div>
+
+              <div class="w-full p-4 md:w-8/12">
+                <blockquote
+                  class="relative mt-10 text-justify font-light text-white before:absolute before:-top-16 before:-left-3 before:font-Playfair before:text-9xl before:leading-none before:text-neutral-500 before:content-[open-quote] after:invisible after:content-[close-quote] md:before:-top-24 md:before:text-[200px]"
+                >
+                  {{ test.text }}
+                </blockquote>
               </div>
             </div>
+          </slide>
 
-            <div class="w-full p-4 md:w-8/12">
-              <blockquote
-                class="relative mt-10 text-justify font-light text-white before:absolute before:-top-16 before:-left-3 before:font-Playfair before:text-9xl before:leading-none before:text-neutral-500 before:content-[open-quote] after:invisible after:content-[close-quote] md:before:-top-24 md:before:text-[200px]"
-              >
-                {{ test.text }}
-              </blockquote>
-            </div>
-          </div>
-        </slide>
-
-        <template #addons>
-          <!-- <navigation /> -->
-          <pagination />
-        </template>
-      </carousel>
+          <template #addons>
+            <!-- <navigation /> -->
+            <pagination />
+          </template>
+        </carousel>
+      </div>
     </div>
   </section>
 </template>
@@ -94,11 +96,12 @@ const testimonials = ref([
 
 onMounted(() => {
   let tl = gsap.timeline({
-    defaults: { ease: "Expo.easeOut", duration: 1.5 },
+    defaults: { ease: "Expo.easeOut", duration: 1.5, delay: 0.5 },
     scrollTrigger: {
       trigger: ".test-wrap",
-      start: "top center",
-      end: "+=1000",
+      start: "top bottom",
+      end: "bottom top",
+      toggleActions: "restart reverse restart reverse",
     },
   });
 
@@ -111,12 +114,13 @@ onMounted(() => {
   tl.from(
     ".testimonial",
     {
-      //scale: 0.8,
+      //scale: 0.9,
+      y: -50,
       autoAlpha: 0,
       duration: 0.7,
       ease: "Back.easeOut",
     },
-    0.5
+    0.3
   );
 });
 </script>

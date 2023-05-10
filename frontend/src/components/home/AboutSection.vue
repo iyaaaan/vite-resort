@@ -58,7 +58,7 @@ onMounted(() => {
       trigger: ".as-title",
       start: "top bottom",
       end: "bottom top",
-      toggleActions: "restart none restart none",
+      toggleActions: "restart reverse restart reverse",
     },
   });
 

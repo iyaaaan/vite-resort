@@ -31,7 +31,7 @@
       >
         <img
           ref="roomBg"
-          src="@/assets/img/room/deluxe.jpg"
+          src="@/assets/img/room/accommodation-banner.jpg"
           alt=""
           class="h-full w-full object-cover object-left"
         />
@@ -56,6 +56,8 @@ onMounted(() => {
     scrollTrigger: {
       trigger: ".rsWrap",
       start: "top center",
+      end: "bottom top",
+      toggleActions: "restart reverse restart reverse",
     },
   });
 
@@ -83,6 +85,7 @@ onMounted(() => {
     scrollTrigger: {
       trigger: ".rsWrap",
       start: "top center",
+      end: "bottom top",
       scrub: true,
     },
   });
