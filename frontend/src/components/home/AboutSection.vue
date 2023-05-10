@@ -68,7 +68,7 @@ onMounted(() => {
       trigger: ".as-wrap",
       scrub: true,
       start: "top center",
-      end: "top top",
+      end: "bottom top",
     },
   });
 });

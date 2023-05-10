@@ -55,7 +55,7 @@ onMounted(() => {
     defaults: { ease: "Power4.inOut", duration: 0.8 },
     scrollTrigger: {
       trigger: ".rsWrap",
-      start: "top center",
+      start: "top bottom",
       end: "bottom top",
       toggleActions: "restart reverse restart reverse",
     },
@@ -73,7 +73,6 @@ onMounted(() => {
     {
       autoAlpha: 0,
       "clip-path": "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)",
-      duration: 0.6,
     },
     0.3
   );
@@ -84,7 +83,7 @@ onMounted(() => {
     ease: "none",
     scrollTrigger: {
       trigger: ".rsWrap",
-      start: "top center",
+      start: "top bottom",
       end: "bottom top",
       scrub: true,
     },

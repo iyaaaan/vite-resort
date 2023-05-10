@@ -106,24 +106,21 @@ onMounted(() => {
   requestAnimationFrame(raf);
  */
 
-  gsap.from(
-    ".fade-to-top",
-    {
-      y: 100,
-      autoAlpha: 0,
-      "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-      stagger: 0.2,
-      ease: "power4.inOut",
-      duration: 1.2,
-      scrollTrigger: {
-        trigger: ".hero-caption",
-        start: "top bottom",
-        end: "bottom top",
-        toggleActions: "restart reverse restart reverse",
-      },
+  gsap.from(".fade-to-top", {
+    y: 100,
+    autoAlpha: 0,
+    "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+    stagger: 0.2,
+    delay: 1,
+    ease: "Power4.inOut",
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: ".hero-caption",
+      start: "top bottom",
+      end: "bottom top",
+      toggleActions: "restart reverse restart reverse",
     },
-    0.5
-  );
+  });
 });
 
 const services = ref([
