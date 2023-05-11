@@ -12,5 +12,5 @@
 }
 
 .button-borderless {
-  @apply min-w-min;
+  @apply min-w-min hover:underline;
 }

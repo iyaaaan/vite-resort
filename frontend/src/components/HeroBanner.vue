@@ -6,10 +6,10 @@
         'background-image':
           'linear-gradient(to top, rgba(0,0,0,.35), rgba(0,0,0,.35)), url(/src/assets/img/banner/' +
           banner +
-          '.jpg)',
+          '.webp)',
       }"
       class="flex h-screen w-full items-center bg-cover bg-fixed bg-no-repeat"
-      :class="banner === 'home' ? 'bg-bottom' : 'bg-center'"
+      :class="banner === 'home-hero' ? 'bg-bottom' : 'bg-center'"
     >
       <slot></slot>
     </div>

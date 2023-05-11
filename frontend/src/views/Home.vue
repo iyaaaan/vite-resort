@@ -1,12 +1,12 @@
 <template>
   <main class="smooth-scroll">
     <!-- Hero -->
-    <HeroBanner banner="home">
+    <HeroBanner banner="home-hero">
       <div
         class="hero-caption relative mx-auto -mt-12 p-4 text-center md:ml-12 md:text-left"
       >
         <div
-          class="fade-to-top full-clip-path pb-4 font-Allura text-6xl leading-none text-white md:text-8xl lg:text-9xl"
+          class="fade-to-top full-clip-path pb-4 font-Allura text-6xl leading-none text-white md:text-8xl lg:text-8xl"
         >
           <span>Relax &</span>
           <span class="ml-0 inline md:ml-14 md:block">Recharge</span>
@@ -52,7 +52,7 @@
 
     <!-- banner section -->
     <section
-      class="h-96 w-full bg-[url('src/assets/img/banner/banner.webp')] bg-cover bg-fixed bg-bottom bg-no-repeat"
+      class="h-96 w-full bg-[url('src/assets/img/banner/home-banner.jpg')] bg-cover bg-fixed bg-bottom bg-no-repeat"
     ></section>
 
     <!-- How to get here -->
