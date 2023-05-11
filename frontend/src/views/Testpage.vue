@@ -4,7 +4,7 @@
   >
     <!-- testimonial 1 -->
     <div
-      class="testimonial testimonial--landscape bg-stone-700 p-4 sm:col-span-2"
+      class="testimonial testimonial--landscape bg-slate-700 p-4 sm:col-span-2"
     >
       <!-- details -->
       <div class="testimonial__details">
@@ -17,7 +17,7 @@
             <template v-for="(n, index) in 5" :key="index">
               <font-awesome-icon
                 icon="fas fa-star"
-                class="text-1xl text-yellow-300"
+                class="testimonial__details-star"
               />
             </template>
           </div>
@@ -36,7 +36,7 @@
 
     <!-- testimonial 2 -->
     <div
-      class="testimonial testimonial--portrait flex items-center justify-center bg-stone-700 p-4"
+      class="testimonial testimonial--portrait flex items-center justify-center bg-gray-800 p-4"
     >
       <!-- details -->
       <div class="testimonial__details">
@@ -49,7 +49,7 @@
             <template v-for="(n, index) in 5" :key="index">
               <font-awesome-icon
                 icon="fas fa-star"
-                class="text-1xl text-yellow-300"
+                class="testimonial__details-star"
               />
             </template>
           </div>
@@ -66,7 +66,7 @@
 
     <!-- testimonial 3 -->
     <div
-      class="testimonial testimonial--portrait flex items-center justify-center bg-stone-700 p-4 sm:row-span-2 md:col-start-3 md:row-start-1 lg:col-start-4"
+      class="testimonial testimonial--portrait flex items-center justify-center bg-zinc-600 p-4 sm:row-span-2 md:col-start-3 md:row-start-1 lg:col-start-4"
     >
       <!-- details -->
       <div class="testimonial__details">
@@ -79,7 +79,7 @@
             <template v-for="(n, index) in 5" :key="index">
               <font-awesome-icon
                 icon="fas fa-star"
-                class="text-1xl text-yellow-300"
+                class="testimonial__details-star"
               />
             </template>
           </div>
@@ -99,7 +99,7 @@
 
     <!-- testimonial 4 -->
     <div
-      class="testimonial testimonial--portrait flex items-center justify-center bg-stone-700 p-4"
+      class="testimonial testimonial--portrait flex items-center justify-center bg-neutral-700 p-4"
     >
       <!-- details -->
       <div class="testimonial__details">
@@ -112,7 +112,7 @@
             <template v-for="(n, index) in 5" :key="index">
               <font-awesome-icon
                 icon="fas fa-star"
-                class="text-1xl text-yellow-300"
+                class="testimonial__details-star"
               />
             </template>
           </div>
@@ -128,7 +128,7 @@
 
     <!-- testimonial 5 -->
     <div
-      class="testimonial testimonial--landscape col-span-2 hidden items-center justify-center bg-stone-700 p-4 lg:flex"
+      class="testimonial testimonial--landscape col-span-2 hidden items-center justify-center bg-stone-600 p-4 lg:flex"
     >
       <!-- details -->
       <div class="testimonial__details">
@@ -141,7 +141,7 @@
             <template v-for="(n, index) in 5" :key="index">
               <font-awesome-icon
                 icon="fas fa-star"
-                class="text-1xl text-yellow-300"
+                class="testimonial__details-star"
               />
             </template>
           </div>
@@ -159,15 +159,15 @@
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .testimonial {
   @apply flex w-full items-center justify-center rounded-lg p-4;
 
   &__details {
-    @apply flex flex-row flex-wrap items-center justify-center p-4 md:mr-5;
+    @apply flex flex-row flex-wrap items-center justify-center p-4;
 
     &-img {
-      @apply mr-4 h-24 w-24;
+      @apply h-auto w-24 px-4;
 
       & img {
         @apply w-full rounded-full object-cover;
@@ -175,23 +175,28 @@
     }
 
     &-name {
-      @apply my-1 text-center font-bold text-white;
+      @apply my-0 text-sm text-center font-bold text-white;
     }
 
     &-rating {
       @apply text-center;
     }
+
+    &-star {
+      @apply text-lg text-yellow-300
+    }
   }
 
   &__text {
-    @apply w-full p-4 font-light text-white;
+    @apply w-full p-4 font-light text-white text-sm text-justify;
   }
 
   &--portrait {
     @apply flex-col;
 
     & .testimonial__details {
-      @apply md:flex-col;
+      @apply flex-row w-full;
+
     }
   }
 
@@ -200,6 +205,7 @@
 
     & .testimonial__details {
       @apply w-full  md:w-1/3;
+
     }
 
     & .testimonial__text {
@@ -208,31 +214,6 @@
   }
 }
 
-.wrap {
-  display: grid;
-  gap: 1.6em;
-  grid-template-areas:
-    "h h h"
-    "m sidebar sidebar"
-    "f f f";
-  grid-auto-flow: row dense;
-  grid-auto-flow: column dense;
-}
-
-.head {
-  grid-column: 1;
-  grid-row: 1 / 3;
-}
-
-.content {
-  grid-row: 1;
-}
-.sidebar {
-  grid-area: sidebar;
-}
-.footer {
-  grid-area: f;
-}
 </style>
 
 <script>

@@ -6,58 +6,165 @@
       >
         Become one of our satisfied customers
       </h2>
-      <div class="testimonial container mx-auto">
-        <carousel :itemsToShow="1" :transition="500">
-          <slide v-for="(test, index) in testimonials" :key="index">
-            <div
-              class="mx-auto mt-16 flex max-w-3xl cursor-context-menu flex-col items-center justify-center rounded-lg bg-[#343434] px-4 py-20 text-center md:flex-row"
-            >
-              <!-- img -->
-              <div class="w-full p-4 md:mr-5 md:w-auto">
-                <div class="mx-auto h-32 w-32">
-                  <img
-                    :src="`src/assets/img/testimonial/${test.img}`"
-                    alt=""
-                    class="test-img h-full w-full rounded-full object-cover"
+
+      <!-- cards  -->
+      <div
+        class="my-28 grid w-full grid-flow-row-dense grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      >
+        <!-- testimonial 1 -->
+        <div
+          class="testimonial testimonial--landscape bg-slate-700 p-4 sm:col-span-2"
+        >
+          <!-- details -->
+          <div class="testimonial__details">
+            <div class="testimonial__details-img">
+              <img src="src/assets/img/testimonial/test.jpg" alt="" />
+            </div>
+            <div>
+              <p class="testimonial__details-name">Juan Dela Cruz</p>
+              <div class="testimonial__details-rating">
+                <template v-for="(n, index) in 5" :key="index">
+                  <font-awesome-icon
+                    icon="fas fa-star"
+                    class="testimonial__details-star"
                   />
-                </div>
-
-                <p class="mt-2 mb-4 font-bold text-white">{{ test.name }}</p>
-
-                <div class="test-rating">
-                  <!-- rating -->
-                  <template v-for="(n, index) in test.rating" :key="index">
-                    <font-awesome-icon
-                      icon="fas fa-star"
-                      class="text-2xl text-yellow-300"
-                    />
-                    <!-- additional stars -->
-                    <template v-for="x in 5 - test.rating">
-                      <font-awesome-icon
-                        v-if="index === test.rating - 1"
-                        class="text-2xl text-gray-200"
-                        icon="fas fa-star"
-                      />
-                    </template>
-                  </template>
-                </div>
-              </div>
-
-              <div class="w-full p-4 md:w-8/12">
-                <blockquote
-                  class="relative mt-10 text-justify font-light text-white before:absolute before:-top-16 before:-left-3 before:font-Playfair before:text-9xl before:leading-none before:text-neutral-500 before:content-[open-quote] after:invisible after:content-[close-quote] md:before:-top-24 md:before:text-[200px]"
-                >
-                  {{ test.text }}
-                </blockquote>
+                </template>
               </div>
             </div>
-          </slide>
+          </div>
 
-          <template #addons>
-            <!-- <navigation /> -->
-            <pagination />
-          </template>
-        </carousel>
+          <!-- text -->
+          <div class="testimonial__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            voluptatem officia esse reiciendis vel odit? Molestias, quas quos
+            similique quae facilis dolorum cupiditate magni iusto vel provident
+            voluptatem ipsum porro quidem earum eaque aut officia libero
+            assumenda deleniti aliquam necessitatibus architecto.
+          </div>
+        </div>
+
+        <!-- testimonial 2 -->
+        <div
+          class="testimonial testimonial--portrait flex items-center justify-center bg-stone-600 p-4"
+        >
+          <!-- details -->
+          <div class="testimonial__details">
+            <div class="testimonial__details-img">
+              <img src="src/assets/img/testimonial/test.jpg" alt="" />
+            </div>
+            <div>
+              <p class="testimonial__details-name">Juan Dela Cruz</p>
+              <div class="testimonial__details-rating">
+                <template v-for="(n, index) in 5" :key="index">
+                  <font-awesome-icon
+                    icon="fas fa-star"
+                    class="testimonial__details-star"
+                  />
+                </template>
+              </div>
+            </div>
+          </div>
+
+          <!-- text -->
+          <div class="testimonial__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            voluptatem officia esse reiciendis vel odit? Molestias, quas quos
+            similique quae facilis dolorum.
+          </div>
+        </div>
+
+        <!-- testimonial 3 -->
+        <div
+          class="testimonial testimonial--portrait flex items-center justify-center bg-gray-800 p-4 sm:row-span-2 md:col-start-3 md:row-start-1 lg:col-start-4"
+        >
+          <!-- details -->
+          <div class="testimonial__details">
+            <div class="testimonial__details-img">
+              <img src="src/assets/img/testimonial/test.jpg" alt="" />
+            </div>
+            <div>
+              <p class="testimonial__details-name">Juan Dela Cruz</p>
+              <div class="testimonial__details-rating">
+                <template v-for="(n, index) in 5" :key="index">
+                  <font-awesome-icon
+                    icon="fas fa-star"
+                    class="testimonial__details-star"
+                  />
+                </template>
+              </div>
+            </div>
+          </div>
+
+          <!-- text -->
+          <div class="testimonial__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            voluptatem officia esse reiciendis vel odit? Molestias, quas quos
+            similique quae facilis dolorum cupiditate magni iusto vel provident
+            voluptatem ipsum porro quidem earum eaque aut officia libero
+            assumenda deleniti aliquam necessitatibus architecto. Ut reiciendis
+            voluptas placeat. Architecto et placeat pariatur quisquam.
+          </div>
+        </div>
+
+        <!-- testimonial 4 -->
+        <div
+          class="testimonial testimonial--portrait flex items-center justify-center bg-neutral-700 p-4"
+        >
+          <!-- details -->
+          <div class="testimonial__details">
+            <div class="testimonial__details-img">
+              <img src="src/assets/img/testimonial/test.jpg" alt="" />
+            </div>
+            <div>
+              <p class="testimonial__details-name">Juan Dela Cruz</p>
+              <div class="testimonial__details-rating">
+                <template v-for="(n, index) in 5" :key="index">
+                  <font-awesome-icon
+                    icon="fas fa-star"
+                    class="testimonial__details-star"
+                  />
+                </template>
+              </div>
+            </div>
+          </div>
+
+          <!-- text -->
+          <div class="testimonial__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            voluptatem officia esse reiciendis vel odit?
+          </div>
+        </div>
+
+        <!-- testimonial 5 -->
+        <div
+          class="testimonial testimonial--landscape col-span-2 hidden items-center justify-center bg-zinc-600 p-4 lg:flex"
+        >
+          <!-- details -->
+          <div class="testimonial__details">
+            <div class="testimonial__details-img">
+              <img src="src/assets/img/testimonial/test.jpg" alt="" />
+            </div>
+            <div>
+              <p class="testimonial__details-name">Juan Dela Cruz</p>
+              <div class="testimonial__details-rating">
+                <template v-for="(n, index) in 5" :key="index">
+                  <font-awesome-icon
+                    icon="fas fa-star"
+                    class="testimonial__details-star"
+                  />
+                </template>
+              </div>
+            </div>
+          </div>
+
+          <!-- text -->
+          <div class="testimonial__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            voluptatem officia esse reiciendis vel odit? Molestias, quas quos
+            similique quae facilis dolorum cupiditate magni iusto vel provident
+            voluptatem ipsum porro quidem earum eaque.
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -119,6 +226,11 @@ onMounted(() => {
       autoAlpha: 0,
       duration: 0.7,
       ease: "Back.easeOut",
+      stagger: {
+        grid: [4,2],
+        from: "random",
+        amount: .5
+      }
     },
     0.3
   );
