@@ -1,9 +1,11 @@
 <template>
   <section
-    class="acts-container container flex flex-wrap justify-center border-b border-b-gray-500 py-48 px-0"
+    class="acts-container container flex flex-wrap justify-center border-b border-b-gray-500 py-20 px-0 md:py-32"
   >
     <!-- left -->
-    <div class="flex w-full flex-wrap items-center justify-center lg:w-1/2">
+    <div
+      class="flex w-full flex-wrap items-center justify-center lg:w-2/3 xl:w-1/2"
+    >
       <div class="acts-card-wrap flex flex-wrap justify-center">
         <!-- card -->
         <template v-for="activity in activities" key="index">
@@ -18,7 +20,7 @@
               </h3>
 
               <!-- card description -->
-              <p class="text-justify">
+              <p class="text-justify font-light">
                 {{ activity.desc }}
               </p>
             </div>
@@ -29,11 +31,11 @@
 
     <!-- right -->
     <div
-      class="order-first my-10 w-full px-4 text-center lg:order-last lg:my-20 lg:w-1/2 lg:text-left"
+      class="order-first my-10 w-full px-4 text-center lg:order-last lg:my-20 lg:w-1/3 lg:text-left xl:w-1/2"
     >
       <div class="acts-text-wrap">
         <h2
-          class="acts-title full-clip-path mb-5 font-Playfair text-3xl text-beaver md:text-5xl lg:mb-10 xl:text-6xl"
+          class="acts-title full-clip-path pb-7 font-Playfair text-3xl text-beaver sm:text-5xl lg:text-4xl xl:text-6xl"
         >
           Engage yourself in our fun and exciting outdoor activities!
         </h2>

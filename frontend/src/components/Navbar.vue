@@ -1,10 +1,10 @@
 <template>
   <header class="relative z-10">
     <nav
-      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between overflow-hidden bg-gradient-to-b py-4 px-4 font-Poppins transition-transform duration-300 ease-linear lg:px-12"
+      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between overflow-hidden bg-gradient-to-b py-4 px-4 font-Poppins backdrop-blur-sm transition-transform duration-300 ease-linear lg:px-12 lg:backdrop-blur-none"
       :class="[
         { '-translate-y-full': !showNavbar },
-        topOfPage ? 'from-black' : 'bg-[#72645B]',
+        topOfPage ? 'lg:from-black' : 'bg-[#72645B]',
       ]"
       ref="nav"
     >

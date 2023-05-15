@@ -1,12 +1,16 @@
 <template>
-  <section class="rsWrap overflow-hidden bg-[#72645B] px-4 py-44 lg:px-0">
-    <div class="container flex flex-col flex-wrap items-center lg:flex-row">
+  <section
+    class="rsWrap overflow-hidden rounded-lg bg-[#72645B] px-4 py-20 md:py-32 lg:py-44"
+  >
+    <div
+      class="container flex flex-col flex-wrap items-center px-0 lg:flex-row"
+    >
       <div
-        class="mb-12 flex flex-1 flex-col items-center justify-center py-4 md:w-3/4 lg:mb-0 lg:px-4"
+        class="mb-12 flex flex-1 flex-col items-center justify-center py-4 md:w-3/4 lg:mb-0"
       >
         <div class="w-full lg:max-w-lg">
           <h2
-            class="rsText full-clip-path py-4 font-Playfair text-6xl text-white"
+            class="rsText full-clip-path py-2 font-Playfair text-4xl text-white sm:text-5xl xl:text-6xl"
           >
             Comfortable Stay
           </h2>
@@ -27,13 +31,13 @@
       </div>
 
       <div
-        class="rsRight full-clip-path h-[30rem] flex-1 bg-slate-600 md:w-3/4"
+        class="rsRight full-clip-path h-auto flex-1 overflow-hidden rounded-lg bg-slate-600 md:w-3/4 xl:h-[30rem]"
       >
         <img
           ref="roomBg"
           src="@/assets/img/room/accommodation-banner.jpg"
           alt=""
-          class="h-full w-full object-cover object-left"
+          class="h-full w-full object-cover"
         />
       </div>
     </div>

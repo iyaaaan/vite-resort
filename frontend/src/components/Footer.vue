@@ -47,7 +47,11 @@
     >
       <!-- logo -->
       <div class="w-full p-4 text-center md:w-1/2 md:text-justify lg:w-1/4">
-        <img src="../assets/img/logo.png" alt="" class="mx-auto w-36" />
+        <img
+          src="../assets/img/logo.png"
+          alt=""
+          class="mx-auto w-24 sm:w-28 md:w-32 lg:w-36"
+        />
         <p class="backgr text-gray-200">Rest your soul in paradise.</p>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. In illum

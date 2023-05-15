@@ -1,6 +1,6 @@
 <template>
   <section
-    class="perks-container container flex flex-wrap items-start justify-center border-b border-b-gray-500 px-0 py-48 text-stone-700"
+    class="perks-container container flex flex-wrap items-start justify-center border-b border-b-gray-500 px-0 py-20 text-stone-700 md:py-32"
   >
     <div class="perks-img full-clip-path w-full px-4 lg:w-96">
       <img

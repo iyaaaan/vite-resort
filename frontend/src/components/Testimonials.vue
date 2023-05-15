@@ -1,27 +1,27 @@
 <template>
-  <section class="container mx-auto py-48 px-0">
+  <section class="container mx-auto py-20 px-0 md:py-32">
     <div class="test-wrap">
       <h2
-        class="test-title full-clip-path py-4 text-center font-Playfair text-3xl text-beaver md:text-5xl"
+        class="test-title full-clip-path mb-0 py-4 text-center font-Playfair text-4xl text-beaver md:mb-8 md:text-5xl"
       >
-        Become one of our satisfied customers
+        What our customers say
       </h2>
 
       <!-- cards  -->
       <div
-        class="my-28 grid w-full grid-flow-row-dense grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        class="grid w-full grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
       >
         <!-- testimonial 1 -->
         <div
-          class="testimonial testimonial--landscape bg-slate-700 p-4 sm:col-span-2"
+          class="testimonial full-clip-path testimonial--landscape bg-slate-700 p-4 sm:col-span-2"
         >
           <!-- details -->
           <div class="testimonial__details">
             <div class="testimonial__details-img">
-              <img src="src/assets/img/testimonial/test.jpg" alt="" />
+              <img src="src/assets/img/testimonial/test-1.jpg" alt="" />
             </div>
             <div>
-              <p class="testimonial__details-name">Juan Dela Cruz</p>
+              <p class="testimonial__details-name">Alex</p>
               <div class="testimonial__details-rating">
                 <template v-for="(n, index) in 5" :key="index">
                   <font-awesome-icon
@@ -35,25 +35,24 @@
 
           <!-- text -->
           <div class="testimonial__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-            voluptatem officia esse reiciendis vel odit? Molestias, quas quos
-            similique quae facilis dolorum cupiditate magni iusto vel provident
-            voluptatem ipsum porro quidem earum eaque aut officia libero
-            assumenda deleniti aliquam necessitatibus architecto.
+            I had an amazing time at the beach resort! The accommodations were
+            luxurious and the staff was incredibly friendly and helpful. I
+            especially loved the sunset cruises and the delicious food at the
+            onsite restaurants.
           </div>
         </div>
 
         <!-- testimonial 2 -->
         <div
-          class="testimonial testimonial--portrait flex items-center justify-center bg-stone-600 p-4"
+          class="testimonial full-clip-path testimonial--portrait flex items-center justify-center bg-stone-600 p-4"
         >
           <!-- details -->
           <div class="testimonial__details">
             <div class="testimonial__details-img">
-              <img src="src/assets/img/testimonial/test.jpg" alt="" />
+              <img src="src/assets/img/testimonial/test-2.jpg" alt="" />
             </div>
             <div>
-              <p class="testimonial__details-name">Juan Dela Cruz</p>
+              <p class="testimonial__details-name">Maya</p>
               <div class="testimonial__details-rating">
                 <template v-for="(n, index) in 5" :key="index">
                   <font-awesome-icon
@@ -67,23 +66,24 @@
 
           <!-- text -->
           <div class="testimonial__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-            voluptatem officia esse reiciendis vel odit? Molestias, quas quos
-            similique quae facilis dolorum.
+            I stayed at the beach resort with my family and we had a fantastic
+            time! There were so many activities to choose from, and the kids'
+            club kept my little ones entertained while my husband and I enjoyed
+            some much-needed relaxation time.
           </div>
         </div>
 
         <!-- testimonial 3 -->
         <div
-          class="testimonial testimonial--portrait flex items-center justify-center bg-gray-800 p-4 sm:row-span-2 md:col-start-3 md:row-start-1 lg:col-start-4"
+          class="testimonial full-clip-path testimonial--portrait flex items-center justify-center bg-gray-700 p-4 sm:row-span-2 md:col-start-3 md:row-start-1 lg:col-start-4"
         >
           <!-- details -->
           <div class="testimonial__details">
             <div class="testimonial__details-img">
-              <img src="src/assets/img/testimonial/test.jpg" alt="" />
+              <img src="src/assets/img/testimonial/test-3.jpg" alt="" />
             </div>
             <div>
-              <p class="testimonial__details-name">Juan Dela Cruz</p>
+              <p class="testimonial__details-name">David</p>
               <div class="testimonial__details-rating">
                 <template v-for="(n, index) in 5" :key="index">
                   <font-awesome-icon
@@ -97,26 +97,24 @@
 
           <!-- text -->
           <div class="testimonial__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-            voluptatem officia esse reiciendis vel odit? Molestias, quas quos
-            similique quae facilis dolorum cupiditate magni iusto vel provident
-            voluptatem ipsum porro quidem earum eaque aut officia libero
-            assumenda deleniti aliquam necessitatibus architecto. Ut reiciendis
-            voluptas placeat. Architecto et placeat pariatur quisquam.
+            The beach resort was the perfect place for me to unwind and
+            recharge. The serene environment and the sound of the ocean helped
+            me relax and destress. I also loved the spa services and the
+            delicious meals at the onsite restaurants.
           </div>
         </div>
 
         <!-- testimonial 4 -->
         <div
-          class="testimonial testimonial--portrait flex items-center justify-center bg-neutral-700 p-4"
+          class="testimonial full-clip-path testimonial--portrait flex items-center justify-center bg-neutral-700 p-4"
         >
           <!-- details -->
           <div class="testimonial__details">
             <div class="testimonial__details-img">
-              <img src="src/assets/img/testimonial/test.jpg" alt="" />
+              <img src="src/assets/img/testimonial/test-4.jpg" alt="" />
             </div>
             <div>
-              <p class="testimonial__details-name">Juan Dela Cruz</p>
+              <p class="testimonial__details-name">Emily</p>
               <div class="testimonial__details-rating">
                 <template v-for="(n, index) in 5" :key="index">
                   <font-awesome-icon
@@ -130,22 +128,24 @@
 
           <!-- text -->
           <div class="testimonial__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-            voluptatem officia esse reiciendis vel odit?
+            I was blown away by the personalized service at the beach resort!
+            The staff went above and beyond to ensure that my stay was
+            comfortable and enjoyable. I also loved the sustainable tourism
+            practices and the resort's commitment to the environment.
           </div>
         </div>
 
         <!-- testimonial 5 -->
         <div
-          class="testimonial testimonial--landscape col-span-2 hidden items-center justify-center bg-zinc-600 p-4 lg:flex"
+          class="testimonial full-clip-path testimonial--landscape col-span-1 items-center justify-center bg-zinc-800 p-4 sm:col-span-2 md:col-span-3 lg:col-span-2 lg:flex"
         >
           <!-- details -->
           <div class="testimonial__details">
             <div class="testimonial__details-img">
-              <img src="src/assets/img/testimonial/test.jpg" alt="" />
+              <img src="src/assets/img/testimonial/test-5.jpg" alt="" />
             </div>
             <div>
-              <p class="testimonial__details-name">Juan Dela Cruz</p>
+              <p class="testimonial__details-name">Daniel</p>
               <div class="testimonial__details-rating">
                 <template v-for="(n, index) in 5" :key="index">
                   <font-awesome-icon
@@ -159,10 +159,11 @@
 
           <!-- text -->
           <div class="testimonial__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-            voluptatem officia esse reiciendis vel odit? Molestias, quas quos
-            similique quae facilis dolorum cupiditate magni iusto vel provident
-            voluptatem ipsum porro quidem earum eaque.
+            I would highly recommend the beach resort to anyone looking for a
+            dream vacation. The location was unbeatable, with stunning views of
+            the ocean and easy access to nearby attractions. The luxury
+            accommodations and world-class dining made it an unforgettable
+            experience.
           </div>
         </div>
       </div>
@@ -221,16 +222,16 @@ onMounted(() => {
   tl.from(
     ".testimonial",
     {
-      //scale: 0.9,
-      y: -50,
+      y: -100,
+      "clip-path": "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
       autoAlpha: 0,
-      duration: 0.7,
-      ease: "Back.easeOut",
+      duration: 1.2,
+      ease: "Power4.easeOut",
       stagger: {
-        grid: [4,2],
+        grid: [4, 2],
         from: "random",
-        amount: .5
-      }
+        amount: 0.5,
+      },
     },
     0.3
   );
@@ -238,16 +239,55 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-.carousel__prev,
-.carousel__next {
-  @apply text-white hover:text-slate-300;
-}
+.testimonial {
+  @apply flex w-full items-center justify-center rounded-lg p-4;
 
-.carousel__pagination-button {
-  @apply rounded-full after:bg-neutral-400 hover:after:bg-neutral-600;
-}
+  &__details {
+    @apply flex flex-row flex-wrap items-center justify-center p-4;
 
-.carousel__pagination-button.carousel__pagination-button--active {
-  @apply after:bg-beaver;
+    &-img {
+      @apply h-auto w-24 px-4;
+
+      & img {
+        @apply w-full rounded-full object-cover;
+      }
+    }
+
+    &-name {
+      @apply my-1 text-center text-base font-bold text-white;
+    }
+
+    &-rating {
+      @apply text-center;
+    }
+
+    &-star {
+      @apply text-lg text-yellow-300;
+    }
+  }
+
+  &__text {
+    @apply w-full p-4 text-justify text-sm font-light text-white lg:text-left;
+  }
+
+  &--portrait {
+    @apply flex-col;
+
+    & .testimonial__details {
+      @apply w-full flex-row;
+    }
+  }
+
+  &--landscape {
+    @apply flex-col md:flex-row;
+
+    & .testimonial__details {
+      @apply w-full  md:w-1/3;
+    }
+
+    & .testimonial__text {
+      @apply md:w-2/3;
+    }
+  }
 }
 </style>

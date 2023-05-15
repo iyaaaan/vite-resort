@@ -6,7 +6,7 @@
         class="hero-caption relative mx-auto -mt-12 p-4 text-center md:ml-12 md:text-left"
       >
         <div
-          class="fade-to-top full-clip-path pb-4 font-Allura text-6xl leading-none text-white md:text-8xl lg:text-8xl"
+          class="fade-to-top full-clip-path pb-4 font-Allura text-6xl leading-none text-white md:text-8xl"
         >
           <span>Relax &</span>
           <span class="ml-0 inline md:ml-14 md:block">Recharge</span>
@@ -52,8 +52,14 @@
 
     <!-- banner section -->
     <section
-      class="h-96 w-full bg-[url('src/assets/img/banner/home-banner.jpg')] bg-cover bg-fixed bg-bottom bg-no-repeat"
-    ></section>
+      class="h-auto w-full bg-cover bg-fixed bg-bottom bg-no-repeat md:h-96 md:bg-[url('src/assets/img/banner/home-banner.webp')]"
+    >
+      <img
+        src="src/assets/img/banner/home-banner.webp"
+        alt=""
+        class="w-full md:hidden"
+      />
+    </section>
 
     <!-- How to get here -->
     <!-- <FeaturedSection :featured="featured" /> -->

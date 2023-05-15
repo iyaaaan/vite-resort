@@ -1,6 +1,6 @@
 <template>
   <section
-    class="as-wrap relative flex w-full items-center justify-center px-4 py-40 text-center"
+    class="as-wrap relative flex w-full items-center justify-center px-4 py-32 text-center"
   >
     <div class="max-w-full text-stone-700 md:max-w-3xl">
       <h2
@@ -8,16 +8,16 @@
       >
         Paradise Beach Resort
       </h2>
-      <p class="atitle mt-2">The best place to clear your mind.</p>
+      <p class="atitle mt-2 font-light">The best place to clear your mind.</p>
 
-      <p class="my-5 text-justify">
+      <p class="my-5 text-justify font-light">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero
         repellat consectetur saepe facilis. Placeat, similique quisquam! Ut,
         consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore,
         perspiciatis necessitatibus dolorem quas.
       </p>
 
-      <p class="my-5 text-justify">
+      <p class="my-5 text-justify font-light">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quis
         corrupti. Voluptates, harum a reprehenderit explicabo quisquam nostrum
         dignissimos provident.

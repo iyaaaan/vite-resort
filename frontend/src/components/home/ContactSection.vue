@@ -1,12 +1,14 @@
 <template>
-  <section class="contact-sec-container container px-0 py-48 text-neutral-700">
+  <section
+    class="contact-sec-container container px-0 py-20 text-neutral-700 md:py-32"
+  >
     <div class="text-center">
       <h2
-        class="contact-sec-title full-clip-path pb-3 font-Playfair text-4xl text-beaver md:text-5xl"
+        class="contact-sec-title full-clip-path px-4 pb-3 font-Playfair text-4xl text-beaver md:text-5xl"
       >
         What are you waiting for?
       </h2>
-      <p class="contact-sec-caption full-clip-path mt-0 font-light">
+      <p class="contact-sec-caption full-clip-path mt-0 px-4 font-light">
         Experience the ultimate beach getaway at our resort!
       </p>
     </div>

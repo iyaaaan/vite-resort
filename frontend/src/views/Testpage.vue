@@ -159,63 +159,6 @@
   </section>
 </template>
 
-<style lang="scss">
-.testimonial {
-  @apply flex w-full items-center justify-center rounded-lg p-4;
-
-  &__details {
-    @apply flex flex-row flex-wrap items-center justify-center p-4;
-
-    &-img {
-      @apply h-auto w-24 px-4;
-
-      & img {
-        @apply w-full rounded-full object-cover;
-      }
-    }
-
-    &-name {
-      @apply my-0 text-sm text-center font-bold text-white;
-    }
-
-    &-rating {
-      @apply text-center;
-    }
-
-    &-star {
-      @apply text-lg text-yellow-300
-    }
-  }
-
-  &__text {
-    @apply w-full p-4 font-light text-white text-sm text-justify;
-  }
-
-  &--portrait {
-    @apply flex-col;
-
-    & .testimonial__details {
-      @apply flex-row w-full;
-
-    }
-  }
-
-  &--landscape {
-    @apply flex-col md:flex-row;
-
-    & .testimonial__details {
-      @apply w-full  md:w-1/3;
-
-    }
-
-    & .testimonial__text {
-      @apply md:w-2/3;
-    }
-  }
-}
-
-</style>
-
 <script>
 import { defineComponent } from "vue";
 import { Carousel, Pagination, Slide } from "vue3-carousel";
