@@ -3,7 +3,7 @@
     <!-- Hero -->
     <HeroBanner banner="home-hero">
       <div
-        class="hero-caption relative mx-auto -mt-12 p-4 text-center md:ml-12 md:text-left"
+        class="hero-caption relative mx-auto -mt-12 p-4 text-center md:ml-12 md:text-left lg:max-w-2xl"
       >
         <div
           class="fade-to-top full-clip-path pb-4 font-Allura text-6xl leading-none text-white md:text-8xl"
@@ -15,7 +15,8 @@
         <p
           class="fade-to-top full-clip-path m-0 text-base font-light text-white md:text-lg"
         >
-          Life is extremely fast. Travel and have fun while your heart is young.
+          Welcome to Our Beach Resort: Where Tranquility Meets Extravagance.
+          Immerse Yourself in the Ultimate Getaway Experience.
         </p>
 
         <div class="mt-8">

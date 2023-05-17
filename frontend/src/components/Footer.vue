@@ -64,16 +64,16 @@
       <div class="w-full p-4 md:w-1/2 lg:w-52">
         <h3 class="font-bold">Site Links</h3>
         <ul>
-          <li class="hover:text-secondaryLight my-2">
+          <li class="my-2 hover:text-secondary">
             <router-link :to="{ name: 'home' }"><span>Home</span></router-link>
           </li>
-          <li class="hover:text-secondaryLight my-2">
+          <li class="my-2 hover:text-secondary">
             <router-link :to="{ name: 'about' }">About</router-link>
           </li>
-          <li class="hover:text-secondaryLight my-2">
+          <li class="my-2 hover:text-secondary">
             <router-link :to="{ name: 'package' }">Packages</router-link>
           </li>
-          <li class="hover:text-secondaryLight my-2">
+          <li class="my-2 hover:text-secondary">
             <router-link :to="{ name: 'contact' }">Contact</router-link>
           </li>
         </ul>
@@ -103,13 +103,13 @@
             <a href="https://www.facebook.com" target="_blank">
               <font-awesome-icon
                 icon="fab fa-facebook-f"
-                class="hover:text-secondaryLight m-2 text-lg"
+                class="hover:text-secondaryLight m-2 text-4xl hover:text-secondary"
               />
             </a>
             <a href="https://www.instagram.com" target="_blank">
               <font-awesome-icon
                 icon="fab fa-instagram"
-                class="hover:text-secondaryLight m-2 text-lg"
+                class="hover:text-secondaryLight m-2 text-4xl hover:text-secondary"
               />
             </a>
           </li>

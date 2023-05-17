@@ -13,157 +13,167 @@
       >
         <!-- testimonial 1 -->
         <div
-          class="testimonial full-clip-path testimonial--landscape bg-slate-700 p-4 sm:col-span-2"
+          class="testimonial full-clip-path testimonial--landscape bg-slate-700 sm:col-span-2"
         >
-          <!-- details -->
-          <div class="testimonial__details">
-            <div class="testimonial__details-img">
-              <img src="src/assets/img/testimonial/test-1.jpg" alt="" />
-            </div>
-            <div>
-              <p class="testimonial__details-name">Alex</p>
-              <div class="testimonial__details-rating">
-                <template v-for="(n, index) in 5" :key="index">
-                  <font-awesome-icon
-                    icon="fas fa-star"
-                    class="testimonial__details-star"
-                  />
-                </template>
+          <div>
+            <!-- details -->
+            <div class="testimonial__details">
+              <div class="testimonial__details-img">
+                <img src="src/assets/img/testimonial/test-1.jpg" alt="" />
+              </div>
+              <div>
+                <p class="testimonial__details-name">Alex</p>
+                <div class="testimonial__details-rating">
+                  <template v-for="(n, index) in 5" :key="index">
+                    <font-awesome-icon
+                      icon="fas fa-star"
+                      class="testimonial__details-star"
+                    />
+                  </template>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- text -->
-          <div class="testimonial__text">
-            I had an amazing time at the beach resort! The accommodations were
-            luxurious and the staff was incredibly friendly and helpful. I
-            especially loved the sunset cruises and the delicious food at the
-            onsite restaurants.
+            <!-- text -->
+            <div class="testimonial__text">
+              I was blown away by the personalized service at the beach resort!
+              The staff went above and beyond to ensure that my stay was
+              comfortable and enjoyable. I also loved the sustainable tourism
+              practices and the resort's commitment to the environment.
+            </div>
           </div>
         </div>
 
         <!-- testimonial 2 -->
         <div
-          class="testimonial full-clip-path testimonial--portrait flex items-center justify-center bg-stone-600 p-4"
+          class="testimonial full-clip-path testimonial--portrait bg-stone-600"
         >
-          <!-- details -->
-          <div class="testimonial__details">
-            <div class="testimonial__details-img">
-              <img src="src/assets/img/testimonial/test-2.jpg" alt="" />
-            </div>
-            <div>
-              <p class="testimonial__details-name">Maya</p>
-              <div class="testimonial__details-rating">
-                <template v-for="(n, index) in 5" :key="index">
-                  <font-awesome-icon
-                    icon="fas fa-star"
-                    class="testimonial__details-star"
-                  />
-                </template>
+          <div>
+            <!-- details -->
+            <div class="testimonial__details">
+              <div class="testimonial__details-img">
+                <img src="src/assets/img/testimonial/test-2.jpg" alt="" />
+              </div>
+              <div>
+                <p class="testimonial__details-name">Maya</p>
+                <div class="testimonial__details-rating">
+                  <template v-for="(n, index) in 5" :key="index">
+                    <font-awesome-icon
+                      icon="fas fa-star"
+                      class="testimonial__details-star"
+                    />
+                  </template>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- text -->
-          <div class="testimonial__text">
-            I stayed at the beach resort with my family and we had a fantastic
-            time! There were so many activities to choose from, and the kids'
-            club kept my little ones entertained while my husband and I enjoyed
-            some much-needed relaxation time.
+            <!-- text -->
+            <div class="testimonial__text">
+              I stayed at the beach resort with my family and we had a fantastic
+              time! There were so many activities to choose from, and the kids'
+              club kept my little ones entertained while my husband and I
+              enjoyed some much-needed relaxation time.
+            </div>
           </div>
         </div>
 
         <!-- testimonial 3 -->
         <div
-          class="testimonial full-clip-path testimonial--portrait flex items-center justify-center bg-gray-700 p-4 sm:row-span-2 md:col-start-3 md:row-start-1 lg:col-start-4"
+          class="testimonial full-clip-path testimonial--portrait bg-gray-700 sm:row-span-2 md:col-start-3 md:row-start-1 lg:col-start-4"
         >
-          <!-- details -->
-          <div class="testimonial__details">
-            <div class="testimonial__details-img">
-              <img src="src/assets/img/testimonial/test-3.jpg" alt="" />
-            </div>
-            <div>
-              <p class="testimonial__details-name">David</p>
-              <div class="testimonial__details-rating">
-                <template v-for="(n, index) in 5" :key="index">
-                  <font-awesome-icon
-                    icon="fas fa-star"
-                    class="testimonial__details-star"
-                  />
-                </template>
+          <div>
+            <!-- details -->
+            <div class="testimonial__details">
+              <div class="testimonial__details-img">
+                <img src="src/assets/img/testimonial/test-3.jpg" alt="" />
+              </div>
+              <div>
+                <p class="testimonial__details-name">David</p>
+                <div class="testimonial__details-rating">
+                  <template v-for="(n, index) in 5" :key="index">
+                    <font-awesome-icon
+                      icon="fas fa-star"
+                      class="testimonial__details-star"
+                    />
+                  </template>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- text -->
-          <div class="testimonial__text">
-            The beach resort was the perfect place for me to unwind and
-            recharge. The serene environment and the sound of the ocean helped
-            me relax and destress. I also loved the spa services and the
-            delicious meals at the onsite restaurants.
+            <!-- text -->
+            <div class="testimonial__text">
+              The beach resort was the perfect place for me to unwind and
+              recharge. The serene environment and the sound of the ocean helped
+              me relax and destress. I also loved the spa services and the
+              delicious meals at the onsite restaurants.
+            </div>
           </div>
         </div>
 
         <!-- testimonial 4 -->
         <div
-          class="testimonial full-clip-path testimonial--portrait flex items-center justify-center bg-neutral-700 p-4"
+          class="testimonial full-clip-path testimonial--portrait bg-neutral-700"
         >
-          <!-- details -->
-          <div class="testimonial__details">
-            <div class="testimonial__details-img">
-              <img src="src/assets/img/testimonial/test-4.jpg" alt="" />
-            </div>
-            <div>
-              <p class="testimonial__details-name">Emily</p>
-              <div class="testimonial__details-rating">
-                <template v-for="(n, index) in 5" :key="index">
-                  <font-awesome-icon
-                    icon="fas fa-star"
-                    class="testimonial__details-star"
-                  />
-                </template>
+          <div>
+            <!-- details -->
+            <div class="testimonial__details">
+              <div class="testimonial__details-img">
+                <img src="src/assets/img/testimonial/test-4.jpg" alt="" />
+              </div>
+              <div>
+                <p class="testimonial__details-name">Emily</p>
+                <div class="testimonial__details-rating">
+                  <template v-for="(n, index) in 5" :key="index">
+                    <font-awesome-icon
+                      icon="fas fa-star"
+                      class="testimonial__details-star"
+                    />
+                  </template>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- text -->
-          <div class="testimonial__text">
-            I was blown away by the personalized service at the beach resort!
-            The staff went above and beyond to ensure that my stay was
-            comfortable and enjoyable. I also loved the sustainable tourism
-            practices and the resort's commitment to the environment.
+            <!-- text -->
+            <div class="testimonial__text">
+              I had an amazing time at the beach resort! The accommodations were
+              luxurious and the staff was incredibly friendly and helpful. I
+              especially loved the sunset cruises and the delicious food at the
+              onsite restaurants.
+            </div>
           </div>
         </div>
 
         <!-- testimonial 5 -->
         <div
-          class="testimonial full-clip-path testimonial--landscape col-span-1 items-center justify-center bg-zinc-800 p-4 sm:col-span-2 md:col-span-3 lg:col-span-2 lg:flex"
+          class="testimonial full-clip-path testimonial--landscape col-span-1 bg-zinc-800 sm:col-span-2 md:col-span-3 lg:col-span-2"
         >
-          <!-- details -->
-          <div class="testimonial__details">
-            <div class="testimonial__details-img">
-              <img src="src/assets/img/testimonial/test-5.jpg" alt="" />
-            </div>
-            <div>
-              <p class="testimonial__details-name">Daniel</p>
-              <div class="testimonial__details-rating">
-                <template v-for="(n, index) in 5" :key="index">
-                  <font-awesome-icon
-                    icon="fas fa-star"
-                    class="testimonial__details-star"
-                  />
-                </template>
+          <div>
+            <!-- details -->
+            <div class="testimonial__details">
+              <div class="testimonial__details-img">
+                <img src="src/assets/img/testimonial/test-5.jpg" alt="" />
+              </div>
+              <div>
+                <p class="testimonial__details-name">Daniel</p>
+                <div class="testimonial__details-rating">
+                  <template v-for="(n, index) in 5" :key="index">
+                    <font-awesome-icon
+                      icon="fas fa-star"
+                      class="testimonial__details-star"
+                    />
+                  </template>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- text -->
-          <div class="testimonial__text">
-            I would highly recommend the beach resort to anyone looking for a
-            dream vacation. The location was unbeatable, with stunning views of
-            the ocean and easy access to nearby attractions. The luxury
-            accommodations and world-class dining made it an unforgettable
-            experience.
+            <!-- text -->
+            <div class="testimonial__text">
+              I would highly recommend the beach resort to anyone looking for a
+              dream vacation. The location was unbeatable, with stunning views
+              of the ocean and easy access to nearby attractions. The luxury
+              accommodations and world-class dining made it an unforgettable
+              experience.
+            </div>
           </div>
         </div>
       </div>
@@ -240,13 +250,13 @@ onMounted(() => {
 
 <style lang="scss">
 .testimonial {
-  @apply flex w-full items-center justify-center rounded-lg p-4;
+  @apply flex w-full flex-wrap items-center justify-center  rounded-lg p-4 md:p-8;
 
   &__details {
-    @apply flex flex-row flex-wrap items-center justify-center p-4;
+    @apply flex items-center;
 
     &-img {
-      @apply h-auto w-24 px-4;
+      @apply mr-4 h-auto w-20;
 
       & img {
         @apply w-full rounded-full object-cover;
@@ -254,23 +264,19 @@ onMounted(() => {
     }
 
     &-name {
-      @apply my-1 text-center text-base font-bold text-white;
-    }
-
-    &-rating {
-      @apply text-center;
+      @apply my-0 font-Playfair text-xl text-white;
     }
 
     &-star {
-      @apply text-lg text-yellow-300;
+      @apply text-base text-yellow-300;
     }
   }
 
   &__text {
-    @apply w-full p-4 text-justify text-sm font-light text-white lg:text-left;
+    @apply mt-4 w-full text-sm font-light text-white lg:text-left;
   }
 
-  &--portrait {
+  /* &--portrait {
     @apply flex-col;
 
     & .testimonial__details {
@@ -282,12 +288,12 @@ onMounted(() => {
     @apply flex-col md:flex-row;
 
     & .testimonial__details {
-      @apply w-full  md:w-1/3;
+      @apply w-full  lg:w-2/5;
     }
 
     & .testimonial__text {
-      @apply md:w-2/3;
+      @apply lg:w-2/3;
     }
-  }
+  } */
 }
 </style>

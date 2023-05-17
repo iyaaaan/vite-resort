@@ -25,7 +25,7 @@
 
       <font-awesome-icon
         icon="fa-solid fa-water"
-        class="as-wave full-clip-path mx-auto my-12 block text-4xl text-stone-400"
+        class="as-wave full-clip-path mx-auto my-12 block text-4xl text-neutral-400"
       />
 
       <div class="as-img my-12 mx-auto h-auto w-full md:w-[30rem]">
@@ -67,8 +67,8 @@ onMounted(() => {
     scrollTrigger: {
       trigger: ".as-wrap",
       scrub: true,
-      start: "top center",
-      end: "bottom top",
+      start: "top 40%",
+      end: "bottom 90%",
     },
   });
 });
