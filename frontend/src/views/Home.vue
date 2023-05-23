@@ -1,5 +1,5 @@
 <template>
-  <main class="smooth-scroll">
+  <div class="smooth-scroll">
     <!-- Hero -->
     <HeroBanner banner="home-hero">
       <div
@@ -67,7 +67,7 @@
 
     <!-- Book Now -->
     <Contact></Contact>
-  </main>
+  </div>
 </template>
 
 <script setup>
@@ -86,33 +86,10 @@ import BookNow from "@/components/home/BookNow.vue";
 import Contact from "@/components/home/ContactSection.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "@studio-freight/lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  // define lenis
-  const lenis = new Lenis({
-    duration: 1.8,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smoothWheel: true,
-  });
-
-  // integrate lenis into gsap
-  lenis.on("scroll", ScrollTrigger.update);
-
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-
-  /* function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
- */
-
   gsap.from(".fade-to-top", {
     y: 100,
     autoAlpha: 0,

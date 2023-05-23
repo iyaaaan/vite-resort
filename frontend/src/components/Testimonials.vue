@@ -275,25 +275,5 @@ onMounted(() => {
   &__text {
     @apply mt-4 w-full text-sm font-light text-white lg:text-left;
   }
-
-  /* &--portrait {
-    @apply flex-col;
-
-    & .testimonial__details {
-      @apply w-full flex-row;
-    }
-  }
-
-  &--landscape {
-    @apply flex-col md:flex-row;
-
-    & .testimonial__details {
-      @apply w-full  lg:w-2/5;
-    }
-
-    & .testimonial__text {
-      @apply lg:w-2/3;
-    }
-  } */
 }
 </style>

@@ -8,8 +8,12 @@
           banner +
           '.webp)',
       }"
-      class="flex h-screen w-full items-center bg-cover bg-fixed bg-no-repeat"
-      :class="banner === 'home-hero' ? 'bg-bottom' : 'bg-center'"
+      class="flex w-full items-center bg-cover bg-no-repeat"
+      :class="
+        banner === 'home-hero'
+          ? 'h-screen bg-fixed bg-bottom'
+          : 'h-[500px] bg-center'
+      "
     >
       <slot></slot>
     </div>

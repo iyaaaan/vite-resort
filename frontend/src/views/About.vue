@@ -1,141 +1,253 @@
 <template>
-  <div data-scroll-container>
+  <div>
     <!-- Hero -->
-    <HeroBanner banner="about">
-      <button class="button">Custom Button</button>
+    <HeroBanner banner="about-hero">
+      <div class="mx-auto max-w-5xl text-center font-light text-white">
+        <p>
+          Welcome to our beach resort, where tranquil waves meet pristine shores
+          and unforgettable experiences await. Nestled in the heart of paradise,
+          our resort offers a haven of luxury and relaxation like no other.
+          Immerse yourself in the beauty of our sun-kissed beaches, indulge in
+          world-class dining, and surrender to the soothing embrace of our
+          exclusive spa.
+        </p>
+      </div>
     </HeroBanner>
 
-    <div data-scroll-section>
-      <h1 data-scroll>Hey</h1>
-      <p data-scroll>👋</p>
-    </div>
-    <div data-scroll-section>
-      <h2 data-scroll data-scroll-speed="1">What's up?</h2>
-      <p data-scroll data-scroll-speed="2">😬</p>
-    </div>
-    <div data-scroll-section>
-      <p data-scroll data-scroll-speed="1">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas esse
-        voluptatibus eveniet pariatur eos corporis fugiat illum maxime fuga eum
-        perferendis quidem atque dolor, ullam sapiente incidunt id recusandae
-        voluptate ad earum veritatis repellat, aliquid possimus. In temporibus
-        voluptate, perspiciatis nostrum architecto amet est voluptatem incidunt
-        quis omnis rerum ipsa molestias illum mollitia nobis? Quae, esse sed!
-        Nihil ducimus quae excepturi aliquam exercitationem accusamus? Aliquam
-        in cupiditate labore eaque vero obcaecati eius nulla odit, ipsam quam.
-        Tempora mollitia sunt facilis, est eveniet voluptate repellat enim nulla
-        incidunt illo ipsum veritatis et dolores voluptates! Aperiam, illo harum
-        porro atque aut reiciendis quia ducimus laborum tenetur quo numquam
-        debitis culpa praesentium quos dolores, beatae aspernatur consequatur
-        quidem officiis? Voluptas, adipisci dignissimos. Autem deserunt,
-        possimus cumque non dolores minus dolor? Est vitae blanditiis aut vero
-        sequi suscipit aliquid architecto, harum ea obcaecati consequuntur
-        tempora, deleniti amet nisi natus temporibus, nobis porro hic optio!
-        Debitis nam magnam provident, dolores fugiat, nemo quia, fuga quo
-        aperiam ipsa nulla minus culpa consectetur iure tenetur. Quisquam sint,
-        dolor iusto temporibus esse praesentium accusantium mollitia cumque
-        repudiandae pariatur, sapiente doloremque officiis nostrum perspiciatis,
-        similique soluta vero optio nulla. Nulla dicta explicabo amet minima
-        quam culpa rerum aperiam quidem, quod quasi illo eveniet molestias quo
-        enim sed exercitationem esse nam asperiores nostrum deserunt odio
-        eligendi perferendis molestiae accusantium! Laudantium quibusdam
-        pariatur placeat tempore nam officiis sit fugiat eligendi rerum dicta,
-        natus nesciunt ipsum, velit recusandae itaque molestiae. Iste eveniet,
-        temporibus qui ea laudantium dolores dignissimos modi rerum repudiandae
-        laboriosam nihil id eum perspiciatis itaque placeat, tempore obcaecati.
-        Ullam labore recusandae quasi consequatur fugit commodi quia velit quis.
-        Velit voluptatum mollitia consectetur fugiat. Laborum rem incidunt est
-        nisi ex rerum voluptates, ratione ipsum doloremque, impedit fuga magnam
-        iste numquam sint nesciunt, fugit nihil nemo! Doloremque provident
-        magnam incidunt obcaecati quia, nulla neque cum amet ducimus similique
-        ipsa dicta veritatis, assumenda perferendis! Recusandae consequuntur,
-        accusantium fugit quibusdam nobis adipisci reprehenderit blanditiis
-        iste, quidem est molestias? Illo, ipsum doloremque. Ex, quia. Officia
-        aut minus eveniet alias sed numquam ipsa assumenda pariatur praesentium
-        est esse nostrum minima vero doloremque placeat commodi dicta
-        repudiandae, consectetur hic in. Sed molestiae in aspernatur error
-        excepturi. Perferendis laboriosam veritatis in ab quam illum doloribus
-        ea error odio aliquam, mollitia beatae adipisci assumenda corporis,
-        voluptates excepturi natus! Eius, dolore alias magni tenetur dolorem ab
-        asperiores odit deserunt sed debitis iusto ipsum doloribus quibusdam
-        aliquid temporibus neque repudiandae. Molestiae autem vitae ut debitis
-        velit placeat illo doloribus, sed, dolorum impedit praesentium quibusdam
-        laudantium? Omnis et a nihil molestiae odit reprehenderit impedit
-        repellat? Qui, ipsum a. Soluta, accusantium consequuntur labore
-        doloremque esse ipsum error nemo veritatis commodi earum provident
-        necessitatibus impedit, magni dicta excepturi ipsa. Tempore ipsum,
-        fugiat corrupti odit aspernatur consectetur modi id tenetur sed, ducimus
-        unde a velit consequatur atque libero architecto vel culpa. In vitae,
-        nulla harum facere eos culpa, ullam aut adipisci magni officiis
-        repudiandae veritatis pariatur commodi fugit ipsa sunt deleniti, optio
-        deserunt quod eligendi accusantium distinctio non autem? Provident
-        eaque, excepturi corrupti, eveniet, ad culpa maxime tenetur doloribus
-        nemo quidem repellat perferendis ea placeat ut iure delectus laudantium
-        illo aliquid saepe unde iste! Hic eveniet blanditiis cum tenetur, cumque
-        fuga, error dolores, nihil voluptatem id possimus esse! Natus optio vero
-        ipsa itaque tempora eveniet dolor doloribus delectus recusandae officia
-        dicta alias reiciendis doloremque assumenda consequuntur nesciunt, hic
-        quaerat dolorum molestias esse blanditiis tempore quae ea deleniti! Et
-        provident sunt, neque eaque architecto ipsam laboriosam non cupiditate
-        ex omnis tempore ipsa, necessitatibus suscipit facilis dolore temporibus
-        modi at facere deserunt. Laboriosam, minus nisi! Labore quasi quidem
-        unde reiciendis dolorem itaque deleniti doloremque inventore temporibus
-        cumque nesciunt impedit laudantium culpa quia eum perspiciatis natus, et
-        tempora facere at beatae. Fugit, suscipit nesciunt deserunt sit debitis
-        atque, corrupti rem, distinctio exercitationem explicabo temporibus.
-        Odit hic culpa nesciunt, dignissimos reprehenderit veniam eligendi,
-        accusamus pariatur at recusandae similique atque amet doloribus placeat
-        minus ullam quaerat cumque deserunt repellat animi doloremque. Nisi
-        voluptatem perspiciatis cum sit quia cumque laborum, quaerat
-        praesentium! Obcaecati similique accusamus facere quasi iusto delectus
-        assumenda neque rem ut repellat, vero, impedit dicta repellendus
-        perspiciatis corrupti sint sapiente. Adipisci ut porro aspernatur cumque
-        id sint voluptatem soluta omnis, consequatur accusantium labore dicta
-        provident placeat voluptate nihil amet debitis. Eaque blanditiis dolorum
-        consequatur eveniet impedit qui, delectus quas repudiandae officiis
-        necessitatibus consequuntur quis numquam nesciunt quibusdam libero
-        aliquid odio obcaecati magni facere sint ratione alias beatae. Suscipit
-        id soluta praesentium, repellat voluptas animi debitis iusto ex cumque
-        nesciunt! Distinctio amet nulla sunt odit possimus numquam ratione
-        exercitationem eaque labore enim voluptas iusto perspiciatis, sapiente
-        assumenda dignissimos et deserunt, iste dicta voluptate! Facilis rem
-        expedita nemo exercitationem doloribus provident quae fugiat. Dolorem
-        quis soluta dolores ex cupiditate illum veritatis illo temporibus
-        exercitationem necessitatibus tenetur distinctio quam, obcaecati minus
-        in nihil dolore beatae ut corporis iure eligendi. Deleniti tenetur, quia
-        error iusto iure asperiores laborum illo, consequuntur, saepe libero
-        ratione animi! Itaque in similique ab accusantium doloribus explicabo
-        molestiae. Incidunt ad omnis excepturi? Sequi nemo tempora ullam rem
-        adipisci. Vero numquam tenetur veniam nemo non ab, ratione accusantium
-        vel rerum recusandae deleniti eius enim totam odio exercitationem error
-        quisquam, sunt modi ad. Quibusdam velit obcaecati placeat odit!
-        Excepturi illo deleniti mollitia asperiores doloribus quas praesentium
-        eum modi, eligendi cupiditate cum ullam laboriosam exercitationem nam,
-        alias beatae accusantium illum tempore officiis animi quis vitae.
-        Explicabo iste quasi eos placeat ipsa ipsum. Molestias dolorum, id
-        maxime temporibus itaque minus quae culpa, dicta quo nobis inventore? Et
-        hic deserunt iusto soluta nulla cum aspernatur, iste, dignissimos in
-        commodi praesentium numquam, amet unde magni provident enim quae
-        possimus quo eum nesciunt cupiditate cumque ducimus atque. Doloremque
-        nostrum labore cumque harum dolorum, facilis aspernatur optio
-        perferendis fuga amet similique cum. Debitis, rerum soluta molestias
-        commodi iure maiores totam eligendi ea aliquid, odio iste reprehenderit
-        velit repellat. Libero perspiciatis quas minima ut sint qui quis est
-        amet numquam, magnam consequuntur, sit, accusantium sequi natus placeat.
-        Illum soluta assumenda voluptas a officia, consequatur odio error quia,
-        facilis, corrupti reprehenderit pariatur quae minus iste alias labore
-        saepe fuga?
-      </p>
-    </div>
+    <!-- about -->
+    <section class="bg-[#8E706C] py-20 text-white">
+      <div class="container flex flex-wrap justify-center">
+        <div class="mb-4 h-auto w-80 md:w-96 lg:mr-4">
+          <img
+            src="src/assets/img/banner/about.jpg"
+            alt="about page image"
+            class="h-full w-full"
+          />
+        </div>
+        <div class="mt-4 max-w-3xl lg:text-left">
+          <h2
+            class="text-center font-Playfair text-4xl md:text-5xl lg:text-left"
+          >
+            Our Story
+          </h2>
+          <p class="text-justify font-light lg:text-left">
+            Our beach resort has a rich history that stems from a vision of
+            creating a luxurious and rejuvenating retreat in harmony with the
+            natural beauty of its surroundings. Inspired by the breathtaking
+            coastal landscapes and a desire to provide a haven for relaxation,
+            the resort was founded by a visionary entrepreneur and a team of
+            passionate individuals who shared a common goal – to create an
+            unparalleled getaway experience.
+          </p>
+          <p class="text-justify font-light lg:text-left">
+            Whether you seek adventure or pure serenity, our resort promises to
+            create cherished moments that linger in your memory. Step into a
+            world where every detail is crafted with precision, where
+            exceptional service and unparalleled elegance converge. Your dream
+            vacation begins here, where time stands still, and your desires
+            become reality. Discover the epitome of seaside sophistication and
+            let us redefine the meaning of bliss. Welcome to your private oasis,
+            where the art of escape is perfected.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- amenities -->
+    <section class="py-20">
+      <div class="container">
+        <h2
+          class="mx-auto max-w-4xl text-center font-Playfair text-2xl text-beaver md:text-4xl"
+        >
+          Unrivaled Luxuries and Endless Delights: Experience our Resort's
+          Exceptional Facilities and Amenities
+        </h2>
+
+        <div
+          class="mt-12 grid grid-cols-1 gap-4 text-stone-700 sm:grid-cols-2 md:grid-cols-3"
+        >
+          <template v-for="amenity in amenities" :key="id">
+            <div>
+              <div class="flex items-center gap-4">
+                <Icon :icon="amenity.icon" class="text-4xl" />
+                <span class="font-Playfair text-2xl">{{ amenity.name }}</span>
+              </div>
+              <p class="font-light">{{ amenity.desc }}</p>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- environmental commitment -->
+    <section class="bg-[#7E8378] py-20 text-white">
+      <div class="container flex flex-wrap justify-center">
+        <div class="mb-4 h-auto w-80 md:w-96 lg:mr-4">
+          <img
+            src="src/assets/img/banner/about.jpg"
+            alt="about page image"
+            class="h-full w-full"
+          />
+        </div>
+        <div class="mt-4 max-w-3xl">
+          <h2
+            class="text-center font-Playfair text-4xl md:text-5xl lg:text-left"
+          >
+            Environmental Commitment
+          </h2>
+          <p class="text-justify font-light lg:text-left">
+            At our beach resort, we are deeply committed to preserving the
+            pristine beauty of our surroundings and minimizing our environmental
+            footprint. Through comprehensive energy conservation measures,
+            including the use of renewable energy sources and efficient
+            technologies, we strive to reduce our carbon emissions and promote a
+            sustainable future.
+          </p>
+          <p class="text-justify font-light lg:text-left">
+            Our waste management practices prioritize recycling, composting, and
+            responsible disposal, ensuring that we minimize waste generation and
+            promote a circular economy. Additionally, we actively engage with
+            the local community through various initiatives, supporting
+            conservation projects, educational programs, and empowering local
+            businesses to foster sustainable development and create a positive
+            impact on the environment and society.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- social responsibility -->
+    <section class="py-20">
+      <div class="container flex flex-wrap justify-center">
+        <div class="mt-4 mb-4 max-w-3xl lg:mr-4 lg:text-left">
+          <h2
+            class="text-center font-Playfair text-4xl text-beaver md:text-5xl lg:text-left"
+          >
+            Environmental Commitment
+          </h2>
+          <p class="text-justify font-light text-stone-700 lg:text-left">
+            At our beach resort, we are deeply committed to preserving the
+            pristine beauty of our surroundings and minimizing our environmental
+            footprint. Through comprehensive energy conservation measures,
+            including the use of renewable energy sources and efficient
+            technologies, we strive to reduce our carbon emissions and promote a
+            sustainable future.
+          </p>
+          <p class="text-justify font-light text-stone-700 lg:text-left">
+            Our waste management practices prioritize recycling, composting, and
+            responsible disposal, ensuring that we minimize waste generation and
+            promote a circular economy. Additionally, we actively engage with
+            the local community through various initiatives, supporting
+            conservation projects, educational programs, and empowering local
+            businesses to foster sustainable development and create a positive
+            impact on the environment and society.
+          </p>
+        </div>
+        <div class="order-first h-auto w-80 md:w-96 xl:order-last">
+          <img
+            src="src/assets/img/banner/about.jpg"
+            alt="about page image"
+            class="h-full w-full"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- banner section -->
+    <section
+      class="flex h-auto w-full items-center justify-center bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('src/assets/img/banner/home-banner.webp')] bg-cover bg-fixed bg-bottom bg-no-repeat py-10 md:h-96"
+    >
+      <div class="container">
+        <p class="text-center font-light text-white">
+          For those seeking a taste of local culture and history, nearby
+          attractions beckon with their charm. Wander through quaint coastal
+          villages, where you'll encounter friendly locals, vibrant markets, and
+          authentic culinary delights. Uncover hidden gems as you explore
+          historic landmarks and immerse yourself in the rich heritage of the
+          region.
+        </p>
+      </div>
+    </section>
+
+    <!-- travel information -->
+    <section class="py-20">
+      <div class="container flex flex-wrap justify-center">
+        <div class="mb-4 h-auto w-80 md:w-96 lg:mr-4">
+          <img
+            src="src/assets/img/banner/about.jpg"
+            alt="about page image"
+            class="h-full w-full"
+          />
+        </div>
+        <div class="mt-4 max-w-3xl">
+          <h2
+            class="text-center font-Playfair text-4xl text-beaver md:text-5xl lg:text-left"
+          >
+            Travel Information
+          </h2>
+          <span class="text-stone-700"
+            >Seamless Journey to Paradise: Easy Directions to Reach Our Beach
+            Resort</span
+          >
+
+          <p class="font-light text-stone-700">
+            At our beach resort, we are deeply committed to preserving the
+            pristine beauty of our surroundings and minimizing our environmental
+            footprint. Through comprehensive energy conservation measures,
+            including the use of renewable energy sources and efficient
+            technologies, we strive to reduce our carbon emissions and promote a
+            sustainable future.
+          </p>
+          <p class="font-light text-stone-700">
+            Our waste management practices prioritize recycling, composting, and
+            responsible disposal, ensuring that we minimize waste generation and
+            promote a circular economy. Additionally, we actively engage with
+            the local community through various initiatives, supporting
+            conservation projects, educational programs, and empowering local
+            businesses to foster sustainable development and create a positive
+            impact on the environment and society.
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import { Icon } from "@iconify/vue";
 import HeroBanner from "@/components/HeroBanner.vue";
-</script>
 
-<style scoped>
-div {
-  min-height: 100vh;
-}
-</style>
+let amenities = ref([
+  {
+    name: "Pool",
+    icon: "fa-solid:swimming-pool",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis.",
+  },
+  {
+    name: "Restaurant",
+    icon: "material-symbols:restaurant-menu",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis.",
+  },
+  {
+    name: "Casino",
+    icon: "cil:casino",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis.",
+  },
+  {
+    name: "Spa",
+    icon: "material-symbols:spa",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis.",
+  },
+  {
+    name: "Casino",
+    icon: "game-icons:martini",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis.",
+  },
+  {
+    name: "Gym",
+    icon: "mdi:gym",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis.",
+  },
+]);
+</script>
