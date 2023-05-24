@@ -2,12 +2,8 @@
   <section
     class="perks-container container flex flex-wrap items-start justify-center border-b border-b-gray-500 px-0 py-20 text-stone-700 md:py-32"
   >
-    <div class="perks-img full-clip-path w-full px-4 lg:w-96">
-      <img
-        src="@/assets/img/banner/home-perks.webp"
-        alt=""
-        class="w-full rounded-lg"
-      />
+    <div class="perks-img full-clip-path w-80 md:w-96">
+      <img src="@/assets/img/banner/home-perks2.jpg" alt="" class="w-full" />
     </div>
     <div
       class="perks-text-wrap mt-10 flex w-full flex-wrap p-4 lg:mt-0 lg:w-1/2"

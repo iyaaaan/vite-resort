@@ -61,7 +61,7 @@
       </div>
 
       <!-- site links -->
-      <div class="w-full p-4 md:w-1/2 lg:w-52">
+      <div class="w-full p-4 md:w-auto">
         <h3 class="font-bold">Site Links</h3>
         <ul>
           <li class="my-2 hover:text-secondary">
@@ -80,7 +80,7 @@
       </div>
 
       <!-- contact -->
-      <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+      <div class="w-full p-4 md:w-60 lg:w-1/4">
         <h3 class="font-bold">Contact Us</h3>
         <ul>
           <li class="my-2">

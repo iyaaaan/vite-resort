@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <HeroBanner banner="about-hero">
-      <div class="mx-auto max-w-5xl text-center font-light text-white">
+      <div class="mx-auto max-w-5xl px-4 text-center font-light text-white">
         <p>
           Welcome to our beach resort, where tranquil waves meet pristine shores
           and unforgettable experiences await. Nestled in the heart of paradise,
@@ -82,7 +82,7 @@
     <!-- environmental commitment -->
     <section class="bg-[#7E8378] py-20 text-white">
       <div class="container flex flex-wrap justify-center">
-        <div class="mb-4 h-auto w-80 md:w-96 lg:mr-4">
+        <div class="h-auto w-80 md:w-96 lg:mr-4">
           <img
             src="src/assets/img/banner/about.jpg"
             alt="about page image"
@@ -119,28 +119,26 @@
     <!-- social responsibility -->
     <section class="py-20">
       <div class="container flex flex-wrap justify-center">
-        <div class="mt-4 mb-4 max-w-3xl lg:mr-4 lg:text-left">
+        <div class="mt-4 max-w-3xl lg:mr-4 lg:text-left">
           <h2
             class="text-center font-Playfair text-4xl text-beaver md:text-5xl lg:text-left"
           >
-            Environmental Commitment
+            Social Responsibility
           </h2>
           <p class="text-justify font-light text-stone-700 lg:text-left">
-            At our beach resort, we are deeply committed to preserving the
-            pristine beauty of our surroundings and minimizing our environmental
-            footprint. Through comprehensive energy conservation measures,
-            including the use of renewable energy sources and efficient
-            technologies, we strive to reduce our carbon emissions and promote a
-            sustainable future.
+            We believe in the power of social responsibility and strive to make
+            a positive difference in the communities we operate in. We actively
+            engage with local organizations and initiatives to support community
+            development, education, and healthcare initiatives, fostering a
+            spirit of empowerment and progress.
           </p>
           <p class="text-justify font-light text-stone-700 lg:text-left">
-            Our waste management practices prioritize recycling, composting, and
-            responsible disposal, ensuring that we minimize waste generation and
-            promote a circular economy. Additionally, we actively engage with
-            the local community through various initiatives, supporting
-            conservation projects, educational programs, and empowering local
-            businesses to foster sustainable development and create a positive
-            impact on the environment and society.
+            Through partnerships with local artisans, we promote cultural
+            preservation and provide opportunities for economic growth. Our
+            commitment to charitable initiatives extends beyond our borders, as
+            we collaborate with global organizations to address pressing social
+            and environmental challenges, aiming to create a lasting, positive
+            impact on both local and global communities.
           </p>
         </div>
         <div class="order-first h-auto w-80 md:w-96 xl:order-last">
@@ -172,43 +170,68 @@
     <!-- travel information -->
     <section class="py-20">
       <div class="container flex flex-wrap justify-center">
-        <div class="mb-4 h-auto w-80 md:w-96 lg:mr-4">
+        <div class="h-auto w-80 md:w-96 lg:mr-4">
           <img
             src="src/assets/img/banner/about.jpg"
             alt="about page image"
             class="h-full w-full"
           />
         </div>
-        <div class="mt-4 max-w-3xl">
+        <div class="mt-4 max-w-3xl font-light text-stone-700">
           <h2
             class="text-center font-Playfair text-4xl text-beaver md:text-5xl lg:text-left"
           >
             Travel Information
           </h2>
-          <span class="text-stone-700"
+          <span class="font-light"
             >Seamless Journey to Paradise: Easy Directions to Reach Our Beach
             Resort</span
           >
 
-          <p class="font-light text-stone-700">
-            At our beach resort, we are deeply committed to preserving the
-            pristine beauty of our surroundings and minimizing our environmental
-            footprint. Through comprehensive energy conservation measures,
-            including the use of renewable energy sources and efficient
-            technologies, we strive to reduce our carbon emissions and promote a
-            sustainable future.
+          <p>
+            Below are the step-by-step instruction on how to get here from
+            [Terminal Name], made easy just for you.
           </p>
-          <p class="font-light text-stone-700">
-            Our waste management practices prioritize recycling, composting, and
-            responsible disposal, ensuring that we minimize waste generation and
-            promote a circular economy. Additionally, we actively engage with
-            the local community through various initiatives, supporting
-            conservation projects, educational programs, and empowering local
-            businesses to foster sustainable development and create a positive
-            impact on the environment and society.
-          </p>
+
+          <ol class="list-decimal pl-7">
+            <li>From [Terminal Name], walk to the nearby [Bus Stop Name].</li>
+            <li>
+              Board the [Bus Number] bus heading towards [Destination/Resort
+              Name].
+            </li>
+            <li>
+              Pay the fare of [Fare Cost], which may vary depending on the
+              distance.
+            </li>
+            <li>
+              Stay on the bus for approximately [Estimated Travel Time] minutes
+              until you reach the [Bus Stop Name] near [Resort Name].
+            </li>
+            <li>
+              Alight at [Bus Stop Name] and walk [Walking Distance] to reach our
+              resort entrance.
+            </li>
+          </ol>
+
+          <BaseButton
+            class="text-beaver"
+            button-type="borderless"
+            :hasArrow="true"
+            >Discover more
+          </BaseButton>
         </div>
       </div>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4911.829108287153!2d122.98175637597885!3d14.135509188292373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3398ae08a0de8c11%3A0x645b6d833e59210f!2sBagasbas%20Beach!5e1!3m2!1sen!2sph!4v1684887984201!5m2!1sen!2sph"
+        width="100%"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="mt-20"
+      ></iframe>
     </section>
   </div>
 </template>
@@ -217,6 +240,7 @@
 import { ref } from "vue";
 import { Icon } from "@iconify/vue";
 import HeroBanner from "@/components/HeroBanner.vue";
+import BaseButton from "@/components/BaseButton.vue";
 
 let amenities = ref([
   {
