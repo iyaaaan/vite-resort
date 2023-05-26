@@ -153,18 +153,4 @@ const services = ref([
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
   },
 ]);
-
-const featured = ref([
-  "package.jpg",
-  "contact.jpg",
-  "banner-1.jpg",
-  "package.jpg",
-  "contact.jpg",
-  "banner-1.jpg",
-  "package.jpg",
-  "contact.jpg",
-  "banner-1.jpg",
-  "package.jpg",
-  "contact.jpg",
-]);
 </script>

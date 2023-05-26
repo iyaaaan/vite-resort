@@ -41,7 +41,7 @@
         </h2>
 
         <router-link
-          :to="{ name: 'package' }"
+          :to="{ name: 'Rooms' }"
           class="acts-cta full-clip-path block"
         >
           <BaseButton

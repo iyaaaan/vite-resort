@@ -65,16 +65,16 @@
         <h3 class="font-bold">Site Links</h3>
         <ul>
           <li class="my-2 hover:text-secondary">
-            <router-link :to="{ name: 'home' }"><span>Home</span></router-link>
+            <router-link :to="{ name: 'Home' }"><span>Home</span></router-link>
           </li>
           <li class="my-2 hover:text-secondary">
-            <router-link :to="{ name: 'about' }">About</router-link>
+            <router-link :to="{ name: 'About' }">About</router-link>
           </li>
           <li class="my-2 hover:text-secondary">
-            <router-link :to="{ name: 'package' }">Packages</router-link>
+            <router-link :to="{ name: 'Rooms' }">Accommodation</router-link>
           </li>
           <li class="my-2 hover:text-secondary">
-            <router-link :to="{ name: 'contact' }">Contact</router-link>
+            <router-link :to="{ name: 'Contact' }">Contact</router-link>
           </li>
         </ul>
       </div>

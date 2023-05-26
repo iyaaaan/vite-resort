@@ -20,7 +20,7 @@
             repellat?
           </p>
           <router-link
-            :to="{ name: 'package' }"
+            :to="{ name: 'Rooms' }"
             class="rsText full-clip-path block text-white underline"
           >
             <BaseButton :hasArrow="true" button-type="borderless" class="p-0"

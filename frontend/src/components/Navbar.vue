@@ -9,7 +9,7 @@
       ref="nav"
     >
       <!-- logo -->
-      <router-link class="cursor-pointer items-center" :to="{ name: 'home' }">
+      <router-link class="cursor-pointer items-center" :to="{ name: 'Home' }">
         <img
           class="inline-block"
           src="@/assets/img/logo.png"
@@ -38,7 +38,7 @@
         class="flex max-h-0 basis-full flex-col text-right font-Poppins font-light transition-all duration-300 ease-linear lg:max-h-full lg:basis-0 lg:flex-row"
         :class="{ 'max-h-96': activeMenu }"
       >
-        <template v-for="(menu, index) in menus" :key="index">
+        <template v-for="(menu, index) in menus" :key="menu.index">
           <div>
             <router-link
               :to="{ name: menu }"
@@ -68,7 +68,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const menus = ref(["home", "about", "package", "activities", "contact"]);
+const menus = ref(["Home", "About", "Rooms", "Activities", "Contact"]);
 
 const nav = ref(null);
 

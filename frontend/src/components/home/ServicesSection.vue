@@ -22,7 +22,7 @@
             class="text-5xl text-white"
           />
           <h3
-            class="my-3 font-Playfair text-xl font-bold capitalize text-secondaryLight"
+            class="text-secondaryLight my-3 font-Playfair text-xl font-bold capitalize"
           >
             {{ service.name }}
           </h3>
