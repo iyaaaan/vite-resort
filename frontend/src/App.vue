@@ -1,11 +1,11 @@
 <template>
-  <Navbar></Navbar>
+  <Navbar v-if="!$route.meta.hideNavbar"></Navbar>
 
   <RouterView v-slot="{ Component }">
     <component :is="Component" />
   </RouterView>
 
-  <Footer></Footer>
+  <Footer v-if="!$route.meta.hideFooter"></Footer>
 </template>
 
 <script setup>

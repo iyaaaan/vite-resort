@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
+import Error404 from "../views/Error404.vue";
 import Rooms from "../views/rooms/Rooms.vue";
 import RoomDetails from "../views/rooms/RoomDetails.vue";
 import Activities from "../views/Activities.vue";
@@ -33,11 +34,12 @@ const router = createRouter({
     },
 
     {
-      path: "/roomdetails/:id",
+      path: "/room-details/:id",
       name: "RoomDetails",
       component: RoomDetails,
+      props: true,
       meta: {
-        title: "RoomDetails",
+        title: "Room Details",
       },
     },
 
@@ -63,6 +65,23 @@ const router = createRouter({
       component: Test,
       meta: {
         title: "Test",
+      },
+    },
+
+    // redirect
+    {
+      path: "/accommodation",
+      redirect: "/rooms",
+    },
+
+    // catchall 404
+    {
+      path: "/:catchAll(.*)",
+      name: "Error404",
+      component: Error404,
+      meta: {
+        hideNavbar: true,
+        hideFooter: true,
       },
     },
   ],

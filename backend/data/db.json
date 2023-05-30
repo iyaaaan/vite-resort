@@ -1,19 +1,94 @@
 {
-  "testimonials": [
+  "room": [
     {
-      "name": "Christian Ocol",
-      "text": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio molestiae suscipit quidem!",
-      "img": "test-1.png"
+      "id": 1,
+      "type": "deluxe",
+      "name": "Serenity Suite ",
+      "desc": "Immerse yourself in tranquility with panoramic ocean views and a private balcony.",
+      "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
+      "price": "$150.00",
+      "rating": 4,
+      "img": "deluxe-room.jpg"
     },
     {
-      "name": "Christian 2",
-      "text": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-      "img": "test-1.png"
+      "id": 2,
+      "type": "deluxe",
+      "name": "Coastal Escape",
+      "desc": "Experience coastal bliss in this spacious room featuring modern amenities and mesmerizing ocean vistas.",
+      "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
+      "price": "$150.00",
+      "rating": 4,
+      "img": "deluxe-room.jpg"
     },
     {
-      "name": "Christian 3",
-      "text": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-      "img": "test-1.png"
+      "id": 3,
+      "type": "deluxe",
+      "name": "Horizon Hideaway",
+      "desc": "Relax in this comfortable retreat, offering a seamless blend of style and comfort with breathtaking ocean views.",
+      "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
+      "price": "$150.00",
+      "rating": 4,
+      "img": "deluxe-room.jpg"
+    },
+    {
+      "id": 4,
+      "type": "family",
+      "name": "Sunshine Haven",
+      "desc": "Create cherished family memories in this spacious villa with multiple bedrooms, a kitchen, and a living area.",
+      "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
+      "price": "$150.00",
+      "rating": 4,
+      "img": "family-room.jpg"
+    },
+    {
+      "id": 5,
+      "type": "family",
+      "name": "Coastal Comfort",
+      "desc": "Experience the perfect blend of space and comfort in this family-friendly villa with easy access to resort amenities.",
+      "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
+      "price": "$150.00",
+      "rating": 4,
+      "img": "family-room.jpg"
+    },
+    {
+      "id": 6,
+      "type": "family",
+      "name": "Harmony Retreat",
+      "desc": "Enjoy quality time together in this villa offering privacy, ample space, and modern conveniences.",
+      "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
+      "price": "$150.00",
+      "rating": 4,
+      "img": "family-room.jpg"
+    },
+    {
+      "id": 7,
+      "type": "luxury",
+      "name": "Azure Serenity",
+      "desc": "With private plunge pool, direct beach access, and personalized concierge service in this beachfront suite.",
+      "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
+      "price": "$150.00",
+      "rating": 4,
+      "img": "luxury-room.jpg"
+    },
+    {
+      "id": 8,
+      "type": "luxury",
+      "name": "Coastal Elegance",
+      "desc": "Sophisticated coastal, spacious suite adorned with contemporary furnishings and captivating ocean views.",
+      "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
+      "price": "$150.00",
+      "rating": 4,
+      "img": "luxury-room.jpg"
+    },
+    {
+      "id": 9,
+      "type": "luxury",
+      "name": "Paradise Retreat ",
+      "desc": "Beachfront sanctuary featuring a spacious living area, a private terrace, and panoramic vistas. ",
+      "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
+      "price": "$150.00",
+      "rating": 4,
+      "img": "luxury-room.jpg"
     }
   ]
 }
