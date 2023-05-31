@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#084887",
-        "primary-light": "#094d8f",
+        primary: "#094d8f",
+        "primary-dark": "#084887",
         secondary: "#F5974B",
         "secondary-dark": "#ea8d46",
         beaver: "#5E564D",

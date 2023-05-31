@@ -8,6 +8,13 @@
       "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$150.00",
       "rating": 4,
+      "amenities": [
+        {
+          "icon": "material-symbols:bed",
+          "title": "2 Bedrooms"
+        },
+        {}
+      ],
       "img": "deluxe-room.jpg"
     },
     {

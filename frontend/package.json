@@ -17,6 +17,7 @@
     "gsap": "^3.11.5",
     "sass": "^1.59.3",
     "vue": "^3.2.47",
+    "vue-datepicker-next": "^1.0.3",
     "vue-router": "^4.1.6",
     "vue3-carousel": "^0.2.12"
   },

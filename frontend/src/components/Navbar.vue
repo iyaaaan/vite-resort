@@ -78,12 +78,12 @@ let menuIcon = ref("bars");
 let topOfPage = ref(true);
 let showNavbar = ref(true);
 let lastScrollPosition = ref(0);
-let scrollOffset = ref(1000);
+let scrollOffset = ref(0);
 
 // check if navbar is not at the top of the page
 const handleScroll = () => {
   // check if page is at the top
-  if (window.pageYOffset == 0) {
+  if (window.pageYOffset === 0) {
     topOfPage.value = true;
   } else {
     topOfPage.value = false;
