@@ -46,7 +46,7 @@
         action=""
         class="mb-4 rounded-lg border border-gray-300 bg-white p-6 px-8 pt-6 pb-8 shadow-md"
       >
-        <h2 class="mb-10 font-Playfair text-xl font-bold text-gray-700">
+        <h2 class="mb-10 font-Playfair text-xl font-bold text-beaver">
           Book this room
         </h2>
 
@@ -64,9 +64,16 @@
             :input-attr="{ id: 'bookDate' }"
             value-type="YYYY/MM/DD"
             format="ddd, MMMM DD, YYYY"
-            :disabled-date="disabledBeforeTodayAndAfterAWeek"
+            :disabled-date="backDates"
           ></date-picker>
         </div>
+
+        <div v-if="date">
+          {{ date[0] }}
+        </div>
+
+        {{ form.checkIn }}
+        {{ form.checkOut }}
 
         <div v-if="form.date">
           {{ form.date[0] }}
@@ -77,16 +84,22 @@
 
         <div class="flex gap-4">
           <BaseInput
+            class="w-full"
             id="adult"
             label="Adult"
             type="number"
+            min="1"
+            max="3"
             v-model="form.adult"
           />
 
           <BaseInput
+            class="w-full"
             id="child"
             label="Child"
             type="number"
+            min="1"
+            max="3"
             v-model="form.child"
           />
         </div>
@@ -97,6 +110,8 @@
       </form>
     </div>
   </div>
+
+    <room-gallery /> 
 
   <div>HELLO</div>
   <div v-if="room">
@@ -111,38 +126,50 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import BaseInput from "@/components/BaseInput.vue";
+import RoomGallery from "@/components/RoomGallery.vue";
 import DatePicker from "vue-datepicker-next";
 import "vue-datepicker-next/index.css";
 
+// route parameter
 const props = defineProps(["id"]);
 
+// room details
 let room = ref(null);
-let date = ref(null);
-
-let form = ref([{ checkIn: "" }, { checkOut: "" }, { adult: 0 }, { child: 0 }]);
-
 onMounted(() => {
+  // fetch room details
   fetch(`http://localhost:3000/room/${props.id}`)
     .then((res) => res.json())
     .then((data) => (room.value = data))
     .catch((err) => console.log(err.message));
 });
 
-function disabledBeforeTodayAndAfterAWeek(date) {
+// date
+let date = ref([]);
+
+// form data
+let form = ref([{ checkIn: "" }, { checkOut: "" }, { adult: 0 }, { child: 0 }]);
+
+// set value if checIn/checkOut after selecting a date
+watch(date, () => {
+  form.value.checkIn = date.value[0];
+  form.value.checkOut = date.value[1];
+});
+
+// disable back dates in the calendar
+function backDates(date) {
   const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  console.log(today);
-
   return date < today;
 }
 
-let d = new Date("yy-mm-dd");
-console.log(d);
+/* const current = new Date();
+const dateToday = `${current.getFullYear()}/${(
+  "0" +
+  (current.getMonth() + 1)
+).slice(-2)}/${("0" + current.getDate()).slice(-2)}`; */
 </script>
 
-<style lang="scss" scoped></style>
+<style></style>

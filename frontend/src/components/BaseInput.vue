@@ -39,6 +39,6 @@ defineProps({
 }
 
 .custom-label {
-  @apply mb-2 block text-sm font-bold text-gray-700;
+  @apply mb-2 block text-sm font-semibold text-stone-700;
 }
 </style>
