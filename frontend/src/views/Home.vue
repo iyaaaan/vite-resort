@@ -71,18 +71,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
+import BaseButton from "@/components/BaseButton.vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import AboutSection from "@/components/home/AboutSection.vue";
-import Testpage from "@/views/Testpage.vue";
-import BaseButton from "@/components/BaseButton.vue";
-import Testimonials from "@/components/Testimonials.vue";
+import Testimonials from "@/components/home/Testimonials.vue";
 import RoomSection from "@/components/home/RoomSection.vue";
-import ServicesSection from "@/components/home/ServicesSection.vue";
 import Activities from "@/components/home/ActivitiesSection.vue";
 import Benefits from "@/components/home/BenefitsSection.vue";
-import FeaturedSection from "@/components/home/FeaturedSection.vue";
-import BookNow from "@/components/home/BookNow.vue";
 import Contact from "@/components/home/ContactSection.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -106,51 +102,4 @@ onMounted(() => {
     },
   });
 });
-
-const services = ref([
-  {
-    name: "pool",
-    icon: "swimming-pool",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio molestiae suscipit quidem! ",
-  },
-  {
-    name: "restaurant",
-    icon: "utensils",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, maiores!",
-  },
-  {
-    name: "gym",
-    icon: "dumbbell",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas?",
-  },
-  {
-    name: "bar",
-    icon: "glass-martini-alt",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-  },
-
-  {
-    name: "wifi",
-    icon: "wifi-3",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-  },
-
-  {
-    name: "room service",
-    icon: "concierge-bell",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-  },
-
-  {
-    name: "spa",
-    icon: "spa",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-  },
-
-  {
-    name: "casino",
-    icon: "dice",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-  },
-]);
 </script>

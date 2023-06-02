@@ -1,42 +1,73 @@
 <template>
   <!-- main image -->
   <div
-    class="flex h-screen w-full items-center justify-between bg-red-100 bg-cover bg-center bg-no-repeat"
+    class="mb-4 flex h-[35rem] w-full items-center justify-between rounded-tr rounded-tl bg-red-100 bg-cover bg-center bg-no-repeat"
     :style="{
       'background-image':
         'url(/src/assets/img/room/' + photos[activePhoto] + ')',
     }"
   >
     <!-- prev button -->
-    <button class="bg-red-700" @click="prevPhoto()">prev</button>
+    <button @click="prevPhoto()" class="box-shadow ml-5 rounded-full">
+      <font-awesome-icon
+        icon="fa-solid fa-chevron-circle-left"
+        class="mx-auto block text-3xl text-white opacity-60 transition-opacity hover:opacity-100"
+      />
+    </button>
 
     <!-- next button -->
-    <button class="bg-red-700" @click="nextPhoto()">next</button>
+    <button @click="nextPhoto()" class="box-shadow mr-5 rounded-full">
+      <font-awesome-icon
+        icon="fa-solid fa-chevron-circle-right"
+        class="mx-auto block text-3xl text-white opacity-60 transition-opacity hover:opacity-100"
+      />
+    </button>
   </div>
 
   <!-- thumbnails -->
-  <div></div>
+  <div class="grid grid-flow-col-dense gap-4">
+    <div
+      v-for="(photo, index) in photos"
+      :key="index"
+      :style="{
+        'background-image': 'url(/src/assets/img/room/' + photo + ')',
+      }"
+      @click="activePhoto = index"
+      :class="{
+        'pointer-events-none border-2 border-secondary-dark':
+          activePhoto == index,
+      }"
+      class="h-28 bg-cover bg-center bg-no-repeat transition-opacity first:rounded-bl last:rounded-br hover:opacity-60"
+    ></div>
+  </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 let photos = ref(["thumb-1.jpg", "thumb-2.jpg", "thumb-3.jpg", "thumb-4.jpg"]);
 let activePhoto = ref(0);
 
+// previous photo
 function prevPhoto() {
-  console.log("prev");
   activePhoto.value =
     activePhoto.value - 1 >= 0
       ? activePhoto.value - 1
       : photos.value.length - 1;
 }
 
+// next photo
 function nextPhoto() {
-  console.log("nek");
   activePhoto.value =
     activePhoto.value + 1 < photos.value.length ? activePhoto.value + 1 : 0;
 }
+
+onMounted(() => {
+  document.addEventListener("keydown", (event) => {
+    if (event.which == 37) prevPhoto();
+    if (event.which == 39) nextPhoto();
+  });
+});
 </script>
 
 <style lang="scss" scoped></style>

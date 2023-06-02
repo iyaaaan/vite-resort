@@ -30,6 +30,10 @@ import {
   faUmbrellaBeach,
   faBars,
   faTimes,
+  faChevronLeft,
+  faChevronRight,
+  faChevronCircleLeft,
+  faChevronCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
@@ -53,7 +57,11 @@ library.add(
   faDice,
   faUmbrellaBeach,
   faBars,
-  faTimes
+  faTimes,
+  faChevronLeft,
+  faChevronRight,
+  faChevronCircleLeft,
+  faChevronCircleRight
 );
 
 const app = createApp(App);

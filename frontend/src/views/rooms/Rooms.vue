@@ -32,40 +32,8 @@
       <div v-if="deluxe.length">
         <div class="grid grid-cols-3 gap-4">
           <template v-for="d in deluxe" :key="d.id">
-            <div class="bg-white p-5">
-              <img
-                :src="`src/assets/img/room/${d.img}`"
-                alt=""
-                class="mb-5 w-full object-cover"
-              />
-              <span class="font-Playfair text-xl text-stone-700">{{
-                d.name
-              }}</span>
-              <p class="font-light text-stone-700">{{ d.desc }}</p>
-
-              <div class="mt-8">
-                <router-link
-                  :to="{ name: 'RoomDetails', params: { id: d.id } }"
-                >
-                  <BaseButton
-                    button-type="secondary"
-                    class="fade-to-top full-clip-path w-full md:w-auto"
-                    >Book Room</BaseButton
-                  >
-                </router-link>
-
-                <router-link
-                  :to="{ name: 'RoomDetails', params: { id: d.id } }"
-                >
-                  <BaseButton
-                    class="fade-to-top full-clip-path w-full text-stone-700 md:w-auto"
-                    button-type="borderless"
-                    :hasArrow="true"
-                    >View Details
-                  </BaseButton>
-                </router-link>
-              </div>
-            </div>
+            <!-- room card -->
+            <room-card :room="d" />
           </template>
         </div>
       </div>
@@ -88,45 +56,13 @@
       <div v-if="family.length">
         <div class="grid grid-cols-3 gap-4">
           <template v-for="f in family" :key="f.id">
-            <div class="bg-white p-5">
-              <img
-                :src="`src/assets/img/room/${f.img}`"
-                alt=""
-                class="mb-5 w-full object-cover"
-              />
-              <span class="font-Playfair text-xl text-stone-700">{{
-                f.name
-              }}</span>
-              <p class="font-light text-stone-700">{{ f.desc }}</p>
-
-              <div class="mt-8">
-                <router-link
-                  :to="{ name: 'RoomDetails', params: { id: f.id } }"
-                >
-                  <BaseButton
-                    button-type="secondary"
-                    class="fade-to-top full-clip-path w-full md:w-auto"
-                    >Book Room</BaseButton
-                  >
-                </router-link>
-
-                <router-link
-                  :to="{ name: 'RoomDetails', params: { id: f.id } }"
-                >
-                  <BaseButton
-                    class="fade-to-top full-clip-path w-full text-stone-700 md:w-auto"
-                    button-type="borderless"
-                    :hasArrow="true"
-                    >View Details
-                  </BaseButton>
-                </router-link>
-              </div>
-            </div>
+            <!-- room card -->
+            <room-card :room="f" />
           </template>
         </div>
       </div>
       <div v-else>
-        <h1><strong>Loading deluxe rooms..</strong></h1>
+        <h1><strong>Loading family rooms..</strong></h1>
       </div>
     </div>
 
@@ -146,45 +82,13 @@
       <div v-if="luxury.length">
         <div class="grid grid-cols-3 gap-4">
           <template v-for="l in luxury" :key="l.id">
-            <div class="bg-white p-5">
-              <img
-                :src="`src/assets/img/room/${l.img}`"
-                alt=""
-                class="mb-5 w-full object-cover"
-              />
-              <span class="font-Playfair text-xl text-stone-700">{{
-                l.name
-              }}</span>
-              <p class="font-light text-stone-700">{{ l.desc }}</p>
-
-              <div class="mt-8">
-                <router-link
-                  :to="{ name: 'RoomDetails', params: { id: l.id } }"
-                >
-                  <BaseButton
-                    button-type="secondary"
-                    class="fade-to-top full-clip-path w-full md:w-auto"
-                    >Book Room</BaseButton
-                  >
-                </router-link>
-
-                <router-link
-                  :to="{ name: 'RoomDetails', params: { id: l.id } }"
-                >
-                  <BaseButton
-                    class="fade-to-top full-clip-path w-full text-stone-700 md:w-auto"
-                    button-type="borderless"
-                    :hasArrow="true"
-                    >View Details
-                  </BaseButton>
-                </router-link>
-              </div>
-            </div>
+            <!-- room card -->
+            <room-card :room="l" />
           </template>
         </div>
       </div>
       <div v-else>
-        <h1><strong>Loading deluxe rooms..</strong></h1>
+        <h1><strong>Loading luxury rooms..</strong></h1>
       </div>
     </div>
   </section>
@@ -192,9 +96,9 @@
 
 <script setup>
 import { onMounted, ref, computed } from "vue";
-import { Icon } from "@iconify/vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import BaseButton from "@/components/BaseButton.vue";
+import RoomCard from "@/components/RoomCard.vue";
 
 const rooms = ref([]);
 
