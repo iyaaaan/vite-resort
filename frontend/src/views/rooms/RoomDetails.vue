@@ -70,49 +70,80 @@
     </template>
 
     <!-- similar rooms -->
-    <div>
+    <div v-if="similarRooms.length" class="grid gap-4 grid-cols-3 col-span-3">
       <template v-for="(similar, index) in similarRooms" :key="index">
-        <room-card :room="similar" />
+        <RoomCard :room="similar" />
       </template>
-
     </div>
   </div>
   <!-- ./ container -->
 </template>
 
 <script setup>
-import { onMounted, ref, computed } from "vue";
+import { onMounted, ref, computed, watch } from "vue";
+import axios from 'axios';
 import HeroBanner from "@/components/HeroBanner.vue";
 import RoomGallery from "@/components/RoomGallery.vue";
 import BookingForm from "@/components/BookingForm.vue";
 import Testimonial from "@/components/Testimonial.vue";
-  import RoomCard from "@/components/RoomCard.vue";
+import RoomCard from "@/components/RoomCard.vue";
 
 // route parameter
 const props = defineProps(["id"]);
 
-//
-let rooms = ref([]);
+// store all rooms
+const rooms = ref([]);
 
-const similarRooms = computed(() => {
-  return rooms.value.filter((t) => t.type == room.type);
-});
+
+let similarRooms = ref();
 
 // room details
-let room = ref(null);
+const room = ref();
+
+/* async function fetchJokes() {
+  try {
+    const response = await fetch(`http://localhost:3000/room/${props.id}`);
+    room.value = await response.json();
+    similarRooms = computed(() => {
+      return rooms.value.filter((t) => t.type == room.value.type);
+    });
+    console.log(room.value.type);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function fetchAllROoms() {
+  try {
+    const response = await fetch(`http://localhost:3000/room/`);
+    rooms.value = await response.json();
+  } catch (error) {
+    console.error(error);
+  }
+} */
+
+
+
 onMounted(() => {
-  // fetch room details
+ /*  fetchJokes();
+  fetchAllROoms(); */
   fetch(`http://localhost:3000/room/${props.id}`)
     .then((res) => res.json())
     .then((data) => (room.value = data))
     .catch((err) => console.log(err.message));
 
-  // fetch all rooms
-  fetch("http://localhost:3000/room")
+  fetch(`http://localhost:3000/room/`)
     .then((res) => res.json())
     .then((data) => (rooms.value = data))
     .catch((err) => console.log(err.message));
+
+    similarRooms = computed(() => {
+      return rooms.value.filter((t) => t.type == room.value.type && t.id !== room.value.id);
+    });
+
+
 });
+
 
 /* testimonials */
 const testimonials = ref([

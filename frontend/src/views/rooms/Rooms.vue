@@ -100,16 +100,20 @@ import HeroBanner from "@/components/HeroBanner.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import RoomCard from "@/components/RoomCard.vue";
 
+// store all rooms
 const rooms = ref([]);
 
+// store deluxe rooms
 const deluxe = computed(() => {
   return rooms.value.filter((t) => t.type == "deluxe");
 });
 
+// store family rooms
 const family = computed(() => {
   return rooms.value.filter((t) => t.type == "family");
 });
 
+// store luxury rooms
 const luxury = computed(() => {
   return rooms.value.filter((t) => t.type == "luxury");
 });

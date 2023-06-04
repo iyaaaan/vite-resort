@@ -37,8 +37,11 @@
 
 <script setup>
 import BaseButton from "@/components/BaseButton.vue";
+import { onMounted } from "vue";
 
 defineProps({
   room: [Object, Array], 
 });
+
+console.log("roomcard");
 </script>
