@@ -97,8 +97,7 @@
 <script setup>
 import { onMounted, ref, computed } from "vue";
 import HeroBanner from "@/components/HeroBanner.vue";
-import BaseButton from "@/components/BaseButton.vue";
-import RoomCard from "@/components/RoomCard.vue";
+import RoomCard from "@/components/room/RoomCard.vue";
 
 // store all rooms
 const rooms = ref([]);

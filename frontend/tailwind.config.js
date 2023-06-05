@@ -22,11 +22,22 @@ module.exports = {
     container: {
       padding: "1rem",
       center: true,
+
+      screens: {
+        sm: "540px",
+        md: "720px",
+        lg: "960px",
+        xl: "1140px",
+        "2xl": "1320px",
+      },
     },
-    /* screens: {
-      sm: "640px",
+    screens: {
+      sm: "576px",
       md: "768px",
-    }, */
+      lg: "992px",
+      xl: "1200px",
+      "2xl": "1400px",
+    },
   },
   plugins: [],
 };

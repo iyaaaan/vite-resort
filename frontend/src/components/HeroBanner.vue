@@ -12,7 +12,7 @@
       :class="
         banner === 'home-hero'
           ? 'h-screen bg-fixed bg-bottom'
-          : 'h-[500px] bg-center'
+          : 'h-[70vh] bg-center'
       "
     >
       <slot></slot>

@@ -34,10 +34,9 @@
       }"
       @click="activePhoto = index"
       :class="{
-        'pointer-events-none border-2 border-secondary-dark':
-          activePhoto == index,
+        'pointer-events-none grayscale-0': activePhoto == index,
       }"
-      class="h-28 bg-cover bg-center bg-no-repeat transition-opacity first:rounded-bl last:rounded-br hover:opacity-60"
+      class="h-28 cursor-pointer bg-cover bg-center bg-no-repeat grayscale transition-all first:rounded-bl last:rounded-br hover:grayscale-0"
     ></div>
   </div>
 </template>
@@ -69,5 +68,3 @@ onMounted(() => {
   });
 });
 </script>
-
-<style lang="scss" scoped></style>
