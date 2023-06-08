@@ -10,7 +10,7 @@
   <div class="container mt-4 grid grid-cols-3 gap-4" v-if="room">
     <!-- room gallery -->
     <div class="col-span-2">
-      <room-gallery />
+      <room-gallery :thumbs="room.thumb" :img="room.img" />
     </div>
 
     <!-- booking form -->

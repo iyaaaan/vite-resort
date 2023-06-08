@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
   room: [Object, Array],
 });
 </script>
