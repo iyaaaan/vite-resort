@@ -4,31 +4,33 @@
   >
     <div class="flex flex-wrap items-center">
       <h2 class="mr-4 mb-2 inline-block font-Playfair text-4xl">
-        {{ room.name }}
-        {{ room.type }}
+        {{ name }}
       </h2>
-      <template v-for="(n, index) in room.rating" :key="index">
+      <template v-for="(n, index) in rating" :key="index">
         <font-awesome-icon icon="fas fa-star" class="text-xl text-yellow-300" />
         <!-- additional stars -->
-        <template v-for="x in 5 - room.rating">
+        <template v-for="x in 5 - rating">
           <font-awesome-icon
-            v-if="index === room.rating - 1"
+            v-if="index === rating - 1"
             class="text-xl text-gray-200"
             icon="fas fa-star"
           />
         </template>
       </template>
-      <div class="basis-full font-light">{{ room.inclusion }}</div>
+      <div class="basis-full font-light">{{ inclusion }}</div>
     </div>
     <div>
-      <span class="text-2xl font-semibold">{{ room.price }}</span>
+      <span class="text-2xl font-semibold">{{ price }}</span>
       <span>/ night</span>
     </div>
   </div>
 </template>
 
 <script setup>
-const props = defineProps({
-  room: [Object, Array],
+defineProps({
+  name: [String],
+  inclusion: [String],
+  price: [String],
+  rating: [Number],
 });
 </script>

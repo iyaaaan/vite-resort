@@ -58,7 +58,7 @@ const props = defineProps({
 let thumbnails = [].concat(props.img, props.thumbs);
 console.log(thumbnails.value);
 
-let photos = ref(["thumb-1.jpg", "thumb-2.jpg", "thumb-3.jpg", "thumb-4.jpg"]);
+// current photo
 let activePhoto = ref(0);
 
 // previous photo

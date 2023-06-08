@@ -4,7 +4,7 @@
 
   <!-- room name -->
   <div class="container" v-if="room">
-    <room-name :room="room"></room-name>
+    <room-name :name="room.name" :rating="room.rating" :price="room.price" :inclusion="room.inclusion"></room-name>
   </div>
 
   <div class="container mt-4 grid grid-cols-3 gap-4" v-if="room">
