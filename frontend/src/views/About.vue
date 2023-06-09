@@ -63,7 +63,7 @@
       <div
         class="mt-12 grid grid-cols-1 gap-4 text-stone-700 sm:grid-cols-2 md:grid-cols-3"
       >
-        <template v-for="amenity in amenities" :key="id">
+        <template v-for="(amenity, index) in amenities" :key="index">
           <div>
             <div class="flex items-center gap-4">
               <Icon :icon="amenity.icon" class="text-4xl" />

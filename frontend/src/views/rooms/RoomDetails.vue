@@ -4,7 +4,12 @@
 
   <!-- room name -->
   <div class="container" v-if="room">
-    <room-name :name="room.name" :rating="room.rating" :price="room.price" :inclusion="room.inclusion"></room-name>
+    <room-name
+      :name="room.name"
+      :rating="room.rating"
+      :price="room.price"
+      :inclusion="room.inclusion"
+    ></room-name>
   </div>
 
   <div class="container mt-4 grid grid-cols-3 gap-4" v-if="room">
@@ -44,7 +49,7 @@
     <!-- similar rooms -->
     <div v-if="similarRooms.length" class="col-span-3 grid grid-cols-3 gap-4">
       <template v-for="(similar, index) in similarRooms" :key="index">
-        <RoomCard :room="similar" />
+        <room-card :room="similar" />
       </template>
     </div>
   </div>
@@ -60,6 +65,7 @@ import RoomGallery from "@/components/room/RoomGallery.vue";
 import RoomCard from "@/components/room/RoomCard.vue";
 import BookingForm from "@/components/room/BookingForm.vue";
 import Testimonial from "@/components/Testimonial.vue";
+import { useRoute } from "vue-router";
 
 // route parameter
 const props = defineProps(["id"]);
@@ -73,11 +79,13 @@ let similarRooms = ref();
 // room details
 const room = ref();
 
-onMounted(() => {
-  fetch(`http://localhost:3000/room/${props.id}`)
+onMounted(async () => {
+  /* fetch(`http://localhost:3000/room/${props.id}`)
     .then((res) => res.json())
     .then((data) => (room.value = data))
-    .catch((err) => console.log(err.message));
+    .catch((err) => console.log(err.message)); */
+  const res = await fetch(`http://localhost:3000/room/${props.id}`);
+  room.value = await res.json();
 
   fetch(`http://localhost:3000/room/`)
     .then((res) => res.json())
@@ -89,6 +97,18 @@ onMounted(() => {
       (t) => t.type == room.value.type && t.id !== room.value.id
     );
   });
+});
+
+// store route
+const route = useRoute();
+
+watch(route, () => {
+  fetch(`http://localhost:3000/room/${props.id}`)
+    .then((res) => res.json())
+    .then((data) => (room.value = data))
+    .catch((err) => console.log(err.message));
+
+  console.log("watch");
 });
 
 /* testimonials */

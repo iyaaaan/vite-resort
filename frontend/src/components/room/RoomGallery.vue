@@ -56,7 +56,6 @@ const props = defineProps({
 });
 
 let thumbnails = [].concat(props.img, props.thumbs);
-console.log(thumbnails.value);
 
 // current photo
 let activePhoto = ref(0);
