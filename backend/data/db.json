@@ -15,8 +15,10 @@
           "title": "2 Bedrooms"
         }
       ],
-      "img": "deluxe-room.jpg",
+      "banner": "deluxe-banner.jpg",
+      "card": "deluxe-card.jpg",
       "thumb": [
+        "deluxe-room.jpg",
         "deluxe-living.jpg",
         "deluxe-kitchen.jpg",
         "deluxe-bathroom.jpg"
@@ -31,8 +33,10 @@
       "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$250.00",
       "rating": 4,
-      "img": "deluxe-room.jpg",
+      "banner": "deluxe-banner.jpg",
+      "card": "deluxe-card.jpg",
       "thumb": [
+        "deluxe-room.jpg",
         "deluxe-living.jpg",
         "deluxe-kitchen.jpg",
         "deluxe-bathroom.jpg"
@@ -47,8 +51,10 @@
       "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$300.00",
       "rating": 4,
-      "img": "deluxe-room.jpg",
+      "banner": "deluxe-banner.jpg",
+      "card": "deluxe-card.jpg",
       "thumb": [
+        "deluxe-room.jpg",
         "deluxe-living.jpg",
         "deluxe-kitchen.jpg",
         "deluxe-bathroom.jpg"
@@ -63,8 +69,10 @@
       "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$175.00",
       "rating": 4,
-      "img": "family-room.jpg",
+      "banner": "family-banner.jpg",
+      "card": "family-card.jpg",
       "thumb": [
+        "family-room.jpg",
         "family-living.jpg",
         "family-kitchen.jpg",
         "family-bathroom.jpg"
@@ -79,8 +87,10 @@
       "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$275.00",
       "rating": 4,
-      "img": "family-room.jpg",
+      "banner": "family-banner.jpg",
+      "card": "family-card.jpg",
       "thumb": [
+        "family-room.jpg",
         "family-living.jpg",
         "family-kitchen.jpg",
         "family-bathroom.jpg"
@@ -95,8 +105,10 @@
       "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$325.00",
       "rating": 4,
-      "img": "family-room.jpg",
+      "banner": "family-banner.jpg",
+      "card": "family-card.jpg",
       "thumb": [
+        "family-room.jpg",
         "family-living.jpg",
         "family-kitchen.jpg",
         "family-bathroom.jpg"
@@ -111,8 +123,10 @@
       "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$200.00",
       "rating": 4,
-      "img": "luxury-room.jpg",
+      "banner": "luxury-banner.jpg",
+      "card": "luxury-card.jpg",
       "thumb": [
+        "luxury-room.jpg",
         "luxury-living.jpg",
         "luxury-kitchen.jpg",
         "luxury-bathroom.jpg"
@@ -127,8 +141,10 @@
       "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$290.00",
       "rating": 4,
-      "img": "luxury-room.jpg",
+      "banner": "luxury-banner.jpg",
+      "card": "luxury-card.jpg",
       "thumb": [
+        "luxury-room.jpg",
         "luxury-living.jpg",
         "luxury-kitchen.jpg",
         "luxury-bathroom.jpg"
@@ -143,8 +159,10 @@
       "inclusion": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$360.00",
       "rating": 4,
-      "img": "luxury-room.jpg",
+      "banner": "luxury-banner.jpg",
+      "card": "luxury-card.jpg",
       "thumb": [
+        "luxury-room.jpg",
         "luxury-living.jpg",
         "luxury-kitchen.jpg",
         "luxury-bathroom.jpg"

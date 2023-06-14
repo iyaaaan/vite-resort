@@ -4,7 +4,8 @@
       <div class="mb-4 h-72 w-full overflow-hidden">
         <div
           :style="{
-            'background-image': 'url(/src/assets/img/room/' + room.img + ')',
+            'background-image':
+              'url(/src/assets/img/room/card/' + room.card + ')',
           }"
           alt=""
           class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-125"
@@ -20,9 +21,6 @@
 </template>
 
 <script setup>
-import BaseButton from "@/components/BaseButton.vue";
-import { onMounted } from "vue";
-
 defineProps({
   room: [Object, Array],
 });

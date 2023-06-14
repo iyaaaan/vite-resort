@@ -75,7 +75,7 @@ onMounted(() => {
     duration: 0.5,
     delay: 0.5,
     scrollTrigger: {
-      trigger: ".acts-text-wrap",
+      trigger: ".acts-card-wrap",
       start: "top bottom",
       end: "bottom top",
       toggleActions: "restart reverse restart reverse",

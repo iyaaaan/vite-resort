@@ -35,7 +35,7 @@
       >
         <img
           ref="roomBg"
-          src="@/assets/img/room/accommodation-banner.jpg"
+          src="@/assets/img/banner/accommodation-banner.jpg"
           alt=""
           class="h-full w-full object-cover"
         />

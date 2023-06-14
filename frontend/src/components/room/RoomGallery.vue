@@ -4,7 +4,7 @@
     class="mb-4 flex h-[35rem] w-full items-center justify-between rounded-tr rounded-tl bg-red-100 bg-cover bg-center bg-no-repeat"
     :style="{
       'background-image':
-        'url(/src/assets/img/room/' + thumbnails[activePhoto] + ')',
+        'url(/src/assets/img/room/imgs/' + thumbnails[activePhoto] + ')',
     }"
   >
     <!-- prev button -->
@@ -27,10 +27,10 @@
   <!-- thumbnails -->
   <div class="grid grid-flow-col-dense gap-4">
     <div
-      v-for="(thumb, index) in thumbnails"
+      v-for="(thumb, index) in thumbs"
       :key="index"
       :style="{
-        'background-image': 'url(/src/assets/img/room/' + thumb + ')',
+        'background-image': 'url(/src/assets/img/room/thumbs/' + thumb + ')',
       }"
       @click="activePhoto = index"
       :class="{
@@ -39,12 +39,6 @@
       class="h-28 cursor-pointer bg-cover bg-center bg-no-repeat grayscale transition-all first:rounded-bl last:rounded-br hover:grayscale-0"
     ></div>
   </div>
-
-  <div class="grid grid-flow-col-dense gap-4">
-    <div v-for="(thumb, index) in thumbnails" :key="index">
-      {{ thumb }}
-    </div>
-  </div>
 </template>
 
 <script setup>
@@ -52,10 +46,9 @@ import { ref, onMounted } from "vue";
 
 const props = defineProps({
   thumbs: [Array],
-  img: [String],
 });
 
-let thumbnails = [].concat(props.img, props.thumbs);
+const thumbnails = props.thumbs;
 
 // current photo
 let activePhoto = ref(0);

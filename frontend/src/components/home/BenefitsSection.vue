@@ -79,7 +79,7 @@ onMounted(() => {
     autoAlpha: 0,
     "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
     scrollTrigger: {
-      trigger: ".perks-img",
+      trigger: ".perks-text-wrap",
       start: "top bottom",
       end: "bottom top",
       toggleActions: "restart reverse restart reverse",

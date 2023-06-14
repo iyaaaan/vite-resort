@@ -14,10 +14,10 @@
           class="inline-block"
           src="@/assets/img/logo.png"
           alt="Company Logo"
-          height="80"
-          width="80"
+          height="70"
+          width="70"
         />
-        <h2 class="hidden font-Allura text-4xl text-white sm:inline-block">
+        <h2 class="hidden font-Allura text-3xl text-white sm:inline-block">
           Paradise Beach Resort
         </h2>
       </router-link>

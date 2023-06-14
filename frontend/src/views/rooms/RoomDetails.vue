@@ -1,6 +1,6 @@
 <template>
   <!-- Hero -->
-  <hero-banner banner="accommodation-hero" />
+  <hero-banner v-show="banner" :banner="banner" />
 
   <!-- room name -->
   <div class="container" v-if="room">
@@ -15,7 +15,7 @@
   <div class="container mt-4 grid grid-cols-3 gap-4" v-if="room">
     <!-- room gallery -->
     <div class="col-span-2">
-      <room-gallery :thumbs="room.thumb" :img="room.img" />
+      <room-gallery :thumbs="room.thumb" />
     </div>
 
     <!-- booking form -->
@@ -51,6 +51,18 @@
       <template v-for="(similar, index) in similarRooms" :key="index">
         <room-card :room="similar" />
       </template>
+      <div
+        class="group flex items-center justify-center bg-white p-5 shadow-md"
+      >
+        <router-link :to="{ name: 'Rooms' }">
+          <BaseButton
+            :hasArrow="true"
+            button-type="borderless"
+            class="block text-lg text-beaver underline"
+            >Discover more
+          </BaseButton>
+        </router-link>
+      </div>
     </div>
   </div>
   <!-- ./ container -->
@@ -59,6 +71,7 @@
 <script setup>
 import { onMounted, ref, computed, watch } from "vue";
 import axios from "axios";
+import BaseButton from "@/components/BaseButton.vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import RoomName from "@/components/room/RoomName.vue";
 import RoomGallery from "@/components/room/RoomGallery.vue";
@@ -78,6 +91,7 @@ let similarRooms = ref();
 
 // room details
 const room = ref();
+let banner = ref();
 
 onMounted(async () => {
   /* fetch(`http://localhost:3000/room/${props.id}`)
@@ -97,6 +111,9 @@ onMounted(async () => {
       (t) => t.type == room.value.type && t.id !== room.value.id
     );
   });
+
+  banner = room.value.banner.split(".")[0];
+  console.log(banner);
 });
 
 // store route
