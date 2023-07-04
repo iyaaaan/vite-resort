@@ -13,7 +13,9 @@
   </HeroBanner>
 
   <section class="py-20">
-    <h2 class="mb-12 text-center font-Playfair text-4xl text-beaver">
+    <h2
+      class="mb-12 px-4 text-center font-Playfair text-3xl text-beaver md:text-4xl"
+    >
       Indulge in the epitome of comfort and relaxation of our suites
     </h2>
 
@@ -30,7 +32,7 @@
 
       <!-- rooms -->
       <div v-if="deluxe.length">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           <template v-for="d in deluxe" :key="d.id">
             <!-- room card -->
             <room-card :room="d" />

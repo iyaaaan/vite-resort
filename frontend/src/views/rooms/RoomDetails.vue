@@ -1,6 +1,6 @@
 <template>
   <!-- Hero -->
-  <hero-banner v-show="banner" :banner="banner" />
+  <hero-banner v-if="banner" :banner="banner" />
 
   <!-- room name -->
   <div class="container" v-if="room">
@@ -12,56 +12,83 @@
     ></room-name>
   </div>
 
-  <div class="container mt-4 grid grid-cols-3 gap-4" v-if="room">
-    <!-- room gallery -->
-    <div class="col-span-2">
-      <room-gallery :thumbs="room.thumb" />
-    </div>
+  <div class="container mt-4" v-if="room">
+    <div class="grid grid-cols-3 gap-4 border-b border-b-stone-300 py-10">
+      <!-- room gallery -->
+      <div class="col-span-2">
+        <room-gallery :thumbs="room.thumb" />
 
-    <!-- booking form -->
-    <div>
-      <booking-form />
-    </div>
+        <!-- room text -->
+        <div class="col-span-2 my-10 font-light text-stone-700">
+          {{ room.text }}
+        </div>
+      </div>
 
-    <!-- room text -->
-    <div class="col-span-2 my-10 font-light text-stone-700">
-      {{ room.text }}
+      <!-- booking form -->
+      <div>
+        <booking-form />
+      </div>
     </div>
 
     <!-- amenities -->
-    <div class="relative col-span-3 my-10 h-96 py-20">
+    <div
+      class="relative col-span-3 border-b border-b-stone-300 py-20"
+      v-if="room.amenities"
+    >
       <!-- bg -->
-      <div
+      <!-- <div
         class="absolute -left-1/2 top-0 -z-10 h-full w-[200vw] bg-gray-500"
-      ></div>
-      <p class="text-white">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-        facere!
-      </p>
+      ></div> -->
+      <h3 class="mb-5 font-Playfair text-xl font-bold text-beaver">
+        Room Amenities
+      </h3>
+      <div class="my-10 grid grid-cols-3 gap-4">
+        <template v-for="(amenity, index) in room.amenities" :key="index">
+          <div class="flex items-center">
+            <span
+              class="mr-4 rounded-md border border-stone-300 p-2 text-beaver"
+            >
+              <Icon :icon="amenity.icon" class="text-2xl" />
+            </span>
+            <span class="font-semibold text-stone-700">{{
+              amenity.title
+            }}</span>
+          </div>
+        </template>
+      </div>
     </div>
     <!-- ./ amenities -->
 
     <!-- testimonial -->
-    <template v-for="(testimonial, index) in testimonials" :key="index">
-      <Testimonial :testimonial="testimonial" class="bg-teal-500" />
-    </template>
+    <div class="border-b border-b-stone-300 py-20">
+      <h3 class="mb-5 font-Playfair text-xl font-bold text-beaver">
+        Room Reviews
+      </h3>
+      <div class="my-10 grid grid-cols-2 gap-4 border-b border-b-stone-300">
+        <template v-for="(testimonial, index) in testimonials" :key="index">
+          <Testimonial :testimonial="testimonial" class="bg-neutral-600" />
+        </template>
+      </div>
+    </div>
 
     <!-- similar rooms -->
-    <div v-if="similarRooms.length" class="col-span-3 grid grid-cols-3 gap-4">
-      <template v-for="(similar, index) in similarRooms" :key="index">
-        <room-card :room="similar" />
-      </template>
-      <div
-        class="group flex items-center justify-center bg-white p-5 shadow-md"
-      >
-        <router-link :to="{ name: 'Rooms' }">
-          <BaseButton
-            :hasArrow="true"
-            button-type="borderless"
-            class="block text-lg text-beaver underline"
-            >Discover more
-          </BaseButton>
-        </router-link>
+    <div class="py-20">
+      <div v-if="similarRooms.length" class="col-span-3 grid grid-cols-3 gap-4">
+        <template v-for="(similar, index) in similarRooms" :key="index">
+          <room-card :room="similar" />
+        </template>
+        <div
+          class="group flex items-center justify-center bg-white p-5 shadow-md"
+        >
+          <router-link :to="{ name: 'Rooms' }">
+            <BaseButton
+              :hasArrow="true"
+              button-type="borderless"
+              class="block text-lg text-beaver underline"
+              >Discover more
+            </BaseButton>
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -72,6 +99,7 @@
 import { onMounted, ref, computed, watch } from "vue";
 import axios from "axios";
 import BaseButton from "@/components/BaseButton.vue";
+import { Icon } from "@iconify/vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import RoomName from "@/components/room/RoomName.vue";
 import RoomGallery from "@/components/room/RoomGallery.vue";
@@ -113,7 +141,6 @@ onMounted(async () => {
   });
 
   banner = room.value.banner.split(".")[0];
-  console.log(banner);
 });
 
 // store route
@@ -136,6 +163,7 @@ const testimonials = ref([
     img: "test-1.jpg",
     rating: 4,
   },
+
   {
     name: "Rhianna Gomez",
     text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
@@ -147,6 +175,12 @@ const testimonials = ref([
     text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
     img: "test-3.jpg",
     rating: 4,
+  },
+  {
+    name: "JD Cruz",
+    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+    img: "test-5.jpg",
+    rating: 5,
   },
 ]);
 

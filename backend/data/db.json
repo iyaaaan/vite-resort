@@ -13,6 +13,30 @@
         {
           "icon": "material-symbols:bed",
           "title": "2 Bedrooms"
+        },
+        {
+          "icon": "fluent-mdl2:breakfast",
+          "title": "Complimentary Breakfast"
+        },
+        {
+          "icon": "ic:round-wifi",
+          "title": "Wifi"
+        },
+        {
+          "icon": "mingcute:air-condition-open-line",
+          "title": "Air- Conditioned"
+        },
+        {
+          "icon": "pixelarticons:device-tv-smart",
+          "title": "Smart TV"
+        },
+        {
+          "icon": "tabler:smoking-no",
+          "title": "No Smoking"
+        },
+        {
+          "icon": "ph:shower-bold",
+          "title": "Shower"
         }
       ],
       "banner": "deluxe-banner.jpg",
