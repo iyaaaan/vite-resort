@@ -42,13 +42,13 @@ import { onMounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const props = defineProps({
   featured: Array,
 });
 
 onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
   const featWrap = gsap.utils.toArray(".feat-wrap");
   const featWrap2 = gsap.utils.toArray(".feat-wrap2");
 

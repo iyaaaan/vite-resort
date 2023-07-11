@@ -56,7 +56,7 @@
 
       <!-- rooms -->
       <div v-if="family.length">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           <template v-for="f in family" :key="f.id">
             <!-- room card -->
             <room-card :room="f" />
@@ -82,7 +82,7 @@
 
       <!-- rooms -->
       <div v-if="luxury.length">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           <template v-for="l in luxury" :key="l.id">
             <!-- room card -->
             <room-card :room="l" />
@@ -97,9 +97,13 @@
 </template>
 
 <script setup>
-import { onMounted, ref, computed } from "vue";
+import { onMounted, ref, computed, onBeforeUnmount } from "vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import RoomCard from "@/components/room/RoomCard.vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 // store all rooms
 const rooms = ref([]);
@@ -124,5 +128,9 @@ onMounted(() => {
     .then((res) => res.json())
     .then((data) => (rooms.value = data))
     .catch((err) => console.log(err.message));
+});
+
+onBeforeUnmount(() => {
+  ScrollTrigger.killAll();
 });
 </script>

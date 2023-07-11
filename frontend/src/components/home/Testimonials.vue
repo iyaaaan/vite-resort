@@ -29,6 +29,7 @@ import { ref } from "vue";
 import { onMounted } from "vue";
 import Testimonial from "@/components/Testimonial.vue";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const testimonials = ref([
   {
@@ -72,6 +73,8 @@ const testimonialClass = ref([
 ]);
 
 onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
   let tl = gsap.timeline({
     defaults: { ease: "Expo.easeOut", duration: 1.5, delay: 0.5 },
     scrollTrigger: {

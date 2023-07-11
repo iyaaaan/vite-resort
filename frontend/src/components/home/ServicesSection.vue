@@ -41,13 +41,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { computed } from "@vue/reactivity";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const props = defineProps({
   services: Array,
 });
 
 onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
   const serviceItem = gsap.utils.toArray(".service-item");
 
   gsap.set(serviceItem, {

@@ -25,8 +25,6 @@ import { ref, onMounted } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const heroWrap = ref(null);
 const heroBg = ref(null);
 
@@ -35,6 +33,8 @@ defineProps({
 });
 
 onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
   let tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2.2 } });
   tl.from(heroWrap.value, {
     autoAlpha: 0,

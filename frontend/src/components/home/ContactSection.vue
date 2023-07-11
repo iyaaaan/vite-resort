@@ -65,13 +65,13 @@
 
 <script setup>
 import BaseButton from "@/components/BaseButton.vue";
-import { onMounted } from "vue";
+import { onMounted, onUnmounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
   let tl = gsap.timeline({
     defaults: { ease: "Power4.inOut", duration: 0.8, y: 100, autoAlpha: 0 },
     scrollTrigger: {
@@ -79,6 +79,7 @@ onMounted(() => {
       start: "top bottom",
       end: "bottom top",
       toggleActions: "restart reverse restart reverse",
+      markers: true,
     },
   });
 

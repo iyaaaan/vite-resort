@@ -50,16 +50,16 @@ import { ref, onMounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const roomBg = ref(null);
 
 onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
   let tl = gsap.timeline({
     defaults: { ease: "Power4.inOut", duration: 0.8 },
     scrollTrigger: {
       trigger: ".rsWrap",
-      start: "top bottom",
+      start: "top 70%",
       end: "bottom top",
       toggleActions: "restart reverse restart reverse",
     },
@@ -87,7 +87,7 @@ onMounted(() => {
     ease: "none",
     scrollTrigger: {
       trigger: ".rsWrap",
-      start: "top bottom",
+      start: "top 80%",
       end: "bottom top",
       scrub: true,
     },

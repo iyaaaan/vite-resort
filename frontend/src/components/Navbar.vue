@@ -62,11 +62,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeMount } from "vue";
+import { ref, onMounted } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const menus = ref(["Home", "About", "Rooms", "Activities", "Contact"]);
 
@@ -119,6 +117,8 @@ const toggleMenu = () => {
 };
 
 onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
   window.addEventListener("scroll", handleScroll);
 
   gsap.from(nav.value, {

@@ -71,7 +71,7 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onBeforeUnmount, onMounted } from "vue";
 import BaseButton from "@/components/BaseButton.vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import AboutSection from "@/components/home/AboutSection.vue";
@@ -85,21 +85,28 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+let tl = gsap.timeline({
+  defaults: { duration: 0.8 },
+  scrollTrigger: {
+    trigger: ".hero-caption",
+    start: "top bottom",
+    end: "bottom top",
+    toggleActions: "restart reverse restart reverse",
+  },
+});
+
 onMounted(() => {
-  gsap.from(".fade-to-top", {
+  tl.from(".fade-to-top", {
     y: 100,
     autoAlpha: 0,
     "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
     stagger: 0.2,
     delay: 1,
     ease: "Power4.inOut",
-    duration: 0.8,
-    scrollTrigger: {
-      trigger: ".hero-caption",
-      start: "top bottom",
-      end: "bottom top",
-      toggleActions: "restart reverse restart reverse",
-    },
   });
+});
+
+onBeforeUnmount(() => {
+  ScrollTrigger.killAll();
 });
 </script>

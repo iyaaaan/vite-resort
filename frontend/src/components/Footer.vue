@@ -168,27 +168,12 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { ref, computed } from "vue";
 
 const email = ref("");
 
 const isValidEmail = computed(() => {
   return /^[^@]+@\w+(\.\w+)+\w$/.test(email.value);
-});
-
-onMounted(() => {
-  gsap.from(".footer-wave", {
-    yPercent: 100,
-    scrollTrigger: {
-      trigger: "footer",
-      start: "top bottom",
-      toggleActions: "restart reverse restart reverse",
-    },
-  });
 });
 </script>
 

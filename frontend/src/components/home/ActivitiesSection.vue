@@ -63,9 +63,19 @@ import { Icon } from "@iconify/vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline({
+    defaults: { ease: "Power4.inOut", duration: 0.8 },
+    scrollTrigger: {
+      trigger: ".rsWrap",
+      start: "top 70%",
+      end: "bottom top",
+      toggleActions: "restart reverse restart reverse",
+    },
+  });
+
   gsap.from(".acts-title, .acts-cta", {
     y: 100,
     autoAlpha: 0,
@@ -76,7 +86,7 @@ onMounted(() => {
     delay: 0.5,
     scrollTrigger: {
       trigger: ".acts-card-wrap",
-      start: "top bottom",
+      start: "top 70%",
       end: "bottom top",
       toggleActions: "restart reverse restart reverse",
     },

@@ -44,9 +44,9 @@ import { onMounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
   gsap.from(".as-title", {
     y: 100,
     autoAlpha: 0,
@@ -59,16 +59,6 @@ onMounted(() => {
       start: "top bottom",
       end: "bottom top",
       toggleActions: "restart reverse restart reverse",
-    },
-  });
-
-  gsap.from(".as-wave", {
-    "clip-path": "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
-    scrollTrigger: {
-      trigger: ".as-wrap",
-      scrub: true,
-      start: "top 40%",
-      end: "bottom 90%",
     },
   });
 });
