@@ -21,7 +21,7 @@
 
     <!-- deluxe -->
     <div class="container mt-20">
-      <h3 class="font-Playfair text-2xl text-stone-700">
+      <h3 class="font-Playfair text-2xl font-bold text-stone-700">
         Deluxe Ocean View Room
       </h3>
       <p class="max-w-4xl font-light text-stone-700">
@@ -32,7 +32,7 @@
 
       <!-- rooms -->
       <div v-if="deluxe.length">
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <template v-for="d in deluxe" :key="d.id">
             <!-- room card -->
             <room-card :room="d" />
@@ -46,7 +46,9 @@
 
     <!-- family -->
     <div class="container mt-20">
-      <h3 class="font-Playfair text-2xl text-stone-700">Family Villa</h3>
+      <h3 class="font-Playfair text-2xl font-bold text-stone-700">
+        Family Villa
+      </h3>
       <p class="max-w-4xl font-light text-stone-700">
         Ideal for families seeking ample space and convenience, our Family Villa
         offers multiple bedrooms, a fully equipped kitchen, and a cozy living
@@ -56,7 +58,7 @@
 
       <!-- rooms -->
       <div v-if="family.length">
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <template v-for="f in family" :key="f.id">
             <!-- room card -->
             <room-card :room="f" />
@@ -70,7 +72,7 @@
 
     <!-- luxury -->
     <div class="container mt-20">
-      <h3 class="font-Playfair text-2xl text-stone-700">
+      <h3 class="font-Playfair text-2xl font-bold text-stone-700">
         Luxury Beachfront Suite
       </h3>
       <p class="max-w-4xl font-light text-stone-700">
@@ -82,7 +84,7 @@
 
       <!-- rooms -->
       <div v-if="luxury.length">
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <template v-for="l in luxury" :key="l.id">
             <!-- room card -->
             <room-card :room="l" />

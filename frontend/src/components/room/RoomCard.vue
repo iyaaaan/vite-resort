@@ -4,7 +4,7 @@
     class="mx-auto w-full sm:w-4/5 md:w-full"
   >
     <div
-      class="group h-full bg-white p-7 shadow-md transition-all hover:shadow-2xl"
+      class="group h-full rounded border border-slate-200 bg-white p-6 transition-all hover:shadow-md"
     >
       <div class="mb-4 w-full">
         <img
@@ -13,11 +13,8 @@
           class="mx-auto"
         />
       </div>
-      <span
-        class="overflow-hidden bg-center font-Playfair text-2xl text-secondary"
-        >{{ room.name }}</span
-      >
-      <p class="mb-0 mt-1 font-light text-stone-700">{{ room.desc }}</p>
+      <span class="font-Playfair text-2xl text-secondary">{{ room.name }}</span>
+      <p class="mb-0 mt-2 font-light text-stone-700">{{ room.desc }}</p>
     </div>
   </router-link>
 </template>

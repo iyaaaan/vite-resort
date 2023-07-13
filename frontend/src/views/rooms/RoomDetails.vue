@@ -44,9 +44,9 @@
       </h3>
       <div class="my-10 grid grid-cols-3 gap-4">
         <template v-for="(amenity, index) in room.amenities" :key="index">
-          <div class="flex items-center">
+          <div class="group flex cursor-pointer items-center">
             <span
-              class="mr-4 rounded-md border border-stone-300 p-2 text-beaver"
+              class="mr-4 rounded-md border border-stone-300 p-2 text-beaver transition-colors duration-300 group-hover:bg-stone-700 group-hover:text-white"
             >
               <Icon :icon="amenity.icon" class="text-2xl" />
             </span>
@@ -73,13 +73,17 @@
 
     <!-- similar rooms -->
     <div class="py-20">
-      <div v-if="similarRooms.length" class="col-span-3 grid grid-cols-3 gap-4">
+      <h3 class="mb-5 font-Playfair text-xl font-bold text-beaver">
+        Similar Rooms
+      </h3>
+      <div
+        v-if="similarRooms.length"
+        class="col-span-3 my-10 grid grid-cols-3 gap-4"
+      >
         <template v-for="(similar, index) in similarRooms" :key="index">
           <room-card :room="similar" />
         </template>
-        <div
-          class="group flex items-center justify-center bg-white p-5 shadow-md"
-        >
+        <div class="group flex items-center justify-center p-5">
           <router-link :to="{ name: 'Rooms' }">
             <BaseButton
               :hasArrow="true"

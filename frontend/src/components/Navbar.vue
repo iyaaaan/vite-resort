@@ -14,8 +14,8 @@
           class="inline-block"
           src="@/assets/img/logo.png"
           alt="Company Logo"
-          height="70"
-          width="70"
+          height="90"
+          width="90"
         />
         <h2 class="hidden font-Allura text-3xl text-white sm:inline-block">
           Paradise Beach Resort
@@ -42,17 +42,12 @@
           <div>
             <router-link
               :to="{ name: menu }"
-              class="hover:after:bg-secondary-light group relative m-4 mr-0 inline-block text-sm uppercase text-white after:absolute after:-bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-secondary after:transition-all after:duration-300 after:content-[''] hover:after:right-0 hover:after:w-6 lg:mr-4"
+              class="hover:after:bg-secondary-light group relative m-4 mr-0 inline-block text-sm uppercase text-white after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-secondary after:transition-all after:duration-300 after:content-[''] hover:after:right-0 hover:after:w-6 lg:mr-4"
             >
               <span
-                class="relative inline-block overflow-hidden p-0 transition duration-300 before:absolute before:left-0 before:inline-block before:translate-y-full before:tracking-[3px] before:transition before:duration-300 before:content-[attr(data-before)] group-hover:before:translate-y-0"
-                :data-before="menu"
+                class="inline-block tracking-[3px] transition duration-300"
+                >{{ menu }}</span
               >
-                <span
-                  class="inline-block translate-y-0 tracking-[3px] transition duration-300 group-hover:-translate-y-full"
-                  >{{ menu }}</span
-                >
-              </span>
             </router-link>
           </div>
         </template>

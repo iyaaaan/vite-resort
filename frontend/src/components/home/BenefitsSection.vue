@@ -1,14 +1,14 @@
 <template>
   <section
-    class="container flex flex-wrap items-start justify-center border-b border-b-gray-500 px-0 py-20 text-stone-700 md:py-32"
+    class="perks-container container flex flex-wrap items-start justify-center border-b border-b-gray-500 px-0 py-20 text-stone-700 md:py-32"
     ref="perksContainer"
   >
-    <div class="full-clip-path w-80 md:mr-12 lg:w-96" ref="perksImg">
+    <div class="full-clip-path perks-img w-80 md:mr-12 lg:w-96" ref="perksImg">
       <img src="@/assets/img/banner/home-perks2.jpg" alt="" class="w-full" />
     </div>
     <div class="mt-10 flex w-full flex-wrap p-4 lg:mt-0 lg:w-1/2">
       <h2
-        class="full-clip-path mb-8 basis-full self-center font-Playfair text-5xl text-beaver"
+        class="full-clip-path perks-title mb-8 basis-full self-center font-Playfair text-5xl text-beaver"
         ref="perksTitle"
       >
         The Perks
@@ -35,6 +35,8 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const perks = [
   {
     title: "Serene Environment",
@@ -59,25 +61,23 @@ const perksTitle = ref(null);
 const perksImg = ref(null);
 
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
-
   let tl = gsap.timeline({
     defaults: { ease: "Power4.inOut", duration: 0.8, autoAlpha: 0 },
     scrollTrigger: {
-      trigger: perksContainer.value,
+      trigger: ".perks-container",
       start: "top 70%",
       end: "bottom top",
       toggleActions: "restart reverse restart reverse",
     },
   });
 
-  tl.from(perksImg.value, {
+  tl.from(".perks-img", {
     y: 100,
     "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
   });
 
   tl.from(
-    perksTitle.value,
+    ".perks-title",
     {
       y: 100,
       "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",

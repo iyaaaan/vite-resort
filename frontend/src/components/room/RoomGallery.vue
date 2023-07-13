@@ -11,7 +11,7 @@
     <button @click="prevPhoto()" class="box-shadow ml-5 rounded-full">
       <font-awesome-icon
         icon="fa-solid fa-chevron-circle-left"
-        class="mx-auto block text-3xl text-white opacity-60 transition-opacity hover:opacity-100"
+        class="mx-auto block text-3xl text-zinc-900 opacity-60 transition-opacity hover:opacity-100"
       />
     </button>
 
@@ -19,7 +19,7 @@
     <button @click="nextPhoto()" class="box-shadow mr-5 rounded-full">
       <font-awesome-icon
         icon="fa-solid fa-chevron-circle-right"
-        class="mx-auto block text-3xl text-white opacity-60 transition-opacity hover:opacity-100"
+        class="mx-auto block text-3xl text-zinc-800 opacity-60 transition-opacity hover:opacity-100"
       />
     </button>
   </div>

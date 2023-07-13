@@ -79,7 +79,6 @@ onMounted(() => {
       start: "top bottom",
       end: "bottom top",
       toggleActions: "restart reverse restart reverse",
-      markers: true,
     },
   });
 
