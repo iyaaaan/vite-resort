@@ -35,7 +35,12 @@
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <template v-for="d in deluxe" :key="d.id">
             <!-- room card -->
-            <room-card :room="d" />
+            <router-link
+              :to="{ name: 'RoomDetails', params: { id: d.id } }"
+              class="mx-auto w-full sm:w-4/5 md:w-full"
+            >
+              <custom-card :card="d" folder="room/card/"></custom-card>
+            </router-link>
           </template>
         </div>
       </div>
@@ -61,7 +66,12 @@
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <template v-for="f in family" :key="f.id">
             <!-- room card -->
-            <room-card :room="f" />
+            <router-link
+              :to="{ name: 'RoomDetails', params: { id: f.id } }"
+              class="mx-auto w-full sm:w-4/5 md:w-full"
+            >
+              <custom-card :card="f" folder="room/card/"></custom-card>
+            </router-link>
           </template>
         </div>
       </div>
@@ -87,7 +97,12 @@
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <template v-for="l in luxury" :key="l.id">
             <!-- room card -->
-            <room-card :room="l" />
+            <router-link
+              :to="{ name: 'RoomDetails', params: { id: l.id } }"
+              class="mx-auto w-full sm:w-4/5 md:w-full"
+            >
+              <custom-card :card="l" folder="room/card/"></custom-card>
+            </router-link>
           </template>
         </div>
       </div>
@@ -102,6 +117,7 @@
 import { onMounted, ref, computed, onBeforeUnmount } from "vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import RoomCard from "@/components/room/RoomCard.vue";
+import CustomCard from "@/components/CustomCard.vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

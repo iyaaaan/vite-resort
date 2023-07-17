@@ -5,10 +5,10 @@
   <!-- room name -->
   <div class="container" v-if="room">
     <room-name
-      :name="room.name"
+      :title="room.title"
       :rating="room.rating"
       :price="room.price"
-      :inclusion="room.inclusion"
+      :inclusions="room.inclusions"
     ></room-name>
   </div>
 
@@ -20,7 +20,7 @@
 
         <!-- room text -->
         <div class="col-span-2 my-10 font-light text-stone-700">
-          {{ room.text }}
+          {{ room.desc }}
         </div>
       </div>
 

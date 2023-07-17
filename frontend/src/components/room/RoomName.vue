@@ -4,7 +4,7 @@
   >
     <div class="flex flex-wrap items-center">
       <h2 class="mr-4 mb-2 inline-block font-Playfair text-4xl">
-        {{ name }}
+        {{ title }}
       </h2>
       <template v-for="(n, index) in rating" :key="index">
         <font-awesome-icon icon="fas fa-star" class="text-xl text-yellow-300" />
@@ -17,7 +17,7 @@
           />
         </template>
       </template>
-      <div class="basis-full font-light">{{ inclusion }}</div>
+      <div class="basis-full font-light">{{ inclusions }}</div>
     </div>
     <div>
       <span class="text-2xl font-semibold">{{ price }}</span>
@@ -28,8 +28,8 @@
 
 <script setup>
 defineProps({
-  name: [String],
-  inclusion: [String],
+  title: [String],
+  inclusions: [String],
   price: [String],
   rating: [Number],
 });

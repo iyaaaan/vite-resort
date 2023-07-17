@@ -24,8 +24,8 @@
     <div
       class="container grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:gap-8"
     >
-      <template v-for="activity in activities">
-        <activity-card :activity="activity"></activity-card>
+      <template v-for="item in items">
+        <custom-card :card="item" folder="activities"></custom-card>
       </template>
     </div>
   </section>
@@ -36,14 +36,14 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 import { Icon } from "@iconify/vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import BaseButton from "@/components/BaseButton.vue";
-import ActivityCard from "@/components/ActivityCard.vue";
+import CustomCard from "@/components/CustomCard.vue";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const activities = ref([
+const items = ref([
   {
     id: 1,
     title: "Kayak",

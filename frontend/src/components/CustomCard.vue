@@ -1,13 +1,13 @@
 <template>
   <div
-    class="group mx-auto max-w-full cursor-pointer shadow-md transition-all duration-300 hover:shadow-xl md:max-w-sm lg:max-w-full"
+    class="group mx-auto max-w-full cursor-pointer rounded border border-slate-200 shadow-md transition-all duration-300 hover:shadow-xl md:max-w-sm lg:max-w-full"
   >
     <!-- img -->
     <div
       class="h-64 w-full overflow-hidden rounded-tr rounded-tl bg-white transition-all duration-300 group-hover:h-32"
     >
       <img
-        :src="`/src/assets/img/activities/${props.activity.img}`"
+        :src="`/src/assets/img/${props.folder}/${props.card.img}`"
         alt=""
         class="block w-full transition-all duration-700 group-hover:scale-125 group-hover:opacity-60"
       />
@@ -19,13 +19,13 @@
     >
       <!-- title -->
       <h2 class="font-Playfair text-2xl text-secondary">
-        {{ props.activity.title }}
+        {{ props.card.title }}
       </h2>
       <!-- inclusions -->
       <p class="text-sm">
         <span class="text-stone-700">Inclusions: </span>
         <span class="text-slate-500"
-          ><em>{{ props.activity.inclusions }}</em></span
+          ><em>{{ props.card.inclusions }}</em></span
         >
       </p>
 
@@ -33,7 +33,7 @@
       <p
         class="max-h-0 translate-y-14 font-light text-stone-700 opacity-0 transition-all delay-100 duration-500 group-hover:max-h-max group-hover:translate-y-0 group-hover:opacity-100"
       >
-        {{ props.activity.text }}
+        {{ props.card.text }}
       </p>
 
       <!-- price -->
@@ -41,7 +41,7 @@
         class="absolute -bottom-16 right-0 rounded-br bg-secondary px-4 py-2 text-white opacity-0 transition-all delay-100 duration-300 group-hover:bottom-0 group-hover:opacity-100"
       >
         <span>
-          <strong>{{ props.activity.price }}</strong>
+          <strong>{{ props.card.price }}</strong>
         </span>
       </div>
     </div>
@@ -52,11 +52,12 @@
 import { onMounted } from "vue";
 
 const props = defineProps({
-  activity: (Array, Object),
+  card: (Array, Object),
+  folder: String,
 });
 
 onMounted(() => {
-  console.log(props.activity);
+  console.log(props.card);
 });
 </script>
 
