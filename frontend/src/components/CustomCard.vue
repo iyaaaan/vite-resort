@@ -49,15 +49,9 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
-
 const props = defineProps({
   card: (Array, Object),
   folder: String,
-});
-
-onMounted(() => {
-  console.log(props.card);
 });
 </script>
 

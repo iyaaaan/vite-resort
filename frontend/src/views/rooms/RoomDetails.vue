@@ -81,7 +81,12 @@
         class="col-span-3 my-10 grid grid-cols-3 gap-4"
       >
         <template v-for="(similar, index) in similarRooms" :key="index">
-          <room-card :room="similar" />
+          <router-link
+            :to="{ name: 'RoomDetails', params: { id: similar.id } }"
+            class="mx-auto w-full sm:w-4/5 md:w-full"
+          >
+            <custom-card :card="similar" folder="room/card/"></custom-card>
+          </router-link>
         </template>
         <div class="group flex items-center justify-center p-5">
           <router-link :to="{ name: 'Rooms' }">
@@ -107,7 +112,7 @@ import { Icon } from "@iconify/vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import RoomName from "@/components/room/RoomName.vue";
 import RoomGallery from "@/components/room/RoomGallery.vue";
-import RoomCard from "@/components/room/RoomCard.vue";
+import CustomCard from "@/components/CustomCard.vue";
 import BookingForm from "@/components/room/BookingForm.vue";
 import Testimonial from "@/components/Testimonial.vue";
 import { useRoute } from "vue-router";
@@ -118,46 +123,63 @@ const props = defineProps(["id"]);
 // store all rooms
 const rooms = ref([]);
 
+/* fetch all rooms */
+async function fetchRooms() {
+  try {
+    let response = await axios.get(`http://localhost:3000/room`);
+    rooms.value = response.data;
+  } catch (error) {
+    console.error(`ERROR: ${error}`);
+  }
+}
+
 // store similar room type
 let similarRooms = ref();
 
 // room details
 const room = ref();
+
+// room banner
 let banner = ref();
 
-onMounted(async () => {
-  /* fetch(`http://localhost:3000/room/${props.id}`)
-    .then((res) => res.json())
-    .then((data) => (room.value = data))
-    .catch((err) => console.log(err.message)); */
-  const res = await fetch(`http://localhost:3000/room/${props.id}`);
-  room.value = await res.json();
+// fetch room details
+async function fetchRoomData(id) {
+  try {
+    let response = await axios.get(`http://localhost:3000/room/${id}`);
+    room.value = response.data;
+    banner = room.value.banner.split(".")[0];
+  } catch (error) {
+    console.error(`ERROR: ${error}`);
+  }
+}
 
-  fetch(`http://localhost:3000/room/`)
-    .then((res) => res.json())
-    .then((data) => (rooms.value = data))
-    .catch((err) => console.log(err.message));
+onMounted(() => {
+  /* fetch room details */
+  fetchRoomData(props.id);
 
+  /* fetch all rooms */
+  fetchRooms();
+
+  /* get similar rooms type from `rooms` */
   similarRooms = computed(() => {
     return rooms.value.filter(
       (t) => t.type == room.value.type && t.id !== room.value.id
     );
   });
-
-  banner = room.value.banner.split(".")[0];
 });
 
 // store route
 const route = useRoute();
 
-watch(route, () => {
-  fetch(`http://localhost:3000/room/${props.id}`)
-    .then((res) => res.json())
-    .then((data) => (room.value = data))
-    .catch((err) => console.log(err.message));
-
-  console.log("watch");
-});
+/* watch for route changes */
+watch(
+  () => route.params.id,
+  (newId) => {
+    if (route.path.startsWith("/rooms")) {
+      fetchRoomData(newId);
+    }
+  }
+);
 
 /* testimonials */
 const testimonials = ref([

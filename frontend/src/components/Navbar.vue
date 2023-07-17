@@ -41,12 +41,19 @@
         <template v-for="(menu, index) in menus" :key="menu.index">
           <div>
             <router-link
-              :to="{ name: menu }"
+              :to="menu.path"
+              :exact="true"
+              :class="[
+                {
+                  'router-link-active active':
+                    isRoomsActive && menu.name === `Rooms`,
+                },
+              ]"
               class="hover:after:bg-secondary-light group relative m-4 mr-0 inline-block text-sm uppercase text-white after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-secondary after:transition-all after:duration-300 after:content-[''] hover:after:right-0 hover:after:w-6 lg:mr-4"
             >
               <span
                 class="inline-block tracking-[3px] transition duration-300"
-                >{{ menu }}</span
+                >{{ menu.name }}</span
               >
             </router-link>
           </div>
@@ -57,11 +64,41 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
+import { useRoute, useRouter } from "vue-router";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const menus = ref(["Home", "About", "Rooms", "Activities", "Contact"]);
+// Access the current route
+const route = useRoute();
+
+// Check if the current path is exact
+const isRoomsActive = computed(() => {
+  return route.path.startsWith("/rooms");
+});
+
+const menus = ref([
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Rooms",
+    path: "/rooms",
+  },
+  {
+    name: "Activities",
+    path: "/activities",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+]);
 
 const nav = ref(null);
 
