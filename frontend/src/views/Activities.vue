@@ -14,16 +14,14 @@
   </HeroBanner>
 
   <!-- activities -->
-  <section class="py-20">
+  <section class="container py-20">
     <h2
       class="mb-12 px-4 text-center font-Playfair text-3xl text-beaver md:text-4xl"
     >
       Embrace Adventure and Fun: Explore Our Thrilling Sports and Activities!
     </h2>
 
-    <div
-      class="container grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:gap-8"
-    >
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:gap-8">
       <template v-for="item in items">
         <custom-card :card="item" folder="activities"></custom-card>
       </template>

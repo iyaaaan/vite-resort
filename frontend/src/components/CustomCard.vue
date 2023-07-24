@@ -40,15 +40,31 @@
       <div
         class="absolute -bottom-16 right-0 rounded-br bg-secondary px-4 py-2 text-white opacity-0 transition-all delay-100 duration-300 group-hover:bottom-0 group-hover:opacity-100"
       >
-        <span>
-          <strong>{{ props.card.price }}</strong>
-        </span>
+        <div>
+          <span
+            ><strong>{{ props.card.price }}</strong></span
+          >
+          <span v-if="route.path.startsWith('/rooms')"> / night</span>
+          <span
+            v-if="
+              route.path.startsWith('/activities') &&
+              props.card.price !== 'Free'
+            "
+          >
+            / hour</span
+          >
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { useRoute } from "vue-router";
+
+// Access the current route
+const route = useRoute();
+
 const props = defineProps({
   card: (Array, Object),
   folder: String,

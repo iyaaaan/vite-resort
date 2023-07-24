@@ -22,7 +22,7 @@
           input-class="custom-input"
           :input-attr="{ id: 'bookDate' }"
           value-type="YYYY/MM/DD"
-          format="ddd, MMMM DD, YYYY"
+          format="ddd, MMM DD, YYYY"
           :disabled-date="backDates"
         ></date-picker>
       </div>

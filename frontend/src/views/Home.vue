@@ -85,17 +85,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-let tl = gsap.timeline({
-  defaults: { duration: 0.8 },
-  scrollTrigger: {
-    trigger: ".hero-caption",
-    start: "top bottom",
-    end: "bottom top",
-    toggleActions: "restart reverse restart reverse",
-  },
-});
-
 onMounted(() => {
+  let tl = gsap.timeline({
+    defaults: { duration: 0.8 },
+    scrollTrigger: {
+      trigger: ".hero-caption",
+      start: "top bottom",
+      end: "bottom top",
+      toggleActions: "restart reverse restart reverse",
+    },
+  });
+
   tl.from(".fade-to-top", {
     y: 100,
     autoAlpha: 0,
