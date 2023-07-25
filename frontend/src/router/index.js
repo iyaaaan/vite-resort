@@ -7,6 +7,9 @@ import RoomDetails from "../views/rooms/RoomDetails.vue";
 import Activities from "../views/Activities.vue";
 import Contact from "../views/Contact.vue";
 import Test from "../views/Testpage.vue";
+import ProductIndex from "../views/ProductIndex.vue";
+import CreateProduct from "../views/CreateProduct.vue";
+import UpdateProduct from "../views/UpdateProduct.vue";
 
 const routes = [
   {
@@ -57,13 +60,24 @@ const routes = [
       title: "Contact",
     },
   },
+
+  /* PRODUCTS */
   {
-    path: "/test",
-    name: "test",
-    component: Test,
-    meta: {
-      title: "Test",
-    },
+    path: "/product-index",
+    name: "ProductIndex",
+    component: ProductIndex,
+  },
+  {
+    path: "/add-product",
+    name: "AddProduct",
+    component: CreateProduct,
+  },
+
+  {
+    path: "/edit-product/:id",
+    name: "EditProduct",
+    component: UpdateProduct,
+    props: true,
   },
 
   // redirect
