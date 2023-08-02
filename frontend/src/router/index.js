@@ -6,16 +6,46 @@ import Rooms from "../views/rooms/Rooms.vue";
 import RoomDetails from "../views/rooms/RoomDetails.vue";
 import Activities from "../views/Activities.vue";
 import Contact from "../views/Contact.vue";
-import Test from "../views/Testpage.vue";
 import ProductIndex from "../views/ProductIndex.vue";
 import CreateProduct from "../views/CreateProduct.vue";
 import UpdateProduct from "../views/UpdateProduct.vue";
+import Admin from "../views/admin.vue";
+import TestZ from "../views/TestPage.vue";
+import Login from "../views/Login.vue";
 
 const routes = [
   {
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/test",
+    name: "TestZ",
+    component: TestZ,
+    meta: {
+      hideNavbar: true,
+      hideFooter: true,
+    },
+  },
+  {
+    path: "/admin",
+    name: "Admin",
+    component: Admin,
+    meta: {
+      hideNavbar: true,
+      hideFooter: true,
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/admin/login",
+    name: "Login",
+    component: Login,
+    meta: {
+      hideNavbar: true,
+      hideFooter: true,
+    },
   },
   {
     path: "/about",
@@ -106,12 +136,18 @@ const router = createRouter({
   },
 });
 
+const isAuthenticated = false;
+
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {
     document.title = `${to.meta.title} | Paradise Beach Resort`;
   } else {
     document.title = `Paradise Beach Resort`;
   }
+
+  /* if (to.matched.some((record) => record.meta.requiresAuth)) {
+    router.push("/admin/login");
+  } */
   next();
 });
 

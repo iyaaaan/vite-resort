@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
 import "./assets/css/main.css";
@@ -67,6 +68,7 @@ library.add(
 const app = createApp(App);
 
 app.use(router);
+app.use(createPinia());
 app.component("font-awesome-icon", FontAwesomeIcon);
 
 router.isReady().then(() => {

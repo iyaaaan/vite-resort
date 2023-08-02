@@ -10,6 +10,8 @@ import {
   deleteProduct,
 } from "../controllers/ProductController.js";
 
+import { checkCredentials } from "../controllers/LoginController.js";
+
 // initialize express router
 const router = express.Router();
 
@@ -27,6 +29,9 @@ router.put("/products/:id", updateProduct);
 
 // delete a product
 router.delete("/products/:id", deleteProduct);
+
+// check login
+router.post("/admin/login", checkCredentials);
 
 // export router
 export default router;

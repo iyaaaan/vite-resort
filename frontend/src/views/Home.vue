@@ -1,5 +1,5 @@
 <template>
-  <div class="smooth-scroll">
+  <div>
     <!-- Hero -->
     <HeroBanner banner="home-hero">
       <div

@@ -1,176 +1,36 @@
 <template>
-  <section
-    class="my-28 grid w-full grid-flow-row-dense grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-  >
-    <!-- testimonial 1 -->
-    <div
-      class="testimonial testimonial--landscape bg-slate-700 p-4 sm:col-span-2"
-    >
-      <!-- details -->
-      <div class="testimonial__details">
-        <div class="testimonial__details-img">
-          <img src="src/assets/img/testimonial/test.jpg" alt="" />
-        </div>
-        <div>
-          <p class="testimonial__details-name">Juan Dela Cruz</p>
-          <div class="testimonial__details-rating">
-            <template v-for="(n, index) in 5" :key="index">
-              <font-awesome-icon
-                icon="fas fa-star"
-                class="testimonial__details-star"
-              />
-            </template>
-          </div>
-        </div>
-      </div>
-
-      <!-- text -->
-      <div class="testimonial__text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-        voluptatem officia esse reiciendis vel odit? Molestias, quas quos
-        similique quae facilis dolorum cupiditate magni iusto vel provident
-        voluptatem ipsum porro quidem earum eaque aut officia libero assumenda
-        deleniti aliquam necessitatibus architecto.
-      </div>
+  <main>
+    <div class="flex">
+      <button @click="filter = 'all'">all</button>
+      <button @click="filter = 'finished'">finished</button>
+      <button @click="filter = 'unfinished'">unfinished</button>
     </div>
+    <input type="text" v-model="newTodo" />
+    <button @click="addNewTodo(newTodo)">AddXS</button>
 
-    <!-- testimonial 2 -->
-    <div
-      class="testimonial testimonial--portrait flex items-center justify-center bg-gray-800 p-4"
-    >
-      <!-- details -->
-      <div class="testimonial__details">
-        <div class="testimonial__details-img">
-          <img src="src/assets/img/testimonial/test.jpg" alt="" />
-        </div>
-        <div>
-          <p class="testimonial__details-name">Juan Dela Cruz</p>
-          <div class="testimonial__details-rating">
-            <template v-for="(n, index) in 5" :key="index">
-              <font-awesome-icon
-                icon="fas fa-star"
-                class="testimonial__details-star"
-              />
-            </template>
-          </div>
-        </div>
-      </div>
-
-      <!-- text -->
-      <div class="testimonial__text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-        voluptatem officia esse reiciendis vel odit? Molestias, quas quos
-        similique quae facilis dolorum.
-      </div>
+    <div v-for="(todo, index) in filteredTodos" :key="index" class="flex">
+      <h2 :class="{ 'line-through': todo.isFinished }" class="mr-4">
+        {{ todo.text }}
+      </h2>
+      <button @click="toggleTodo(todo.id)">toggle</button>
     </div>
-
-    <!-- testimonial 3 -->
-    <div
-      class="testimonial testimonial--portrait flex items-center justify-center bg-zinc-600 p-4 sm:row-span-2 md:col-start-3 md:row-start-1 lg:col-start-4"
-    >
-      <!-- details -->
-      <div class="testimonial__details">
-        <div class="testimonial__details-img">
-          <img src="src/assets/img/testimonial/test.jpg" alt="" />
-        </div>
-        <div>
-          <p class="testimonial__details-name">Juan Dela Cruz</p>
-          <div class="testimonial__details-rating">
-            <template v-for="(n, index) in 5" :key="index">
-              <font-awesome-icon
-                icon="fas fa-star"
-                class="testimonial__details-star"
-              />
-            </template>
-          </div>
-        </div>
-      </div>
-
-      <!-- text -->
-      <div class="testimonial__text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-        voluptatem officia esse reiciendis vel odit? Molestias, quas quos
-        similique quae facilis dolorum cupiditate magni iusto vel provident
-        voluptatem ipsum porro quidem earum eaque aut officia libero assumenda
-        deleniti aliquam necessitatibus architecto. Ut reiciendis voluptas
-        placeat. Architecto et placeat pariatur quisquam.
-      </div>
-    </div>
-
-    <!-- testimonial 4 -->
-    <div
-      class="testimonial testimonial--portrait flex items-center justify-center bg-neutral-700 p-4"
-    >
-      <!-- details -->
-      <div class="testimonial__details">
-        <div class="testimonial__details-img">
-          <img src="src/assets/img/testimonial/test.jpg" alt="" />
-        </div>
-        <div>
-          <p class="testimonial__details-name">Juan Dela Cruz</p>
-          <div class="testimonial__details-rating">
-            <template v-for="(n, index) in 5" :key="index">
-              <font-awesome-icon
-                icon="fas fa-star"
-                class="testimonial__details-star"
-              />
-            </template>
-          </div>
-        </div>
-      </div>
-
-      <!-- text -->
-      <div class="testimonial__text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-        voluptatem officia esse reiciendis vel odit?
-      </div>
-    </div>
-
-    <!-- testimonial 5 -->
-    <div
-      class="testimonial testimonial--landscape col-span-2 hidden items-center justify-center bg-stone-600 p-4 lg:flex"
-    >
-      <!-- details -->
-      <div class="testimonial__details">
-        <div class="testimonial__details-img">
-          <img src="src/assets/img/testimonial/test.jpg" alt="" />
-        </div>
-        <div>
-          <p class="testimonial__details-name">Juan Dela Cruz</p>
-          <div class="testimonial__details-rating">
-            <template v-for="(n, index) in 5" :key="index">
-              <font-awesome-icon
-                icon="fas fa-star"
-                class="testimonial__details-star"
-              />
-            </template>
-          </div>
-        </div>
-      </div>
-
-      <!-- text -->
-      <div class="testimonial__text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-        voluptatem officia esse reiciendis vel odit? Molestias, quas quos
-        similique quae facilis dolorum cupiditate magni iusto vel provident
-        voluptatem ipsum porro quidem earum eaque.
-      </div>
-    </div>
-  </section>
+  </main>
 </template>
 
-<script>
-import { defineComponent } from "vue";
-import { Carousel, Pagination, Slide } from "vue3-carousel";
+<script setup>
+import { useTodosStore } from "@/store/TodoStore";
+import { ref } from "vue";
+import { storeToRefs } from "pinia";
 
-import "vue3-carousel/dist/carousel.css";
+const newTodo = ref("");
 
-export default defineComponent({
-  name: "Autoplay",
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-  },
-});
+const addNewTodo = (text) => {
+  addTodo(text);
+  newTodo.value = "";
+};
+
+const todosStore = useTodosStore();
+
+const { filteredTodos, filter } = storeToRefs(todosStore);
+const { addTodo, toggleTodo } = todosStore;
 </script>
