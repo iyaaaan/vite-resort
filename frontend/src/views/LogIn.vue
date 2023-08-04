@@ -56,8 +56,10 @@ const handleLogin = async () => {
     if (!response.data) {
       router.push({ name: "Login" });
       console.log("Error logging in");
+      console.log(response);
     } else {
       router.push({ name: "Admin" });
+      console.log(response);
       console.log("Logged in successfuly");
     }
 

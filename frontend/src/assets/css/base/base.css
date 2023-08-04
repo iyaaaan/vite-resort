@@ -10,3 +10,7 @@ body {
 p {
   @apply my-4 tracking-wide;
 }
+
+::selection {
+  @apply bg-stone-700 text-white;
+}

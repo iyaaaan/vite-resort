@@ -13,6 +13,11 @@ import Admin from "../views/admin.vue";
 import TestZ from "../views/TestPage.vue";
 import Login from "../views/Login.vue";
 
+/* user */
+import Users from "../views/Users.vue";
+import CreateUser from "../views/CreateUser.vue";
+import UpdateUser from "../views/UpdateUser.vue";
+
 const routes = [
   {
     path: "/",
@@ -108,6 +113,36 @@ const routes = [
     name: "EditProduct",
     component: UpdateProduct,
     props: true,
+  },
+
+  /* USER */
+  {
+    path: "/users",
+    name: "Users",
+    component: Users,
+    meta: {
+      hideNavbar: true,
+      hideFooter: true,
+    },
+  },
+  {
+    path: "/add-user",
+    name: "Createuser",
+    component: CreateUser,
+    meta: {
+      hideNavbar: true,
+      hideFooter: true,
+    },
+  },
+  {
+    path: "/edit-user/:id",
+    name: "UpdateUser",
+    component: UpdateUser,
+    props: true,
+    meta: {
+      hideNavbar: true,
+      hideFooter: true,
+    },
   },
 
   // redirect

@@ -192,5 +192,34 @@
         "luxury-bathroom.jpg"
       ]
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "sample product",
+      "price": "$99.99"
+    },
+    {
+      "id": 90926,
+      "name": "asdsad",
+      "price": "asda"
+    },
+    {
+      "name": "1111222",
+      "price": "111222",
+      "id": 59872
+    }
+  ],
+  "users": [
+    {
+      "username": "adminXX1",
+      "password": "adminpwXX1",
+      "id": 1
+    },
+    {
+      "id": 30436,
+      "username": "12111",
+      "password": "12121"
+    }
   ]
 }
