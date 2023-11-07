@@ -28,24 +28,25 @@
         class="as-wave full-clip-path mx-auto my-12 block text-4xl text-neutral-400"
       />
 
-      <div class="as-img my-12 mx-auto h-auto w-full md:w-[30rem]">
+      <!-- <div class="as-img my-12 mx-auto h-auto w-full md:w-[30rem]">
         <img
           src="@/assets/img/banner/home-about.jpg"
           alt="about image"
           class="h-full w-full"
         />
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, onUnmounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.refresh();
 
   gsap.from(".as-title", {
     y: 100,
@@ -61,5 +62,9 @@ onMounted(() => {
       toggleActions: "restart reverse restart reverse",
     },
   });
+});
+
+onUnmounted(() => {
+  ScrollTrigger.killAll();
 });
 </script>

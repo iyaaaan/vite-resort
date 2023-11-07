@@ -38,7 +38,7 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, onUnmounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -46,8 +46,9 @@ const props = defineProps({
   featured: Array,
 });
 
+gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.refresh();
 
   const featWrap = gsap.utils.toArray(".feat-wrap");
   const featWrap2 = gsap.utils.toArray(".feat-wrap2");
@@ -91,5 +92,9 @@ onMounted(() => {
       invalidateOnRefresh: true,
     },
   });
+});
+
+onUnmounted(() => {
+  ScrollTrigger.killAll;
 });
 </script>

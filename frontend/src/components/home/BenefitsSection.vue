@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -61,6 +61,8 @@ const perksTitle = ref(null);
 const perksImg = ref(null);
 
 onMounted(() => {
+  ScrollTrigger.refresh();
+
   let tl = gsap.timeline({
     defaults: { ease: "Power4.inOut", duration: 0.8, autoAlpha: 0 },
     scrollTrigger: {
@@ -94,6 +96,10 @@ onMounted(() => {
     },
     0.3
   );
+});
+
+onUnmounted(() => {
+  ScrollTrigger.killAll();
 });
 </script>
 

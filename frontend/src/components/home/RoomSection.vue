@@ -46,14 +46,15 @@
 
 <script setup>
 import BaseButton from "@/components/BaseButton.vue";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const roomBg = ref(null);
 
+gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.refresh();
 
   let tl = gsap.timeline({
     defaults: { ease: "Power4.inOut", duration: 0.8 },
@@ -92,5 +93,9 @@ onMounted(() => {
       scrub: true,
     },
   });
+});
+
+onUnmounted(() => {
+  ScrollTrigger.killAll();
 });
 </script>

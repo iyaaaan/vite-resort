@@ -1,10 +1,10 @@
 <template>
   <header class="relative z-10">
     <nav
-      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between overflow-hidden bg-gradient-to-b py-4 px-4 font-Poppins backdrop-blur-sm transition-transform duration-300 ease-linear lg:px-12 lg:backdrop-blur-none"
+      class="clip-path-to-bottom fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between overflow-hidden bg-gradient-to-b py-4 px-8 font-Poppins backdrop-blur-sm transition-transform duration-300 ease-linear lg:px-12 lg:backdrop-blur-none"
       :class="[
         { '-translate-y-full': !showNavbar },
-        topOfPage ? 'lg:from-black' : 'bg-[#72645B]',
+        topOfPage ? 'lg:from-[rgba(0,0,0,.3)]' : 'bg-[#72645B]',
       ]"
       ref="nav"
     >
@@ -25,12 +25,20 @@
       <!-- menu toggler -->
       <span
         @click="toggleMenu"
-        class="flex h-6 w-6 items-center justify-center lg:hidden"
+        class="relative h-3 w-9 cursor-pointer lg:hidden"
       >
-        <font-awesome-icon
+        <!-- <font-awesome-icon
           :icon="`fas fa-${menuIcon}`"
           class="text-2xl text-white"
-        />
+        /> -->
+        <div
+          class="absolute top-0 left-0 h-[3px] w-full bg-white transition-all delay-75 duration-300 ease-in-out"
+          :class="{ 'top-1 -rotate-45': activeMenu }"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 h-[3px] w-full bg-white transition-all duration-300 ease-in-out"
+          :class="{ 'bottom-1 rotate-45': activeMenu }"
+        ></div>
       </span>
 
       <!-- menu -->
@@ -64,7 +72,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from "vue";
+import { ref, onMounted, computed, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -108,7 +116,7 @@ let menuIcon = ref("bars");
 let topOfPage = ref(true);
 let showNavbar = ref(true);
 let lastScrollPosition = ref(0);
-let scrollOffset = ref(0);
+let scrollOffset = ref(1000);
 
 // check if navbar is not at the top of the page
 const handleScroll = () => {
@@ -148,8 +156,9 @@ const toggleMenu = () => {
   menuIcon.value = activeMenu.value ? "times" : "bars";
 };
 
+gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.refresh();
 
   window.addEventListener("scroll", handleScroll);
 
@@ -158,6 +167,10 @@ onMounted(() => {
     duration: 1,
     delay: 1.8,
   });
+});
+
+onUnmounted(() => {
+  ScrollTrigger.killAll();
 });
 </script>
 

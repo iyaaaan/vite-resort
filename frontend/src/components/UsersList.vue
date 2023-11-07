@@ -4,13 +4,13 @@ import { onMounted, ref } from "vue";
 
 const users = ref([]);
 const getUsers = async () => {
-  await axios.get("http://localhost:3000/users").then((res) => {
+  await axios.get("users").then((res) => {
     users.value = res.data;
   });
 };
 
 const deleteUser = async (id) => {
-  await axios.delete(`http://localhost:3000/users/${id}`).then((res) => {
+  await axios.delete(`users/${id}`).then((res) => {
     console.log(res);
     getUsers();
   });

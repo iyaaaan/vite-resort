@@ -26,7 +26,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { onMounted } from "vue";
+import { onMounted, onUnmounted } from "vue";
 import Testimonial from "@/components/Testimonial.vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -72,8 +72,9 @@ const testimonialClass = ref([
   "col-span-1 bg-zinc-800 sm:col-span-2 md:col-span-3 lg:col-span-2",
 ]);
 
+gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.refresh();
 
   let tl = gsap.timeline({
     defaults: { ease: "Expo.easeOut", duration: 1.5, delay: 0.5 },
@@ -107,5 +108,9 @@ onMounted(() => {
     },
     0.3
   );
+});
+
+onUnmounted(() => {
+  ScrollTrigger.killAll();
 });
 </script>

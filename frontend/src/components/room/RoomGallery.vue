@@ -3,8 +3,7 @@
   <div
     class="mb-4 flex h-[35rem] w-full items-center justify-between rounded-tr rounded-tl bg-red-100 bg-cover bg-center bg-no-repeat"
     :style="{
-      'background-image':
-        'url(/src/assets/img/room/imgs/' + thumbnails[activePhoto] + ')',
+      'background-image': 'url(' + imageUrls[activePhoto] + ')',
     }"
   >
     <!-- prev button -->
@@ -27,10 +26,10 @@
   <!-- thumbnails -->
   <div class="grid grid-flow-col-dense gap-4">
     <div
-      v-for="(thumb, index) in thumbs"
+      v-for="(thumb, index) in thumbUrls"
       :key="index"
       :style="{
-        'background-image': 'url(/src/assets/img/room/thumbs/' + thumb + ')',
+        'background-image': 'url(' + thumb + ')',
       }"
       @click="activePhoto = index"
       :class="{
@@ -42,13 +41,30 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 
 const props = defineProps({
   thumbs: [Array],
 });
 
+const imageUrls = [];
+const thumbUrls = [];
+
 const thumbnails = props.thumbs;
+
+// dynamically import images for vite build
+props.thumbs.forEach((img) => {
+  const imageUrl = computed(
+    () => new URL(`/src/assets/img/room/imgs/${img}`, import.meta.url).href
+  );
+
+  const thumbUrl = computed(
+    () => new URL(`/src/assets/img/room/thumbs/${img}`, import.meta.url).href
+  );
+
+  imageUrls.push(imageUrl.value);
+  thumbUrls.push(thumbUrl.value);
+});
 
 // current photo
 let activePhoto = ref(0);
@@ -56,13 +72,13 @@ let activePhoto = ref(0);
 // previous photo
 function prevPhoto() {
   activePhoto.value =
-    activePhoto.value - 1 >= 0 ? activePhoto.value - 1 : thumbnails.length - 1;
+    activePhoto.value - 1 >= 0 ? activePhoto.value - 1 : imageUrls.length - 1;
 }
 
 // next photo
 function nextPhoto() {
   activePhoto.value =
-    activePhoto.value + 1 < thumbnails.length ? activePhoto.value + 1 : 0;
+    activePhoto.value + 1 < imageUrls.length ? activePhoto.value + 1 : 0;
 }
 
 onMounted(() => {

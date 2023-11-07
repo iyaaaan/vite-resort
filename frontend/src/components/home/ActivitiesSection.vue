@@ -10,7 +10,9 @@
         <!-- card -->
         <template v-for="activity in activities" key="index">
           <div class="acts-card w-full p-4 md:w-1/2">
-            <div class="rounded-lg border bg-white px-8 py-10 text-stone-700">
+            <div
+              class="rounded-lg border border-beaver px-7 py-10 text-stone-700"
+            >
               <!-- card icon -->
               <Icon :icon="activity.icon" class="mx-auto text-7xl" />
 
@@ -58,13 +60,14 @@
 
 <script setup>
 import BaseButton from "@/components/BaseButton.vue";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { Icon } from "@iconify/vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.refresh();
 
   let tl = gsap.timeline({
     defaults: { ease: "Power4.inOut", duration: 0.8 },
@@ -104,6 +107,10 @@ onMounted(() => {
       toggleActions: "restart reverse restart reverse",
     },
   });
+});
+
+onUnmounted(() => {
+  ScrollTrigger.killAll();
 });
 
 const activities = ref([

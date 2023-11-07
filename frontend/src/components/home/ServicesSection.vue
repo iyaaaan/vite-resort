@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, onUnmounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { computed } from "@vue/reactivity";
@@ -45,8 +45,9 @@ const props = defineProps({
   services: Array,
 });
 
+gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.refresh();
 
   const serviceItem = gsap.utils.toArray(".service-item");
 
@@ -65,5 +66,9 @@ onMounted(() => {
         duration: 0.3,
       }),
   });
+});
+
+onUnmounted(() => {
+  ScrollTrigger.killAll();
 });
 </script>

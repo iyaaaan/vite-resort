@@ -29,13 +29,14 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, onUnmounted } from "vue";
 import BaseButton from "@/components/BaseButton.vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.refresh();
 
   let tl = gsap.timeline({
     defaults: { ease: "Power4.inOut", duration: 0.5 },
@@ -60,5 +61,9 @@ onMounted(() => {
     },
     0.5
   );
+});
+
+onUnmounted(() => {
+  ScrollTrigger.killAll();
 });
 </script>

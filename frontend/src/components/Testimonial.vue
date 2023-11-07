@@ -6,7 +6,7 @@
       <div class="testimonial__details">
         <!-- image -->
         <div class="testimonial__details-img">
-          <img :src="`/src/assets/img/testimonial/${testimonial.img}`" alt="" />
+          <img :src="imageUrl" alt="" />
         </div>
         <div>
           <!-- name -->
@@ -42,9 +42,19 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from "vue";
+
+const props = defineProps({
   testimonial: [Object, Array],
 });
+
+const imageUrl = computed(
+  () =>
+    new URL(
+      `/src/assets/img/testimonial/${props.testimonial.img}`,
+      import.meta.url
+    ).href
+);
 </script>
 
 <style lang="scss">

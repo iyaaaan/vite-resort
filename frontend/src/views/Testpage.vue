@@ -56,6 +56,10 @@
       </button>
     </form>
   </div>
+
+  <section>
+    <div></div>
+  </section>
 </template>
 
 <script setup>
@@ -63,6 +67,40 @@ import { useTodosStore } from "@/store/TodoStore";
 import { ref, onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import axios from "axios";
+
+// Data
+const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+const timeSlots = ref([]);
+
+// Generate time slots from 7:00 AM to 5:30 PM with 30-minute intervals
+const generateTimeSlots = () => {
+  let currentTime = new Date(0, 0, 0, 7, 0); // Start at 7:00 AM
+  const endTime = new Date(0, 0, 0, 17, 30); // End at 5:30 PM
+
+  while (currentTime <= endTime) {
+    timeSlots.value.push(
+      currentTime.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+    );
+    currentTime = new Date(currentTime.getTime() + 30 * 60 * 1000); // Increment by 30 minutes
+  }
+};
+
+const classSlots = ref([]);
+// Generate empty class slots for each time slot and day
+const generateClassSlots = () => {
+  days.forEach((day) => {
+    timeSlots.value.forEach((timeSlot) => {
+      classSlots.value.push({ day, timeSlot, className: "" });
+    });
+  });
+};
+
+const getClassName = (day, timeSlot) => {
+  const slot = classSlots.value.find(
+    (slot) => slot.day === day && slot.timeSlot === timeSlot
+  );
+  return slot ? slot.className : "";
+};
 
 const action = ref("add");
 
@@ -73,7 +111,7 @@ const price = ref("");
 
 // product
 const getProducts = async () => {
-  const res = await axios.get("http://localhost:3000/products");
+  const res = await axios.get("products");
   products.value = res.data;
 };
 
@@ -88,7 +126,7 @@ const handleSubmit = () => {
 
 const addProduct = async () => {
   await axios
-    .post("http://localhost:3000/products", {
+    .post("products", {
       id: Math.floor(Math.random() * 100000),
       name: newProduct.value,
       price: price.value,
@@ -103,7 +141,7 @@ const addProduct = async () => {
 
 const getProductById = async (id) => {
   action.value = "edit";
-  const product = await axios.get(`http://localhost:3000/products/${id}`);
+  const product = await axios.get(`products/${id}`);
 
   productId.value = id;
   newProduct.value = product.data.name;
@@ -112,7 +150,7 @@ const getProductById = async (id) => {
 
 const updateProduct = async () => {
   await axios
-    .put(`http://localhost:3000/products/${productId.value}`, {
+    .put(`products/${productId.value}`, {
       name: newProduct.value,
       price: price.value,
     })
@@ -127,7 +165,7 @@ const updateProduct = async () => {
 
 const deleteProduct = async (id) => {
   try {
-    await axios.delete(`http://localhost:3000/products/${id}`).then((res) => {
+    await axios.delete(`products/${id}`).then((res) => {
       console.log(res);
       getProducts();
     });
@@ -138,6 +176,9 @@ const deleteProduct = async (id) => {
 
 onMounted(() => {
   getProducts();
+
+  generateTimeSlots();
+  generateClassSlots();
 });
 
 const newTodo = ref("");

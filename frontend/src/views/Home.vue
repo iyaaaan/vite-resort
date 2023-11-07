@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero -->
-    <HeroBanner banner="home-hero">
+    <HeroBanner :banner="HomeHero" page="home">
       <div
         class="hero-caption relative mx-auto -mt-12 p-4 text-center md:ml-12 md:text-left lg:max-w-2xl"
       >
@@ -53,10 +53,10 @@
 
     <!-- banner section -->
     <section
-      class="h-auto w-full bg-cover bg-fixed bg-bottom bg-no-repeat md:h-96 md:bg-[url('src/assets/img/banner/home-banner.webp')]"
+      class="h-auto w-full bg-cover bg-fixed bg-bottom bg-no-repeat md:h-96 md:bg-[url('/src/assets/img/banner/home-banner.webp')]"
     >
       <img
-        src="src/assets/img/banner/home-banner.webp"
+        src="/src/assets/img/banner/home-banner.webp"
         alt=""
         class="w-full md:hidden"
       />
@@ -71,7 +71,8 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted } from "vue";
+import { onUnmounted, onMounted } from "vue";
+import HomeHero from "@/assets/img/banner/home-hero.webp";
 import BaseButton from "@/components/BaseButton.vue";
 import HeroBanner from "@/components/HeroBanner.vue";
 import AboutSection from "@/components/home/AboutSection.vue";
@@ -86,6 +87,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
+  ScrollTrigger.refresh();
+
   let tl = gsap.timeline({
     defaults: { duration: 0.8 },
     scrollTrigger: {
@@ -106,7 +109,7 @@ onMounted(() => {
   });
 });
 
-onBeforeUnmount(() => {
+onUnmounted(() => {
   ScrollTrigger.killAll();
 });
 </script>

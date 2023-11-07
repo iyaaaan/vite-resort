@@ -12,7 +12,7 @@ const username = ref("");
 const password = ref("");
 
 const getUserById = async () => {
-  await axios.get(`http://localhost:3000/users/${id}`).then((res) => {
+  await axios.get(`users/${id}`).then((res) => {
     username.value = res.data.username;
     password.value = res.data.password;
   });
@@ -20,7 +20,7 @@ const getUserById = async () => {
 
 const updateUser = async () => {
   await axios
-    .put(`http://localhost:3000/users/${id}`, {
+    .put(`users/${id}`, {
       username: username.value,
       password: password.value,
     })

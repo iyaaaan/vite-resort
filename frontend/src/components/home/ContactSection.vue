@@ -15,7 +15,7 @@
 
     <div class="mt-16 flex flex-wrap items-start justify-end">
       <div class="contact-sec-img hidden w-full px-4 md:block md:w-1/2">
-        <img src="src/assets/img/banner/book-now.jpg" alt="" class="w-full" />
+        <img src="/src/assets/img/banner/book-now.jpg" alt="" class="w-full" />
       </div>
       <div class="w-full px-4 md:w-1/2">
         <form action="#">
@@ -69,8 +69,9 @@ import { onMounted, onUnmounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.refresh();
 
   let tl = gsap.timeline({
     defaults: { ease: "Power4.inOut", duration: 0.8, y: 100, autoAlpha: 0 },
@@ -107,5 +108,9 @@ onMounted(() => {
       scale: 0.8,
       ease: "Back.easeOut",
     });
+});
+
+onUnmounted(() => {
+  ScrollTrigger.killAll();
 });
 </script>

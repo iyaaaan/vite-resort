@@ -1,7 +1,9 @@
 <template>
   <!-- Hero -->
-  <HeroBanner banner="about-hero">
-    <div class="mx-auto max-w-5xl px-4 text-center font-light text-white">
+  <HeroBanner :banner="ActivityHero">
+    <div
+      class="full-clip-path activity-text mx-auto max-w-5xl px-4 text-center font-light text-white"
+    >
       <p>
         From thrilling water sports to energizing beachside activities, our
         beach resort offers a wide range of experiences to satisfy your inner
@@ -14,25 +16,28 @@
   </HeroBanner>
 
   <!-- activities -->
-  <section class="container py-20">
+  <section class="activity-wrap container py-20">
     <h2
-      class="mb-12 px-4 text-center font-Playfair text-3xl text-beaver md:text-4xl"
+      class="full-clip-path activity-title mb-12 px-4 text-center font-Playfair text-3xl text-beaver md:text-4xl"
     >
       Embrace Adventure and Fun: Explore Our Thrilling Sports and Activities!
     </h2>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:gap-8">
-      <template v-for="item in items">
-        <custom-card :card="item" folder="activities"></custom-card>
+      <template v-for="item in items" :key="item.id">
+        <div class="activity-card">
+          <custom-card :card="item" folder="activities"></custom-card>
+        </div>
       </template>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { Icon } from "@iconify/vue";
 import HeroBanner from "@/components/HeroBanner.vue";
+import ActivityHero from "@/assets/img/banner/activity-hero.webp";
 import BaseButton from "@/components/BaseButton.vue";
 import CustomCard from "@/components/CustomCard.vue";
 
@@ -40,6 +45,44 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  ScrollTrigger.refresh();
+
+  gsap.from(".activity-text", {
+    y: 50,
+    "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+    autoAlpha: 0,
+    delay: 1,
+  });
+
+  let tl = gsap.timeline({
+    defaults: { ease: "Power4.inOut", duration: 0.8 },
+    scrollTrigger: {
+      trigger: ".activity-wrap",
+      start: "top 80%",
+      end: "bottom top",
+      toggleActions: "restart reverse restart reverse",
+    },
+  });
+
+  tl.from(".activity-title", {
+    y: 50,
+    "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+    autoAlpha: 0,
+    delay: 1,
+  });
+
+  tl.from(".activity-card", {
+    scale: 0.8,
+    autoAlpha: 0,
+    stagger: 0.2,
+  });
+});
+
+onUnmounted(() => {
+  ScrollTrigger.killAll();
+});
 
 const items = ref([
   {

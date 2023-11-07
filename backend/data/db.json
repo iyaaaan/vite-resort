@@ -46,6 +46,32 @@
         "deluxe-living.jpg",
         "deluxe-kitchen.jpg",
         "deluxe-bathroom.jpg"
+      ],
+      "testimonials": [
+        {
+          "name": "Juan Dela Cruz",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-4.jpg",
+          "rating": 4
+        },
+        {
+          "name": "Jenny Ortega",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+          "img": "test-3.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Arcelis Gomez",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum.",
+          "img": "test-2.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Paul June",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-1.jpg",
+          "rating": 4
+        }
       ]
     },
     {
@@ -57,6 +83,28 @@
       "inclusions": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$250.00",
       "rating": 4,
+      "amenities": [
+        {
+          "icon": "material-symbols:bed",
+          "title": "2 Bedrooms"
+        },
+        {
+          "icon": "fluent-mdl2:breakfast",
+          "title": "Complimentary Breakfast"
+        },
+        {
+          "icon": "mingcute:air-condition-open-line",
+          "title": "Air- Conditioned"
+        },
+        {
+          "icon": "tabler:smoking-no",
+          "title": "No Smoking"
+        },
+        {
+          "icon": "ph:shower-bold",
+          "title": "Shower"
+        }
+      ],
       "banner": "deluxe-banner.jpg",
       "img": "deluxe-card.jpg",
       "thumb": [
@@ -64,6 +112,26 @@
         "deluxe-living.jpg",
         "deluxe-kitchen.jpg",
         "deluxe-bathroom.jpg"
+      ],
+      "testimonials": [
+        {
+          "name": "Arcelis Gomez",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum.",
+          "img": "test-2.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Juan Dela Cruz",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-4.jpg",
+          "rating": 4
+        },
+        {
+          "name": "Jenny Ortega",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+          "img": "test-3.jpg",
+          "rating": 5
+        }
       ]
     },
     {
@@ -75,6 +143,36 @@
       "inclusions": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$300.00",
       "rating": 4,
+      "amenities": [
+        {
+          "icon": "material-symbols:bed",
+          "title": "2 Bedrooms"
+        },
+        {
+          "icon": "fluent-mdl2:breakfast",
+          "title": "Complimentary Breakfast"
+        },
+        {
+          "icon": "ic:round-wifi",
+          "title": "Wifi"
+        },
+        {
+          "icon": "mingcute:air-condition-open-line",
+          "title": "Air- Conditioned"
+        },
+        {
+          "icon": "pixelarticons:device-tv-smart",
+          "title": "Smart TV"
+        },
+        {
+          "icon": "tabler:smoking-no",
+          "title": "No Smoking"
+        },
+        {
+          "icon": "ph:shower-bold",
+          "title": "Shower"
+        }
+      ],
       "banner": "deluxe-banner.jpg",
       "img": "deluxe-card.jpg",
       "thumb": [
@@ -82,6 +180,32 @@
         "deluxe-living.jpg",
         "deluxe-kitchen.jpg",
         "deluxe-bathroom.jpg"
+      ],
+      "testimonials": [
+        {
+          "name": "Juan Dela Cruz",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-4.jpg",
+          "rating": 4
+        },
+        {
+          "name": "Arcelis Gomez",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum.",
+          "img": "test-2.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Jenny Ortega",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+          "img": "test-3.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Paul June",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-1.jpg",
+          "rating": 4
+        }
       ]
     },
     {
@@ -93,6 +217,28 @@
       "inclusions": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$175.00",
       "rating": 4,
+      "amenities": [
+        {
+          "icon": "material-symbols:bed",
+          "title": "2 Bedrooms"
+        },
+        {
+          "icon": "fluent-mdl2:breakfast",
+          "title": "Complimentary Breakfast"
+        },
+        {
+          "icon": "ic:round-wifi",
+          "title": "Wifi"
+        },
+        {
+          "icon": "mingcute:air-condition-open-line",
+          "title": "Air- Conditioned"
+        },
+        {
+          "icon": "ph:shower-bold",
+          "title": "Shower"
+        }
+      ],
       "banner": "family-banner.jpg",
       "img": "family-card.jpg",
       "thumb": [
@@ -100,6 +246,32 @@
         "family-living.jpg",
         "family-kitchen.jpg",
         "family-bathroom.jpg"
+      ],
+      "testimonials": [
+        {
+          "name": "Juan Dela Cruz",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-4.jpg",
+          "rating": 4
+        },
+        {
+          "name": "Jenny Ortega",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+          "img": "test-3.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Arcelis Gomez",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum.",
+          "img": "test-2.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Paul June",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-1.jpg",
+          "rating": 4
+        }
       ]
     },
     {
@@ -111,6 +283,36 @@
       "inclusions": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$275.00",
       "rating": 4,
+      "amenities": [
+        {
+          "icon": "material-symbols:bed",
+          "title": "2 Bedrooms"
+        },
+        {
+          "icon": "fluent-mdl2:breakfast",
+          "title": "Complimentary Breakfast"
+        },
+        {
+          "icon": "ic:round-wifi",
+          "title": "Wifi"
+        },
+        {
+          "icon": "mingcute:air-condition-open-line",
+          "title": "Air- Conditioned"
+        },
+        {
+          "icon": "pixelarticons:device-tv-smart",
+          "title": "Smart TV"
+        },
+        {
+          "icon": "tabler:smoking-no",
+          "title": "No Smoking"
+        },
+        {
+          "icon": "ph:shower-bold",
+          "title": "Shower"
+        }
+      ],
       "banner": "family-banner.jpg",
       "img": "family-card.jpg",
       "thumb": [
@@ -118,6 +320,26 @@
         "family-living.jpg",
         "family-kitchen.jpg",
         "family-bathroom.jpg"
+      ],
+      "testimonials": [
+        {
+          "name": "Arcelis Gomez",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum.",
+          "img": "test-2.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Juan Dela Cruz",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-4.jpg",
+          "rating": 4
+        },
+        {
+          "name": "Jenny Ortega",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+          "img": "test-3.jpg",
+          "rating": 5
+        }
       ]
     },
     {
@@ -129,6 +351,32 @@
       "inclusions": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$325.00",
       "rating": 4,
+      "amenities": [
+        {
+          "icon": "material-symbols:bed",
+          "title": "2 Bedrooms"
+        },
+        {
+          "icon": "fluent-mdl2:breakfast",
+          "title": "Complimentary Breakfast"
+        },
+        {
+          "icon": "ic:round-wifi",
+          "title": "Wifi"
+        },
+        {
+          "icon": "mingcute:air-condition-open-line",
+          "title": "Air- Conditioned"
+        },
+        {
+          "icon": "pixelarticons:device-tv-smart",
+          "title": "Smart TV"
+        },
+        {
+          "icon": "ph:shower-bold",
+          "title": "Shower"
+        }
+      ],
       "banner": "family-banner.jpg",
       "img": "family-card.jpg",
       "thumb": [
@@ -136,6 +384,32 @@
         "family-living.jpg",
         "family-kitchen.jpg",
         "family-bathroom.jpg"
+      ],
+      "testimonials": [
+        {
+          "name": "Juan Dela Cruz",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-4.jpg",
+          "rating": 4
+        },
+        {
+          "name": "Arcelis Gomez",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum.",
+          "img": "test-2.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Jenny Ortega",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+          "img": "test-3.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Paul June",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-1.jpg",
+          "rating": 4
+        }
       ]
     },
     {
@@ -147,6 +421,32 @@
       "inclusions": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$200.00",
       "rating": 4,
+      "amenities": [
+        {
+          "icon": "material-symbols:bed",
+          "title": "2 Bedrooms"
+        },
+        {
+          "icon": "fluent-mdl2:breakfast",
+          "title": "Complimentary Breakfast"
+        },
+        {
+          "icon": "ic:round-wifi",
+          "title": "Wifi"
+        },
+        {
+          "icon": "mingcute:air-condition-open-line",
+          "title": "Air- Conditioned"
+        },
+        {
+          "icon": "pixelarticons:device-tv-smart",
+          "title": "Smart TV"
+        },
+        {
+          "icon": "ph:shower-bold",
+          "title": "Shower"
+        }
+      ],
       "banner": "luxury-banner.jpg",
       "img": "luxury-card.jpg",
       "thumb": [
@@ -154,6 +454,32 @@
         "luxury-living.jpg",
         "luxury-kitchen.jpg",
         "luxury-bathroom.jpg"
+      ],
+      "testimonials": [
+        {
+          "name": "Juan Dela Cruz",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-4.jpg",
+          "rating": 4
+        },
+        {
+          "name": "Arcelis Gomez",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum.",
+          "img": "test-2.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Jenny Ortega",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+          "img": "test-3.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Paul June",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-1.jpg",
+          "rating": 4
+        }
       ]
     },
     {
@@ -172,6 +498,26 @@
         "luxury-living.jpg",
         "luxury-kitchen.jpg",
         "luxury-bathroom.jpg"
+      ],
+      "testimonials": [
+        {
+          "name": "Arcelis Gomez",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum.",
+          "img": "test-2.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Jenny Ortega",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+          "img": "test-3.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Paul June",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-1.jpg",
+          "rating": 4
+        }
       ]
     },
     {
@@ -183,6 +529,32 @@
       "inclusions": "2 adults, 1 child. Additional $20 per exceeding pax",
       "price": "$360.00",
       "rating": 4,
+      "amenities": [
+        {
+          "icon": "material-symbols:bed",
+          "title": "2 Bedrooms"
+        },
+        {
+          "icon": "fluent-mdl2:breakfast",
+          "title": "Complimentary Breakfast"
+        },
+        {
+          "icon": "ic:round-wifi",
+          "title": "Wifi"
+        },
+        {
+          "icon": "mingcute:air-condition-open-line",
+          "title": "Air- Conditioned"
+        },
+        {
+          "icon": "tabler:smoking-no",
+          "title": "No Smoking"
+        },
+        {
+          "icon": "ph:shower-bold",
+          "title": "Shower"
+        }
+      ],
       "banner": "luxury-banner.jpg",
       "img": "luxury-card.jpg",
       "thumb": [
@@ -190,9 +562,36 @@
         "luxury-living.jpg",
         "luxury-kitchen.jpg",
         "luxury-bathroom.jpg"
+      ],
+      "testimonials": [
+        {
+          "name": "Arcelis Gomez",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum.",
+          "img": "test-2.jpg",
+          "rating": 5
+        },
+        {
+          "name": "Juan Dela Cruz",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-4.jpg",
+          "rating": 4
+        },
+        {
+          "name": "Paul June",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
+          "img": "test-1.jpg",
+          "rating": 4
+        },
+        {
+          "name": "Jenny Ortega",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+          "img": "test-3.jpg",
+          "rating": 5
+        }
       ]
     }
   ],
+
   "products": [
     {
       "id": 1,
@@ -208,6 +607,11 @@
       "name": "1111222",
       "price": "111222",
       "id": 59872
+    },
+    {
+      "id": 64563,
+      "name": "asd",
+      "price": "asd"
     }
   ],
   "users": [
@@ -220,6 +624,11 @@
       "id": 30436,
       "username": "12111",
       "password": "12121"
+    },
+    {
+      "username": "asd221",
+      "password": "asd22",
+      "id": 82365
     }
   ]
 }

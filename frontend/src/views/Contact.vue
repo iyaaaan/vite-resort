@@ -1,7 +1,9 @@
 <template>
   <!-- Hero -->
-  <HeroBanner banner="about-hero">
-    <div class="mx-auto max-w-5xl px-4 text-center font-light text-white">
+  <HeroBanner :banner="ContactHero">
+    <div
+      class="contact-text full-clip-path mx-auto max-w-5xl px-4 text-center font-light text-white"
+    >
       <p>
         From thrilling water sports to energizing beachside activities, our
         beach resort offers a wide range of experiences to satisfy your inner
@@ -80,6 +82,11 @@
 
   <!-- map -->
   <section class="relative top-44">
+    <h2
+      class="mb-12 px-4 text-center font-Playfair text-4xl text-beaver md:text-4xl"
+    >
+      See Map
+    </h2>
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4911.829108287153!2d122.98175637597885!3d14.135509188292373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3398ae08a0de8c11%3A0x645b6d833e59210f!2sBagasbas%20Beach!5e1!3m2!1sen!2sph!4v1684887984201!5m2!1sen!2sph"
       width="100%"
@@ -96,10 +103,30 @@
 
 <script setup>
 import HeroBanner from "@/components/HeroBanner.vue";
+import ContactHero from "@/assets/img/banner/contact-hero.webp";
 import BaseButton from "@/components/BaseButton.vue";
 import BaseInput from "@/components/BaseInput.vue";
 import BaseTextArea from "@/components/BaseTextArea.vue";
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const form = ref([{ name: "" }, { email: "" }, { message: "" }]);
+
+gsap.registerPlugin(ScrollTrigger);
+onMounted(() => {
+  ScrollTrigger.refresh();
+
+  gsap.from(".contact-text", {
+    y: 50,
+    "clip-path": "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+    autoAlpha: 0,
+    delay: 1,
+  });
+});
+
+onUnmounted(() => {
+  ScrollTrigger.killAll();
+});
 </script>

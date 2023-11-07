@@ -65,7 +65,10 @@
         Room Reviews
       </h3>
       <div class="my-10 grid grid-cols-2 gap-4 border-b border-b-stone-300">
-        <template v-for="(testimonial, index) in testimonials" :key="index">
+        <template
+          v-for="(testimonial, index) in room.testimonials"
+          :key="index"
+        >
           <Testimonial :testimonial="testimonial" class="bg-neutral-600" />
         </template>
       </div>
@@ -85,7 +88,7 @@
             :to="{ name: 'RoomDetails', params: { id: similar.id } }"
             class="mx-auto w-full sm:w-4/5 md:w-full"
           >
-            <custom-card :card="similar" folder="room/card/"></custom-card>
+            <custom-card :card="similar" folder="room/card"></custom-card>
           </router-link>
         </template>
         <div class="group flex items-center justify-center p-5">
@@ -117,6 +120,12 @@ import BookingForm from "@/components/room/BookingForm.vue";
 import Testimonial from "@/components/Testimonial.vue";
 import { useRoute } from "vue-router";
 
+// testimonial images
+import Test1 from "@/assets/img/testimonial/test-1.jpg";
+import Test2 from "@/assets/img/testimonial/test-2.jpg";
+import Test3 from "@/assets/img/testimonial/test-3.jpg";
+import Test4 from "@/assets/img/testimonial/test-4.jpg";
+
 // route parameter
 const props = defineProps(["id"]);
 
@@ -126,7 +135,7 @@ const rooms = ref([]);
 /* fetch all rooms */
 async function fetchRooms() {
   try {
-    let response = await axios.get(`http://localhost:3000/room`);
+    let response = await axios.get(`room`);
     rooms.value = response.data;
   } catch (error) {
     console.error(`ERROR: ${error}`);
@@ -142,12 +151,28 @@ const room = ref();
 // room banner
 let banner = ref();
 
+const testImgs = [];
+
 // fetch room details
 async function fetchRoomData(id) {
   try {
-    let response = await axios.get(`http://localhost:3000/room/${id}`);
+    let response = await axios.get(`room/${id}`);
     room.value = response.data;
-    banner = room.value.banner.split(".")[0];
+    //banner = room.value.banner.split(".")[0];
+    let img = room.value.banner;
+
+    room.value.testimonials.forEach((img) => {
+      const imageUrl = computed(
+        () =>
+          new URL(`/src/assets/img/testimonial/${img}`, import.meta.url).href
+      );
+
+      testImgs.push(imageUrl.value);
+    });
+
+    banner = computed(
+      () => new URL(`/src/assets/img/banner/${img}`, import.meta.url).href
+    );
   } catch (error) {
     console.error(`ERROR: ${error}`);
   }
@@ -186,26 +211,26 @@ const testimonials = ref([
   {
     name: "Juan Dela Cruz",
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
-    img: "test-1.jpg",
+    img: Test1,
     rating: 4,
   },
 
   {
     name: "Rhianna Gomez",
-    text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-    img: "test-2.jpg",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+    img: Test2,
     rating: 5,
   },
   {
     name: "Joshua The Explorer",
-    text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
-    img: "test-3.jpg",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptas? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, amet!",
+    img: Test3,
     rating: 4,
   },
   {
     name: "JD Cruz",
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vero repellat consectetur saepe facilis. Placeat, similique quisquam! Ut, consequuntur! Aliquam, earum. Nostrum delectus doloremque ex labore, perspiciatis necessitatibus dolorem quas.",
-    img: "test-5.jpg",
+    img: Test4,
     rating: 5,
   },
 ]);

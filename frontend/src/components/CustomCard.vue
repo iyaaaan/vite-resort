@@ -7,7 +7,7 @@
       class="h-64 w-full overflow-hidden rounded-tr rounded-tl bg-white transition-all duration-300 group-hover:h-32"
     >
       <img
-        :src="`/src/assets/img/${props.folder}/${props.card.img}`"
+        :src="imageUrl"
         alt=""
         class="block w-full transition-all duration-700 group-hover:scale-125 group-hover:opacity-60"
       />
@@ -61,6 +61,7 @@
 
 <script setup>
 import { useRoute } from "vue-router";
+import { computed } from "vue";
 
 // Access the current route
 const route = useRoute();
@@ -69,6 +70,14 @@ const props = defineProps({
   card: (Array, Object),
   folder: String,
 });
+
+const imageUrl = computed(
+  () =>
+    new URL(
+      `/src/assets/img/${props.folder}/${props.card.img}`,
+      import.meta.url
+    ).href
+);
 </script>
 
 <style lang="scss" scoped></style>

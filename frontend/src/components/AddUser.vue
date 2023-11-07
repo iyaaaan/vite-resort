@@ -10,7 +10,7 @@ const password = ref("");
 
 const addUser = async () => {
   await axios
-    .post("http://localhost:3000/users", {
+    .post("users", {
       id: Math.floor(Math.random() * 100000),
       username: username.value,
       password: password.value,

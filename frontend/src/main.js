@@ -1,3 +1,4 @@
+import axios from "axios";
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import App from "./App.vue";
@@ -64,6 +65,8 @@ library.add(
   faChevronCircleLeft,
   faChevronCircleRight
 );
+
+axios.defaults.baseURL = "http://localhost:3000/";
 
 const app = createApp(App);
 
