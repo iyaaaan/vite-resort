@@ -37,7 +37,7 @@ onMounted(() => {
   gsap.registerPlugin(ScrollTrigger);
 
   let tl = gsap.timeline({ defaults: { ease: "power4.inOut", duration: 2.2 } });
-  //tl.set(document.body, { overflow: "hidden" });
+  tl.set(document.body, { overflow: "hidden" });
   tl.from(heroWrap.value, {
     //autoAlpha: 0,
     scale: 0.5,
@@ -53,7 +53,7 @@ onMounted(() => {
     0.5
   );
 
-  //tl.set(document.body, { overflow: "auto" });
+  tl.set(document.body, { overflow: "auto" });
 
   gsap.fromTo(
     heroBg.value,
